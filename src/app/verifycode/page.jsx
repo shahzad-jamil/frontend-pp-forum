@@ -21,22 +21,22 @@ const page = () => {
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
         <div className='w-[100%] order-2 md:order-1'>
           <div className='w-[80%] h-[100%] mx-auto  flex item-center flex-col  justify-center'>
-            <h1 className='text-[40px] font-semibold mb-[10px] primary-text-color '>Verify Code</h1>
-            <p className='text-[16px]  secondary-text-color'>
+            <h1 className='text-[40px] font-semibold mb-[10px] primary-text-color montserrat-primary-font'>Verify Code</h1>
+            <p className='text-[16px]  secondary-text-color montserrat-secondary-font'>
               Enter the code that send to registered email
             </p>
             <form action="">
               <div className="relative mt-[30px] w-full ">
                 <label
                   htmlFor="optcode"
-                  className="absolute text-[14px] -top-3 left-5 px-2  bg-white primary-text-color font-semibold"
+                  className="absolute text-[14px] -top-3 left-5 px-2 montserrat-primary-font  bg-white primary-text-color font-semibold"
                 >
                   Otp Code
                 </label>
-                <input type="text" placeholder='312564' className='w-full secondary-text-color border-color outline-none p-7 rounded-[100px] text-[14px]' />
+                <input type="text" placeholder='312564' className='w-full montserrat-secondary-font secondary-text-color border-color outline-none p-7 rounded-[100px] text-[14px]' />
               </div>
               <div>
-                <button className='w-[100%] background-color p-7 rounded-[100px] background-text-color text-[14px]  cursor-pointer my-[30px]'>
+                <button className='w-[100%] background-color p-7 rounded-[100px] background-text-color montserrat-secondary-font text-[14px]  cursor-pointer my-[30px]'>
                   Verify
                 </button>
               </div>

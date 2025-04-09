@@ -27,22 +27,22 @@ const page = () => {
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
         <div className='w-[100%] order-2 md:order-1 mb-[40px]'>
           <div className='w-[80%] h-[100%] mx-auto  flex item-center flex-col  justify-center'>
-            <h1 className='text-[40px] primary-text-color font-semibold mb-[10px] '>Register</h1>
-            <p className='text-[16px] secondary-text-color'>
+            <h1 className='text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font '>Register</h1>
+            <p className='text-[16px] montserrat-secondary-font secondary-text-color'>
               Create a account to use Pak Passion
             </p>
             <form action="">
-              <div className="relative mt-[30px] w-full ">
+              <div className="relative mt-[30px] w-full montserrat-font ">
                 <label
                   htmlFor="username"
-                  className="absolute text-[14px] -top-3 left-5 px-2 bg-white primary-text-color font-semibold"
+                  className="absolute text-[14px] -top-3 left-5 px-2 bg-white primary-text-color montserrat-primary-font font-semibold"
                 >
-                  Username
+                  User Name
                 </label>
                 <input
                   type="text"
                   id="username"
-                  className="w-full secondary-text-color border-1 outline-none p-7 rounded-[100px] text-[14px] focus:outline-none"
+                  className="w-full montserrat-secondary-font secondary-text-color border-1 outline-none p-7 rounded-[100px] text-[14px] focus:outline-none"
                   placeholder='username'
                 />
               </div>
@@ -51,36 +51,36 @@ const page = () => {
               <div className="relative mt-[30px] w-full ">
                 <label
                   htmlFor="email"
-                  className="absolute text-[14px] -top-3 left-5 px-2 bg-white primary-text-color font-semibold"
+                  className="absolute text-[14px] -top-3 left-5 px-2 montserrat-primary-font bg-white primary-text-color font-semibold"
                 >
                   Email
                 </label>
-                <input type="text" placeholder='user@gmail.com' className='w-full secondary-text-color border-1 outline-none p-7 rounded-[100px] text-[14px]' />
+                <input type="text" placeholder='user@gmail.com' className='w-full montserrat-secondary-font secondary-text-color border-1 outline-none p-7 rounded-[100px] text-[14px]' />
               </div>
 
               <div className="relative mt-[30px] w-full ">
                 <label
                   htmlFor="password"
-                  className="absolute text-[14px] -top-3 left-5 px-2 bg-white primary-text-color font-semibold"
+                  className="absolute text-[14px] -top-3 left-5 px-2 montserrat-primary-font bg-white primary-text-color font-semibold"
                 >
                   Password
                 </label>
                 <div className='flex border-color rounded-[100px] pr-[20px]'>
-                  <input type="text" placeholder='Enter Your Password' className='w-full   secondary-text-color outline-none p-7 rounded-[100px] text-[14px]' />
+                  <input type="text" placeholder='Enter Your Password' className='w-full montserrat-secondary-font   secondary-text-color outline-none p-7 rounded-[100px] text-[14px]' />
                   <Image src={eye} alt='eye' height={18} width={18} className='cursor-pointer' />
                 </div>
               </div>
 
               <div className="flex flex-col justify-center mt-[20px] gap-[10px] mb-4">
                 <label className="flex items-center space-x-2 text-[14px]">
-                  <input type="checkbox" className="form-checkbox w-6 h-6 cursor-pointer border-color accent-blue-500" />
-                  <span className='text-[14px] tracking-wider secondary-text-color'>I agree to the terms and privacy policy.</span>
+                  <input type="checkbox" className="form-checkbox w-6 h-6 cursor-pointer montserrat-secondary-font border-color accent-blue-500" />
+                  <span className='text-[14px] tracking-wider montserrat-secondary-font secondary-text-color'>I agree to the terms and privacy policy.</span>
                 </label>
 
                 <div className='flex justify-between items-center'>
                   <label className="flex items-center space-x-2 text-[14px]">
-                    <input type="checkbox" className="form-checkbox w-6 h-6 cursor-pointer border-color accent-blue-500" />
-                    <span className='text-[14px] tracking-wider secondary-text-color'>I am human</span>
+                    <input type="checkbox" className="form-checkbox w-6 h-6 montserrat-secondary-font cursor-pointer border-color accent-blue-500" />
+                    <span className='text-[14px] tracking-wider montserrat-secondary-font secondary-text-color'>I am human</span>
                   </label>
 
                   <Image
@@ -93,20 +93,20 @@ const page = () => {
 
               </div>
               <div>
-                <button className='w-[100%] background-color p-7 rounded-[100px] background-text-color text-[14px]  cursor-pointer my-[30px]'>
+                <button className='w-[100%] background-color p-7 montserrat-secondary-font rounded-[100px] background-text-color text-[14px]  cursor-pointer my-[30px]'>
                   Register
                 </button>
               </div>
 
 
               <div className=' text-center text-[14px] mt-[-20px] tracking-[2px]'>
-                <h1 className='secondary-text-color'>
-                  Already have an account?<Link href="/register" className='text-[14px] register-text-color font-semibold'>
+                <h1 className='secondary-text-color montserrat-secondary-font'>
+                  Already have an account?<Link href="/login" className='text-[14px] register-text-color montserrat-secondary-font font-semibold'>
 
                     Login</Link>
                 </h1>
               </div>
-              <div className='flex gap-3 lg:mt-[30px] items-center'>
+              <div className='flex gap-3 lg:mt-[30px] items-center montserrat-secondary-font'>
                 <div className='w-[100%] line-background-color h-[1px]'>
 
                 </div>

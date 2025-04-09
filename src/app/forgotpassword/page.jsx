@@ -23,22 +23,22 @@ const page = () => {
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
         <div className='w-[100%] order-2 md:order-1'>
           <div className='w-[80%] h-[100%] mx-auto  flex item-center flex-col  justify-center'>
-            <h1 className='text-[40px] font-semibold mb-[10px] primary-text-color '>Forget Password</h1>
-            <p className='text-[16px] secondary-text-color'>
+            <h1 className='text-[40px] font-semibold mb-[10px] primary-text-color montserrat-primary-font '>Forget Password</h1>
+            <p className='text-[16px] secondary-text-color montserrat-secondary-font'>
               Registered email is required to reset your password.
             </p>
             <form action="">
               <div className="relative mt-[30px] w-full ">
                 <label
                   htmlFor="email"
-                  className="absolute text-[14px] -top-3 left-5 px-2 bg-white primary-text-color font-semibold"
+                  className="absolute text-[14px] -top-3 left-5 montserrat-primary-font px-2 bg-white primary-text-color font-semibold"
                 >
                   Email
                 </label>
-                <input type="text" placeholder='user@gmail.com' className='w-full border-1 outline-none p-7 rounded-[100px] text-[14px] secondary-text-color' />
+                <input type="text" placeholder='user@gmail.com' className='w-full montserrat-secondary-font border-1 outline-none p-7 rounded-[100px] text-[14px] secondary-text-color' />
               </div>
               <div className="mt-[20px] mb-4">
-                <div className='flex justify-between items-center'>
+                <div className='flex justify-between items-center montserrat-secondary-font'>
                   <label className="flex items-center space-x-2 text-[14px]">
                     <input type="checkbox" className="form-checkbox w-6 h-6 cursor-pointer secondary-text-color accent-blue-500" />
                     <span className='text-[14px] tracking-wider secondary-text-color'>I am human</span>
@@ -51,7 +51,7 @@ const page = () => {
                 </div>
               </div>
               <div>
-                <button className='w-[100%] background-color p-7 rounded-[100px] background-text-color text-[14px]  cursor-pointer my-[30px]'>
+                <button className='w-[100%] background-color p-7 rounded-[100px] montserrat-secondary-font background-text-color text-[14px]  cursor-pointer my-[30px]'>
                   Reset
                 </button>
               </div>

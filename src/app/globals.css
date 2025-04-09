@@ -9,6 +9,16 @@
   ---register-text-color: #4AB100;
 }
 
+.montserrat-primary-font {
+  font-family: 'Montserrat';
+  font-weight: 600;
+}
+
+.montserrat-secondary-font {
+  font-family: 'Montserrat';
+  font-weight: 500;
+}
+
 .primary-text-color {
   color: var(--primary-color);
 }
