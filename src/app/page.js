@@ -1,8 +1,12 @@
 import React from 'react'
+import Sports from './pages/Sports'
 
 const page = () => {
   return (
-    <div className='text-red-600'>page</div>
+    <>
+
+      <Sports />
+    </>
 
 
 

@@ -12,7 +12,7 @@ const page = () => {
   return (
     <>
 
-      <div className='my-[20px]  px-[100px]'>
+      <div className='py-[20px]   px-[100px]'>
         <Image
           src={Logo}
           alt='logo image'

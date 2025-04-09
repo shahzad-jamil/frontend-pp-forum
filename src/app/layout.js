@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="montserrat-font" >
+      <body className="w-[100%] h-[100vh]" >
         <Navbar />
         {children}
         <Footer />

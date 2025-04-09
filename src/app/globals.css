@@ -6,7 +6,17 @@
   --accent-color: #FF3D00;
   --background-color: #3F9405;
   --background-text-color: #FFFFFF;
-  ---register-text-color: #4AB100;
+  --register-text-color: #4AB100;
+  --Following-text-color: #007AD9;
+  --card-background-color: #F5F7F9;
+}
+
+.navbar-background-color {
+  background-color: var(--primary-color);
+}
+
+.navbar-button-background {
+  background-color: var(--background-text-color);
 }
 
 .montserrat-primary-font {
@@ -32,7 +42,7 @@
 }
 
 .background-text-color {
-  color: var(--background-);
+  color: var(--background-text-color);
 }
 
 .button-text-color {
@@ -40,7 +50,7 @@
 }
 
 .register-text-color {
-  color: var(---register-text-color);
+  color: var(--register-text-color);
 }
 
 .background-color {
@@ -51,12 +61,24 @@
   border: 1px solid var(--secondary-color);
 }
 
+.sport-border-color {
+  border-bottom: 1px solid var(--secondary-color);
+}
+
 .background-color {
   background-color: var(--background-color);
 }
 
+.card-background-color {
+  background-color: var(--card-background-color);
+}
+
 .line-background-color {
   background-color: var(--secondary-color);
+}
+
+.following-text-color {
+  color: var(--Following-text-color);
 }
 
 .text-gradient {

@@ -1,5 +1,6 @@
+"use client"
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from "../../../public/logo.svg"
 import LoginImage from "../../../public/login.svg"
 import Link from 'next/link'
@@ -7,14 +8,18 @@ import googleIcon from "../../../public/icons8_google 1.svg"
 import facebookIcon from "../../../public/icons8_facebook_circled 1.svg"
 import twitterIcon from "../../../public/icons8_X 1.svg"
 import eye from "../../../public/icons8_hide 1.svg"
-
-
+import eyeSlash from "../../../public/viewEye.svg"
 
 const page = () => {
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
   return (
     <>
-
-      <div className='my-[20px]  px-[100px]'>
+      <div className='py-[20px]  px-[100px]'>
         <Image
           src={Logo}
           alt='logo image'
@@ -47,8 +52,19 @@ const page = () => {
                   Password
                 </label>
                 <div className='flex border-color rounded-[100px] pr-[20px]'>
-                  <input type="text" placeholder='Enter Your Password' className='w-full montserrat-secondary-font   secondary-text-color outline-none p-7 rounded-[100px] text-[14px]' />
-                  <Image src={eye} alt='eye' height={18} width={18} className='cursor-pointer' />
+                  <input
+                    type={passwordVisible ? 'text' : 'password'}
+                    placeholder='Enter Your Password'
+                    className='w-full montserrat-secondary-font secondary-text-color outline-none p-7 rounded-[100px] text-[14px]'
+                  />
+                  <Image
+                    src={passwordVisible ? eyeSlash : eye}
+                    alt='toggle visibility'
+                    height={18}
+                    width={18}
+                    className='cursor-pointer'
+                    onClick={togglePasswordVisibility}
+                  />
                 </div>
               </div>
               <div className="flex mt-[20px] items-center justify-between mb-4">
@@ -57,9 +73,9 @@ const page = () => {
                   <span className='text-[14px] secondary-text-color montserrat-secondary-font'>Remember me</span>
                 </label>
 
-                <a href="#" className="text-[14px] accent-text-color hover:underline montserrat-secondary-font">
+                <Link href="/forgotpassword" className="text-[14px] accent-text-color hover:underline montserrat-secondary-font">
                   Forgot password
-                </a>
+                </Link>
               </div>
               <div>
                 <button className='w-[100%] background-color p-7 rounded-[100px] button-text-color text-[14px] montserrat-secondary-font  cursor-pointer my-[30px]'>
@@ -69,25 +85,21 @@ const page = () => {
               <div className=' text-center text-[14px] mt-[-20px] tracking-[1px] montserrat-secondary-font'>
                 <h1 className='secondary-text-color montserrat-secondary-font'>
                   Don't have an account? <Link href="/register" className='text-[14px] register-text-color font-semibold'>
-
                     Register now</Link>
                 </h1>
               </div>
               <div className='flex gap-3 mt-[30px] items-center montserrat-secondary-font'>
                 <div className='w-[100%] line-background-color h-[1px]'>
-
                 </div>
                 <p className='w-[60%] lg:my-[10px] secondary-text-color text-[14px] text-center tracking-[2px]'>
                   or continue with
                 </p>
                 <div className='w-[100%] line-background-color h-[1px]'>
-
                 </div>
               </div>
             </form>
 
             <div className='w-[100%] flex gap-[30px] mt-[20px]'>
-
               <div className='flex items-center  w-[100%] border-color cursor-pointer p-4 rounded-[100px] justify-center'>
                 <Image
                   src={googleIcon}
@@ -123,8 +135,7 @@ const page = () => {
         </div>
       </div>
     </>
-
   )
 }
 
-export default page
+export default page;
