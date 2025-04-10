@@ -9,6 +9,8 @@
   --register-text-color: #4AB100;
   --Following-text-color: #007AD9;
   --card-background-color: #F5F7F9;
+  --button-background-color: #4AB100;
+  --viewmore-button-color: #E9ECF5;
 }
 
 .navbar-background-color {
@@ -22,6 +24,11 @@
 .montserrat-primary-font {
   font-family: 'Montserrat';
   font-weight: 600;
+}
+
+.montserrat-smallweigh-font {
+  font-family: 'Montserrat';
+  font-weight: 400;
 }
 
 .montserrat-secondary-font {
@@ -86,4 +93,33 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+
+
+
+.btn {
+  padding: 4px 12px;
+  border-radius: 6px;
+  color: white;
+  background-color: blue;
+
+}
+
+.btn:hover {
+  background-color: black;
+  ;
+}
+
+
+.button-background-color {
+  background-color: var(--button-background-color);
+}
+
+.spaces-button-color {
+  background-color: var(--primary-color);
+}
+
+.viewmore-button-color {
+  background-color: var(--viewmore-button-color);
 }

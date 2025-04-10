@@ -32,7 +32,7 @@ const page = () => {
           <div className='w-[80%] h-[100%] mx-auto  flex item-center flex-col  justify-center'>
             <h1 className='text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font '>Login</h1>
             <p className='text-[16px]  secondary-text-color montserrat-secondary-font'>
-              Login to access your Pak Passion account
+              Login to access your PakPassion account
             </p>
             <form action="">
               <div className="relative mt-[30px] w-full ">

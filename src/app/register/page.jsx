@@ -29,7 +29,7 @@ const page = () => {
           <div className='w-[80%] h-[100%] mx-auto flex item-center flex-col justify-center'>
             <h1 className='text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font '>Register</h1>
             <p className='text-[16px] montserrat-secondary-font secondary-text-color'>
-              Create a account to use Pak Passion
+              Create a account to use PakPassion
             </p>
             <form action="">
               <div className="relative mt-[30px] w-full montserrat-font">
