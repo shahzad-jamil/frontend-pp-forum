@@ -7,7 +7,7 @@ import plus from "../../../public/icons8_Plus_1 1.svg"
 const page = () => {
   return (
     <>
-      <div className='w-[100%] px-[10px] xl:px-[0px] xl:max-w-[82%] h-[48vh]  xl:h-[35.8vh] mx-auto mt-[1px] lg:mt-[20px] '>
+      <div className='w-[100%] px-[10px] xl:px-[0px] xl:max-w-[82%] h-[48vh]  xl:h-[37.8vh] mx-auto mt-[1px] my-[20px] '>
         <h1 className='text-[32px] text-center md:text-left md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
           Create A Poll
         </h1>

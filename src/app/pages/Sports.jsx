@@ -181,7 +181,7 @@ const Sports = () => {
 
             {
               staffOnline.map((member, index) => {
-                return <div className='flex items-center gap-2 mt-[10px]'>
+                return <div key={index} className='flex items-center gap-2 mt-[10px]'>
                   <div className='w-[45px] h-[34px] flex justify-center items-center p-0 rounded-full '>
                     <Image src={member.userImage} alt='post 1' height={34} width={45} className='rounded-full object-cover' />
                   </div>

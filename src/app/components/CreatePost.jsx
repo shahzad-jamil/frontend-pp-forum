@@ -38,11 +38,10 @@ const CreatePost = () => {
       });
       setEasyMDE(instance);
 
-      // Ensure that the editor container is scrollable
-      const editorContainer = instance.codemirror.getWrapperElement(); // Get the editor's wrapper element
-      editorContainer.style.height = '300px'; // Set a fixed height for the editor
-      editorContainer.style.overflowY = 'hidden'; // Enable vertical scrolling
-
+      // Get the editor wrapper element and make it scrollable if needed
+      const editorContainer = instance.codemirror.getWrapperElement();
+      editorContainer.style.overflowY = 'auto'; // Enable vertical scrolling
+      editorContainer.style.maxHeight = '250px'; // Optional fixed height
     });
   }, []);
 
@@ -264,7 +263,7 @@ const CreatePost = () => {
         <textarea
           ref={editorRef}
           placeholder="Start a conversation... What’s on your mind?"
-          className="outline-none p-5 text-[18px]  w-full h-[250px] resize-none"
+          className={`${EasyMDE ? 'hidden' : ''} outline-none p-5 text-[18px] w-full h-[250px] resize-none no-repeat`}
         />
       </div>
       <div className='flex justify-center w-[100%] mx-auto px-[10px] xl:px-0 xl:max-w-[82%]  mt-[150px] mb-[10px] lg:justify-end'>

@@ -11,6 +11,7 @@
   --card-background-color: #F5F7F9;
   --button-background-color: #4AB100;
   --viewmore-button-color: #E9ECF5;
+  --chatbox-background-color: #F4F4F7;
 }
 
 .navbar-background-color {
@@ -122,4 +123,12 @@
 
 .viewmore-button-color {
   background-color: var(--viewmore-button-color);
+}
+
+.chatbox-background-color {
+  background-color: var(--chatbox-background-color);
+}
+
+.message-theme-text-color {
+  color: var(--button-background-color);
 }
