@@ -7,7 +7,7 @@ const PageNotFound = () => {
   return (
     <>
 
-      <div className='flex flex-col justify-center  lg:justify-start items-center h-[60vh] md:h-[58.1vh] mt-[10px] w-[82%] mx-auto'>
+      <div className='flex flex-col justify-center   items-center md:min-h-screen h-[60vh]  mt-[10px] w-[82%] mx-auto'>
         <h1 className='text-[24px] md:text-[60px] primary-text-color font-semibold montserrat-primary-font'>
           404: Page Not Found
         </h1>

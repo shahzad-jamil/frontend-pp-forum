@@ -26,7 +26,7 @@ const Footer = () => {
     <div className='bg-[#141A28] w-full py-8'>
       <div className='w-[90%] xl:w-[82%] mx-auto flex flex-col items-center'>
         <div className='relative flex flex-col items-center justify-center w-full px-4 text-center'>
-          <h1 className='font-bold text-white leading-none text-gradient text-[60px] sm:text-[90px] md:text-[100px] lg:text-[120px] xl:text-[220px]'>
+          <h1 className='font-bold text-white leading-none text-gradient text-[60px] sm:text-[90px] md:text-[90px] lg:text-[110px] xl:text-[180px]'>
             NewsLetter
           </h1>
 

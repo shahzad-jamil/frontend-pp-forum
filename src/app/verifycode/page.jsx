@@ -48,8 +48,8 @@ const page = () => {
           <Image
             src={verifyImage}
             alt='verify image'
-            width={616}
-            height={816}
+            width={587}
+            height={800}
             className="object-contain"
           />
         </div>

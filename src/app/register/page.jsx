@@ -92,12 +92,12 @@ const page = () => {
                   </Link>
                 </h1>
               </div>
-              <div className='flex gap-3 lg:mt-[30px] items-center montserrat-secondary-font'>
-                <div className='w-[100%] line-background-color h-[1px]'></div>
-                <p className='w-[60%] my-[10px] text-[14px] secondary-text-color text-center tracking-[2px]'>
+              <div className='flex gap-3 mt-[30px] items-center montserrat-secondary-font whitespace-nowrap'>
+                <div className='flex-1 line-background-color h-[1px]' />
+                <p className='text-[14px] secondary-text-color text-center tracking-[2px] px-2'>
                   or continue with
                 </p>
-                <div className='w-[100%] line-background-color h-[1px]'></div>
+                <div className='flex-1 line-background-color h-[1px]' />
               </div>
             </form>
             <div className='w-[100%] flex gap-[30px] mt-[20px]'>
@@ -114,7 +114,7 @@ const page = () => {
           </div>
         </div>
         <div className="order-1 md:order-2 lg:flex items-center justify-center">
-          <Image src={registerImage} alt='register' width={616} height={816} className="object-contain" />
+          <Image src={registerImage} alt='register' width={587} height={800} className="object-contain" />
         </div>
       </div>
     </>
