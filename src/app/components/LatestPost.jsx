@@ -55,10 +55,10 @@ const LatestPost = () => {
   ]
   return (
     <>
-      <div className=' flex card-background-color flex-col mt-[30px]  h-[600px]  py-4 px-12 rounded-[20px]'>
+      <div className=' flex card-background-color flex-col mt-[30px] dark:bg-primaryColor outline-none shadow-2xl border border-secondaryColor/50   py-4 md:px-12 rounded-[20px]'>
         <div className=' w-[100%] flex  justify-between  rounded-[15px]'>
           <div>
-            <h1 className='text-[24px] font-bold primary-text-color montserrat-primary-font'>
+            <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color dark:text-backgroundTextColor montserrat-primary-font'>
               Latest Posts
             </h1>
 
@@ -67,16 +67,16 @@ const LatestPost = () => {
         </div>
         {
           latestPost.map((latest, index) => {
-            return <div className='flex   py-7 px-2  gap-2 mt-[10px]' key={index}>
+            return <div className='flex   py-4 px-2 border-b pb-1 border-secondaryColor/50  gap-2 mt-[2px] sm:mt-[20px] ' key={index}>
               <div className='w-[75px] h-[34px] flex justify-center items-center p-0 rounded-full '>
                 <Image src={latest.image} alt='post 1' height={34} width={75} className='rounded-full object-cover' />
               </div>
 
               <div className='flex flex-col '>
-                <h1 className='montserrat-primary-font text-[14px] flex-1 font-bold primary-text-color'>
+                <h1 className='montserrat-primary-font dark:text-backgroundTextColor text-[14px] flex-1 font-bold primary-text-color'>
                   {latest.title}
                 </h1>
-                <div className='flex justify-between  mt-[10px] items-center'>
+                <div className='flex  flex-col sm:flex-row justify-between  mt-[5px] smitems-center'>
                   <div className='flex items-center gap-2 '>
                     <h1 className='montserrat-secondary-font text-[11px] font-bold secondary-text-color'>
                       Latest:

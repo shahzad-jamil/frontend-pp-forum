@@ -23,14 +23,14 @@ const Footer = () => {
   if (hideFooterPages.includes(pathname)) return null
 
   return (
-    <div className='bg-[#141A28] w-full py-8'>
+    <div className='bg-[#141A28]  dark:bg-secondaryColor/10 w-full py-8'>
       <div className='w-[90%] xl:w-[82%] mx-auto flex flex-col items-center'>
         <div className='relative flex flex-col items-center justify-center w-full px-4 text-center'>
           <h1 className='font-bold text-white leading-none text-gradient text-[60px] sm:text-[90px] md:text-[90px] lg:text-[110px] xl:text-[180px]'>
             NewsLetter
           </h1>
 
-          <button className='bg-green-400 cursor-pointer text-white text-[14px] py-4 px-6 sm:px-10 sm:py-5 rounded-full 
+          <button className='bg-green-400 cursor-pointer text-white w-[70%] sm:w-[30%] md:w-[25%] text-[14px] py-4 px-6 sm:px-10 sm:py-5 rounded-full 
             absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
             Subscribed To Get Updated
           </button>

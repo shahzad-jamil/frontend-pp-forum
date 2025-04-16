@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className="w-[100%] h-[100vh]">
+      <body className="w-[100%] h-[100vh] dark:bg-primaryColor">
         <Navbar />
         {children}
         <Footer />
