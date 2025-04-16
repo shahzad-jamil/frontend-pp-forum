@@ -10,6 +10,7 @@ import darkmode from "../../../public/icons8_light_on 2.svg"
 import notificationImage from "../../../public/notification-03.svg"
 import searchIcon from "../../../public/Search Icon.svg"
 import navImage from "../../../public/Rectangle 100.svg"
+import profileImage from "../../../public/Ellipse 443.svg"
 
 const Navbar = () => {
   const pathname = usePathname()
@@ -97,10 +98,15 @@ const Navbar = () => {
                 className='cursor-pointer'
               />
             </div>
-            <Link href="/register">
-              <button className='navbar-button-background py-3 px-8 cursor-pointer text-[14px] rounded-[100px]'>
+            <Link href="/profile">
+              {/* <button className='navbar-button-background py-3 px-8 cursor-pointer text-[14px] rounded-[100px]'>
                 Login/Register
-              </button>
+              </button> */}
+
+              <Image src={profileImage}
+                alt="profileImage"
+                height={42}
+                width={42} />
             </Link>
           </div>
 
@@ -164,9 +170,15 @@ const Navbar = () => {
               />
             </div>
 
-            <button className='navbar-button-background z-50 py-3 px-8 cursor-pointer text-[14px] rounded-[100px] mt-2'>
+            {/* <button className='navbar-button-background z-50 py-3 px-8 cursor-pointer text-[14px] rounded-[100px] mt-2'>
               Login/Register
-            </button>
+            </button> */}
+
+
+            <Image src={profileImage}
+              alt="profileImage"
+              height={42}
+              width={42} />
           </div>
         )}
       </div>

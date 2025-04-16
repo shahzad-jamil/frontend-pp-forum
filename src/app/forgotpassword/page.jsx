@@ -1,9 +1,11 @@
+"use client"
 import Image from 'next/image'
 import React from 'react'
 import Logo from "../../../public/logo.svg"
 import forgotImage from "../../../public/forgotpassword.svg"
 import Link from 'next/link'
 import captchaIcon from "../../../public/captcha.svg 1.svg"
+
 
 
 
@@ -62,8 +64,8 @@ const page = () => {
           <Image
             src={forgotImage}
             alt='logo image'
-            width={616}
-            height={816}
+            width={587}
+            height={800}
             className="object-contain"
           />
         </div>

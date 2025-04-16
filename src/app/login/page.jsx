@@ -19,7 +19,7 @@ const page = () => {
 
   return (
     <>
-      <div className='py-[20px]  px-[100px]'>
+      <div className='py-[20px] px-[20px] md:px-[100px] overflow-x-hidden'>
         <Image
           src={Logo}
           alt='logo image'
@@ -27,12 +27,12 @@ const page = () => {
           width={200}
         />
       </div >
-      <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
+      <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto items-center overflow-x-hidden">
         <div className='w-[100%] order-2 md:order-1 mb-[40px]'>
-          <div className='w-[80%] h-[100%] mx-auto  flex item-center flex-col  justify-center'>
+          <div className='w-[80%] h-[100%] mx-auto flex flex-col justify-center'>
             <h1 className='text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font '>Login</h1>
-            <p className='text-[16px]  secondary-text-color montserrat-secondary-font'>
-              Login to access your Pak Passion account
+            <p className='text-[16px] secondary-text-color montserrat-secondary-font'>
+              Login to access your PakPassion account
             </p>
             <form action="">
               <div className="relative mt-[30px] w-full ">
@@ -78,36 +78,36 @@ const page = () => {
                 </Link>
               </div>
               <div>
-                <button className='w-[100%] background-color p-7 rounded-[100px] button-text-color text-[14px] montserrat-secondary-font  cursor-pointer my-[30px]'>
+                <button className='w-[100%] background-color p-7 rounded-[100px] button-text-color text-[14px] montserrat-secondary-font cursor-pointer my-[30px]'>
                   Login
                 </button>
               </div>
-              <div className=' text-center text-[14px] mt-[-20px] tracking-[1px] montserrat-secondary-font'>
+              <div className='text-center text-[14px] mt-[-20px] tracking-[1px] montserrat-secondary-font'>
                 <h1 className='secondary-text-color montserrat-secondary-font'>
                   Don't have an account? <Link href="/register" className='text-[14px] register-text-color font-semibold'>
                     Register now</Link>
                 </h1>
               </div>
-              <div className='flex gap-3 mt-[30px] items-center montserrat-secondary-font'>
-                <div className='w-[100%] line-background-color h-[1px]'>
-                </div>
-                <p className='w-[60%] lg:my-[10px] secondary-text-color text-[14px] text-center tracking-[2px]'>
+
+              {/* or continue section fixed */}
+              <div className='flex gap-3 mt-[30px] items-center montserrat-secondary-font whitespace-nowrap'>
+                <div className='flex-1 line-background-color h-[1px]' />
+                <p className='text-[14px] secondary-text-color text-center tracking-[2px] px-2'>
                   or continue with
                 </p>
-                <div className='w-[100%] line-background-color h-[1px]'>
-                </div>
+                <div className='flex-1 line-background-color h-[1px]' />
               </div>
             </form>
 
             <div className='w-[100%] flex gap-[30px] mt-[20px]'>
-              <div className='flex items-center  w-[100%] border-color cursor-pointer p-4 rounded-[100px] justify-center'>
+              <div className='flex items-center w-[100%] border-color cursor-pointer p-4 rounded-[100px] justify-center'>
                 <Image
                   src={googleIcon}
                   height={34}
                   width={34}
                 />
               </div>
-              <div className='flex items-center  w-[100%] border-color p-4 cursor-pointer rounded-[100px] justify-center'>
+              <div className='flex items-center w-[100%] border-color p-4 cursor-pointer rounded-[100px] justify-center'>
                 <Image
                   src={facebookIcon}
                   height={34}
@@ -124,12 +124,13 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="order-1 md:order-2 lg:flex items-center justify-center ">
+
+        <div className="order-1 lg:order-1 flex items-center justify-center mt-6 lg:mt-0 ">
           <Image
             src={LoginImage}
             alt='logo image'
-            width={616}
-            height={816}
+            width={587}
+            height={800}
             className="object-contain"
           />
         </div>

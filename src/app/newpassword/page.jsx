@@ -92,8 +92,8 @@ const Page = () => {
           <Image
             src={newPassImage}
             alt='new Pass image'
-            width={616}
-            height={816}
+            width={587}
+            height={800}
             className="object-contain"
           />
         </div>

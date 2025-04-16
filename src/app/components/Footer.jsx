@@ -26,8 +26,7 @@ const Footer = () => {
     <div className='bg-[#141A28] w-full py-8'>
       <div className='w-[90%] xl:w-[82%] mx-auto flex flex-col items-center'>
         <div className='relative flex flex-col items-center justify-center w-full px-4 text-center'>
-          <h1 className='font-bold text-white leading-none text-gradient
-            text-[60px] sm:text-[90px] md:text-[120px] lg:text-[180px] xl:text-[220px]'>
+          <h1 className='font-bold text-white leading-none text-gradient text-[60px] sm:text-[90px] md:text-[90px] lg:text-[110px] xl:text-[180px]'>
             NewsLetter
           </h1>
 
@@ -46,14 +45,14 @@ const Footer = () => {
             ))}
           </div>
 
-          <div className='flex gap-4'>
+          <div className='flex gap-4 mt-6 lg:mt-0'>
             <Image src={instagram} alt='Instagram' height={26} width={26} className='cursor-pointer' />
             <Image src={twitter} alt='Twitter' height={26} width={26} className='cursor-pointer' />
             <Image src={facebook} alt='Facebook' height={26} width={26} className='cursor-pointer' />
             <Image src={youtube} alt='YouTube' height={26} width={26} className='cursor-pointer' />
           </div>
 
-          <p className='text-[14px] text-white text-center'>
+          <p className='text-[14px] text-white text-center mt-6 lg:mt-0'>
             Forum PakPassion.net™ © copyright 2025 All Rights Reserved.
           </p>
         </div>
