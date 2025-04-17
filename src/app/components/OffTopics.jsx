@@ -57,68 +57,48 @@ const OffTopics = () => {
       <AnimatePresence>
         {!isMinimized && (
           <motion.div
+            key="sports-content"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
             className='w-full'
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
           >
             {offTopics.map((item, index) => (
-              <div key={index} className='flex mt-[20px] gap-[20px] sport-border-color pb-4 overflow-hidden'>
-                <Image src={item.image} alt='post 1' height={228} width={260} />
+              <div key={index} className='flex flex-col sm:flex-row mt-[20px] gap-[20px] sport-border-color pb-4'>
+                <Image src={item.image} alt='post 1' height={228} width={260} className='w-full sm:w-[260px] h-auto object-cover' />
                 <div className='flex flex-col'>
                   <div className='flex items-center justify-between'>
-                    <h1 className='text-[24px] font-bold primary-text-color montserrat-primary-font'>
-                      {item.title}
-                    </h1>
-                    <h1 className='text-[14px] font-semibold following-text-color montserrat-primary-font'>
-                      Following
-                    </h1>
+                    <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>{item.title}</h1>
+                    <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1>
                   </div>
-                  <p className='text-[14px] secondary-text-color montserrat-secondary-font'>
-                    {item.description}
-                  </p>
-                  <div className='flex justify-between mt-[10px] items-center'>
+                  <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>{item.description}</p>
+
+                  <div className='flex justify-between flex-col sm:flex-row gap-4 my-[10px] sm:items-center flex-wrap'>
                     <div className='flex items-center gap-1'>
-                      <h1 className='text-[14px] font-bold primary-text-color montserrat-primary-font'>
-                        Threads:
-                      </h1>
-                      <p className='text-[14px] secondary-text-color montserrat-secondary-font'>
-                        {item.threads}
-                      </p>
+                      <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Threads:</h1>
+                      <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font dark:text-registerTextColor dark:montserrat-smallweigh-font'>{item.threads}</p>
                     </div>
+
                     <div className='flex items-center gap-1'>
-                      <h1 className='text-[14px] font-bold primary-text-color montserrat-primary-font'>
-                        Updated:
-                      </h1>
-                      <p className='text-[14px] secondary-text-color montserrat-secondary-font'>
-                        {item.updatedTime}
-                      </p>
+                      <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Updated:</h1>
+                      <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font dark:text-registerTextColor dark:montserrat-smallweigh-font'>{item.updatedTime}</p>
                     </div>
                   </div>
-                  <h1 className='text-[14px] font-bold primary-text-color montserrat-primary-font'>
-                    {item.MatchBetweenTeams}
-                  </h1>
-                  <div className='flex items-center gap-2 mt-2'>
-                    <div className='w-[34px] h-[34px] flex justify-center items-center p-0 rounded-full'>
-                      <Image
-                        src={item.postedUserImage}
-                        alt='post user'
-                        height={34}
-                        width={34}
-                        className='rounded-full object-cover'
-                      />
+
+                  <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>{item.MatchBetweenTeams}</h1>
+                  <div className='flex items-center gap-2 mt-[10px] sm:mt-1'>
+                    <div className='w-[34px] h-[34px]'>
+                      <Image src={item.postedUserImage} alt='posted user' height={34} width={34} className='rounded-full object-cover' />
                     </div>
-                    <p className='montserrat-primary-font text-[14px] font-bold primary-text-color'>
-                      {item.postedBy}
-                    </p>
+                    <p className='montserrat-primary-font text-[12px] sm:text-[14px]  font-bold primary-text-color dark:text-backgroundTextColor'>{item.postedBy}</p>
                   </div>
                 </div>
               </div>
-            ))}
-          </motion.div>
+            ))}          </motion.div>
         )}
       </AnimatePresence>
+
     </>
   )
 }

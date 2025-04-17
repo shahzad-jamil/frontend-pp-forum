@@ -1,20 +1,37 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
+  darkMode: 'class',
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+
+    // Or if using `src` directory:
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      primary: 'var(--primary-color)',
-      secondary: 'var(--secondary-color)',
-      accent: 'var(--accent-color)',
-      background: 'var(--background-color)',
-      text: 'var(--text-color)',
-    },
+    extend: {
+      colors: {
+        "primaryColor": " #141A28",
+        "secondaryColor": " #7E7F81",
+        "accentColor": " #FF3D00",
+        "backgroundColor": " #3F9405",
+        "backgroundTextColor": " #FFFFFF",
+        "registerTextColor": " #4AB100",
+        "FollowingTextColor": " #007AD9",
+        "cardBackgroundColor": " #F5F7F9",
+        "buttonBackgroundColor": " #4AB100",
+        "viewmoreButtonColor": " #E9ECF5",
+        "chatboxBackgroundColor": " #F4F4F7",
+        "discussionButtonColor": "#1E90FF",
+        "articleButtonColor": "#FFA500",
+        "pollButtonColor": "#8A2BE2",
+        "questionButtonColor": "#E53935",
 
-    extend: {},
+      }
+    },
   },
-  plugins: [require('@tailwindcss/typography')],
-};
+  plugins: [],
+}
+
+

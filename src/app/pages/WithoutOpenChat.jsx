@@ -36,7 +36,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
 
         <div className='w-[100%]  shadow-2xl h-[100%] flex gap-2 rounded-[20px]'>
 
-          <div className=' flex-1 p-4 '>
+          <div className=' flex p-4 '>
             <div className='flex flex-col gap-2 item-center justify-center'>
               <h1 className='text-[24px]  primary-text-color font-semibold montserrat-primary-font'>
                 Messages
@@ -91,7 +91,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
 
           {users ?
             <OpenChat selectedUser={users} />
-            : <div className=' pb-[20px] flex-3'>
+            : <div className=' pb-[20px] flex-1'>
               <div className='flex p-2 justify-end  h-[61px]'>
                 <Image src={report} alt='search icon' width={42} height={42} className='cursor-pointer' />
               </div>
@@ -102,19 +102,29 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                 </p>
 
               </div>
-              <div className='h-[36px] w-[100%] items-center flex justify-between '>
-                <div className='flex gap-2 w-[85%]'>
-                  <Image src={attach} alt='search icon' width={42} height={42} className='cursor-pointer' />
-                  <input type="text" placeholder='Type your message here..' className='w-[100%] text-[14px] outline-none secondary-text-color montserrat-smallweigh-font' />
+              <div className='w-full  flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 p-3 rounded-md'>
+                <div className='flex items-center gap-2 w-full'>
+                  <Image
+                    src={attach}
+                    alt='attach'
+                    width={32}
+                    height={32}
+                    className='cursor-pointer shrink-0'
+                  />
+                  <input
+                    type='text'
+                    placeholder='Type your message here...'
+                    className='w-full text-sm outline-none secondary-text-color montserrat-smallweigh-font py-4 px-3 rounded-md'
+                  />
                 </div>
-                <button className='button-background-color rounded-[10px] justify-center mr-[10px] py-3 md:py-5 px-8 flex items-center gap-3'>
 
-                  <h1 className='text-[14px] cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
+                <button className='button-background-color w-[15%] h-[40px]  rounded-[10px] py-3 px-5 flex items-center justify-center gap-3'>
+                  <h1 className='text-sm cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
                     Send Message
                   </h1>
-
                 </button>
               </div>
+
             </div>}
         </div>
       </div>

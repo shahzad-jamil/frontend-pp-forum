@@ -1,5 +1,6 @@
 "use client"
 import { usePathname } from 'next/navigation'
+import { useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -15,12 +16,30 @@ import profileImage from "../../../public/Ellipse 443.svg"
 const Navbar = () => {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [theme, setTheme] = useState('light'); // ✅ now always called
 
   const hideNavbarPages = ['/login', '/register', '/forgotpassword', '/newpassword', '/verifycode']
-  if (hideNavbarPages.includes(pathname)) {
-    return null
-  }
 
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [theme])
+
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    if (newTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
   const navlinks = [
     {
       name: "Home",
@@ -39,7 +58,10 @@ const Navbar = () => {
       path: "/helpcenter"
     }
   ]
-
+  // ✅ Only return null after all hooks have been called
+  if (hideNavbarPages.includes(pathname)) {
+    return null
+  }
   return (
     <>
       <div className='relative navbar-background-color p-3 overflow-hidden'>
@@ -60,7 +82,7 @@ const Navbar = () => {
           />
           <div className=' z-50 hidden xl:flex gap-[50px]'>
             {navlinks.map((item, index) => (
-              <Link href={item.path} key={index} className='background-text-color text-[14px]'>
+              <Link href={item.path} key={index} className='background-text-color  text-[14px]'>
                 {item.name}
               </Link>
             ))}
@@ -80,24 +102,30 @@ const Navbar = () => {
               width={18}
               className='cursor-pointer'
             />
-            <div className='navbar-button-background py-3 px-4 gap-[10px] text-[14px] rounded-[100px] flex'>
-
+            <div className='navbar-button-background py-3 px-5 gap-[10px] rounded-[100px] flex'>
               <Image
                 src={lightmode}
                 alt='lightmode'
-                height={18}
-                width={18}
-                className='cursor-pointer'
+                height={20}
+                width={26}
+                className={`cursor-pointer transition-all duration-200 ${theme === 'light' ? 'drop-shadow-[0_0_6px_#facc15]' : 'opacity-50'
+                  }`}
+                onClick={() => setTheme('light')}
               />
 
               <Image
                 src={darkmode}
                 alt='darkmode'
                 height={18}
-                width={18}
-                className='cursor-pointer'
+                width={26}
+                className={`cursor-pointer transition-all duration-200 ${theme === 'dark' ? 'drop-shadow-[0_0_6px_#38bdf8]' : 'opacity-50'
+                  }`}
+                onClick={() => setTheme('dark')}
               />
             </div>
+
+
+
             <Link href="/profile">
               {/* <button className='navbar-button-background py-3 px-8 cursor-pointer text-[14px] rounded-[100px]'>
                 Login/Register

@@ -24,13 +24,13 @@ const page = () => {
       </div >
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
         <div className='w-[100%] order-2 md:order-1'>
-          <div className='w-[80%] h-[100%] mx-auto  flex item-center flex-col  justify-center'>
-            <h1 className='text-[40px] font-semibold mb-[10px] primary-text-color montserrat-primary-font '>Forget Password</h1>
+          <div className='w-[80%] h-[100vh] mx-auto  flex item-center flex-col  justify-center'>
+            <h1 className='text-[40px] font-semibold mb-[10px] primary-text-color montserrat-primary-font '>Forget Password?</h1>
             <p className='text-[16px] secondary-text-color montserrat-secondary-font'>
               Registered email is required to reset your password.
             </p>
             <form action="">
-              <div className="relative mt-[30px] w-full ">
+              <div className="relative mt-[30px] w-full border-color rounded-[100px] ">
                 <label
                   htmlFor="email"
                   className="absolute text-[14px] -top-3 left-5 montserrat-primary-font px-2 bg-white primary-text-color font-semibold"
@@ -60,12 +60,12 @@ const page = () => {
             </form>
           </div>
         </div>
-        <div className="order-1 md:order-2 lg:flex items-center justify-center ">
+        <div className="order-1 md:order-2 flex flex-col lg:flex-row items-center justify-center overflow-y-hidden  lg:fixed right-[6%] ">
           <Image
             src={forgotImage}
             alt='logo image'
-            width={587}
-            height={800}
+            width={447}
+            height={900}
             className="object-contain"
           />
         </div>
