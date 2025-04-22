@@ -122,7 +122,7 @@ const OpenChat = ({ selectedUser }) => {
 
 
 
-              <h1 className='text-[16px]   primary-text-color font-semibold montserrat-primary-font'>
+              <h1 className='text-[16px]   primary-text-color dark:text-backgroundTextColor font-semibold montserrat-primary-font'>
                 {selectedUser.name}
               </h1>
 
@@ -133,7 +133,7 @@ const OpenChat = ({ selectedUser }) => {
           </div>
           <Image src={report} alt='search icon' width={42} height={42} className='cursor-pointer' />
         </div>
-        <div className='flex w-[100%]  chatbox-background-color m-3 h-[585px]'>
+        <div className='flex w-[100%]  chatbox-background-color dark:bg-primaryColor m-3 h-[585px]'>
           <div className=' flex flex-col w-[100%]   gap-4'>
             <div className='flex gap-5 items-start'>
               <Image src={selectedUser.profileImage} alt='search icon' width={24} height={24} className='cursor-pointer' />
@@ -143,7 +143,7 @@ const OpenChat = ({ selectedUser }) => {
                   <p className='text-[14px] message-theme-text-color montserrat-smallweigh-font'>
                     https://dribbble.com/shots/17742253-ui-kit-designjam
                   </p>
-                  <p className='text-[14px] primary-text-color montserrat-primary-font'>
+                  <p className='text-[14px] dark:text-backgroundTextColor primary-text-color montserrat-primary-font'>
                     {selectedUser.userMessage1}
                   </p>
                   <p className='text-[12px]  secondary-text-color montserrat-smallweigh-font'>
@@ -154,7 +154,7 @@ const OpenChat = ({ selectedUser }) => {
             </div>
             <div className='w-[100%]  flex pl-3 gap-0 flex-col items-end pr-4 justify-center'>
 
-              <p className='text-[14px] primary-text-color montserrat-primary-font'>
+              <p className='text-[14px] dark:text-backgroundTextColor primary-text-color montserrat-primary-font'>
                 Thank you for work, see you!
               </p>
               <p className='text-[12px]  secondary-text-color montserrat-smallweigh-font'>
@@ -177,7 +177,7 @@ const OpenChat = ({ selectedUser }) => {
               <Image src={selectedUser.profileImage} alt='search icon' width={24} height={24} className='cursor-pointer' />
               <div className='flex pl-3 gap-0 flex-col justify-center'>
 
-                <p className='text-[14px] primary-text-color montserrat-primary-font'>
+                <p className='text-[14px] dark:text-backgroundTextColor primary-text-color montserrat-primary-font'>
                   {selectedUser.userMessage2}
 
                 </p>
@@ -190,7 +190,7 @@ const OpenChat = ({ selectedUser }) => {
 
             <div className='flex pl-3 gap-0 flex-col justify-center items-end'>
 
-              <p className='text-[14px] primary-text-color  montserrat-primary-font'>
+              <p className='text-[14px] primary-text-color dark:text-backgroundTextColor  montserrat-primary-font'>
                 Hi, yes, David have found it, ask our concierge 👀
               </p>
               <p className='text-[12px]  secondary-text-color montserrat-smallweigh-font'>
@@ -209,8 +209,8 @@ const OpenChat = ({ selectedUser }) => {
 
 
         </div>
-        <div className='w-full  flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 p-3 rounded-md'>
-          <div className='flex items-center gap-2 w-full'>
+        <div className='w-full dark:bg-viewmoreButtonColor/30 flex flex-row items-stretch md:items-center justify-between gap-3 p-1 rounded-md'>
+          <div className='flex items-center gap-2 w-[100%]'>
             <Image
               src={attach}
               alt='attach'
@@ -221,13 +221,13 @@ const OpenChat = ({ selectedUser }) => {
             <input
               type='text'
               placeholder='Type your message here...'
-              className='w-full text-sm outline-none secondary-text-color montserrat-smallweigh-font py-4 px-3 rounded-md'
+              className='w-full text-[12px] outline-none bg-transparent secondary-text-color montserrat-smallweigh-font py-4 px-3 rounded-md'
             />
           </div>
 
-          <button className='button-background-color w-[15%] h-[40px] rounded-[10px] py-3 px-5 flex items-center justify-center gap-3'>
-            <h1 className='text-sm cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
-              Send Message
+          <button className='button-background-color w-[15%] h-[40px] rounded-[10px] py-3 px-4 flex items-center justify-center '>
+            <h1 className='text-[11px] sm:text-[14px] cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
+              Send
             </h1>
           </button>
         </div>

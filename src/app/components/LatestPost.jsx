@@ -1,8 +1,8 @@
 import React from 'react'
 import postedByUser from "../../../public/Rectangle 56.svg"
 import Image from 'next/image'
-import darkmaximize from "../../../public/icons8_Plus_2 1.svg"
-import darkminimize from "../../../public/icons8_macos_minimize 1 (1).svg"
+// import greenmaximize from "../../../public/icons8_expand_arrow 1 (1).svg"
+// import greenminimize from "../../../public/icons8_expand_arrow 1 (2).svg"
 
 const LatestPost = () => {
   const latestPost = [
@@ -55,7 +55,7 @@ const LatestPost = () => {
   ]
   return (
     <>
-      <div className=' flex card-background-color flex-col mt-[30px] dark:bg-primaryColor outline-none shadow-2xl border border-secondaryColor/50   py-4 md:px-12 rounded-[20px]'>
+      <div className=' flex card-background-color flex-col mt-[30px]  outline-none dark:bg-backgroundTextColor/10 border border-secondaryColor/50 py-4 px-4 sm:py-5 sm:px-8 rounded-[20px]'>
         <div className=' w-[100%] flex  justify-between  rounded-[15px]'>
           <div>
             <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color dark:text-backgroundTextColor montserrat-primary-font'>
@@ -78,14 +78,14 @@ const LatestPost = () => {
                 </h1>
                 <div className='flex  flex-col sm:flex-row justify-between  mt-[5px] smitems-center'>
                   <div className='flex items-center gap-2 '>
-                    <h1 className='montserrat-secondary-font text-[11px] font-bold secondary-text-color'>
+                    <h1 className='montserrat-secondary-font dark:font-[400]  dark:font-openSans  text-[11px] font-bold secondary-text-color'>
                       Latest:
                     </h1>
 
-                    <h1 className='montserrat-secondary-font text-[11px]  font-bold secondary-text-color'>
+                    <h1 className='montserrat-secondary-font text-[11px]  font-bold secondary-text-color dark:font-[400]  dark:font-openSans'>
                       {latest.updatedBy}
                     </h1>
-                    <h1 className='montserrat-secondary-font text-[11px]  font-bold secondary-text-color'>
+                    <h1 className='montserrat-secondary-font text-[11px]  font-bold secondary-text-color dark:font-[400]  dark:font-openSans'>
                       {latest.updatedTime}
                     </h1>
                   </div>

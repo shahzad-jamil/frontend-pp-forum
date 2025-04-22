@@ -1,12 +1,13 @@
 'use client'
 import React, { useState } from 'react'
-import minimize from "../../../public/icons8_macos_minimize 1.svg"
-import maximize from "../../../public/icons8_Plus 3.svg"
+import minimize from "../../../public/icons8_expand_arrow 1.svg"
+import maximize from "../../../public/Vector.svg"
 import { AnimatePresence, motion } from 'framer-motion'
-import postedByUser from "../../../public/Rectangle 56.svg"
+import postedByUser from "../../../public/Ellipse 1 (1).svg"
+import onlineUser from "../../../public/Rectangle 56.svg"
 import Image from 'next/image'
-import darkmaximize from "../../../public/icons8_Plus_2 1.svg"
-import darkminimize from "../../../public/icons8_macos_minimize 1 (1).svg"
+import greenmaximize from "../../../public/icons8_expand_arrow 1 (2).svg"
+import greenminimize from "../../../public/icons8_expand_arrow 1 (1).svg"
 import post1 from "../../../public/Rectangle 24 (4).svg"
 import post2 from "../../../public/Rectangle 24 (3).svg"
 import post3 from "../../../public/Rectangle 24 (2).svg"
@@ -53,32 +54,48 @@ const Sports = () => {
 
   const staffOnline = [
     {
-      userImage: postedByUser,
+      userImage: onlineUser,
       userName: "BouncerGuy",
       userRole: "Super Moderator"
     },
     {
-      userImage: postedByUser,
+      userImage: onlineUser,
       userName: "Asad T",
       userRole: "Super Moderator"
     },
   ]
 
   const [isMinimized, setIsMinimized] = useState(false)
-  const [isDarkMinimized, setIsDarkMinimized] = useState(false)
+  // const [isGreenMinimized, setIsGreenMinimized] = useState(false)
+  const [isStaffMinimized, setIsStaffMinimized] = useState(false);
+  const [isMembersMinimized, setIsMembersMinimized] = useState(false);
 
   return (
     <>
       <div className='flex flex-col lg:flex-row gap-[30px] w-full lg:max-w-[82%] md:mt-[20px] mx-auto px-4'>
         <div className='w-full lg:flex-4 p-3'>
           {/* Header */}
-          <div className='background-color w-full flex justify-between items-center p-4 rounded-[15px] '>
-            <h1 className='text-[28px] background-text-color px-3 montserrat-primary-font font-semibold '>Sports</h1>
+          <div
+            className={`w-full flex justify-between items-center p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'background-color'
+              }`}
+          >
+            <h1
+              className={`text-[28px] px-3 montserrat-primary-font font-semibold ${isMinimized ? 'text-black' : 'background-text-color'
+                }`}
+            >
+              Sports
+            </h1>
             <button onClick={() => setIsMinimized(!isMinimized)}>
-              <Image src={isMinimized ? maximize : minimize} alt='toggle' height={35} width={35} className='cursor-pointer' />
+              <Image
+                src={isMinimized ? maximize : minimize}
+                alt="toggle"
+                height={20}
+                width={22}
+                className={`cursor-pointer ${isMinimized ? 'text-black w-[12]' : 'background-text-color'
+                  }`}
+              />
             </button>
           </div>
-
           {/* Sports Topics */}
           <AnimatePresence>
             {!isMinimized && (
@@ -91,11 +108,11 @@ const Sports = () => {
                 className='w-full'
               >
                 {sportsTopic.map((item, index) => (
-                  <div key={index} className='flex flex-col sm:flex-row mt-[20px] gap-[20px] sport-border-color pb-4'>
+                  <div key={index} className='flex flex-col sm:flex-row mt-[20px] gap-[20px] border-b border-secondaryColor/50 pb-4'>
                     <Image src={item.image} alt='post 1' height={228} width={260} className='w-full sm:w-[260px] h-auto object-cover' />
                     <div className='flex flex-col'>
                       <div className='flex items-center justify-between'>
-                        <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>{item.title}</h1>
+                        <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font '>{item.title}</h1>
                         <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1>
                       </div>
                       <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>{item.description}</p>
@@ -103,19 +120,19 @@ const Sports = () => {
                       <div className='flex justify-between flex-col sm:flex-row gap-4 my-[10px] sm:items-center flex-wrap'>
                         <div className='flex items-center gap-1'>
                           <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Threads:</h1>
-                          <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font dark:text-registerTextColor dark:montserrat-smallweigh-font'>{item.threads}</p>
+                          <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.threads}</p>
                         </div>
 
                         <div className='flex items-center gap-1'>
                           <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Updated:</h1>
-                          <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font dark:text-registerTextColor dark:montserrat-smallweigh-font'>{item.updatedTime}</p>
+                          <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.updatedTime}</p>
                         </div>
                       </div>
 
                       <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>{item.MatchBetweenTeams}</h1>
                       <div className='flex items-center gap-2 mt-[10px] sm:mt-1'>
                         <div className='w-[34px] h-[34px]'>
-                          <Image src={item.postedUserImage} alt='posted user' height={34} width={34} className='rounded-full object-cover' />
+                          <Image src={item.postedUserImage} alt='posted user' />
                         </div>
                         <p className='montserrat-primary-font text-[12px] sm:text-[14px]  font-bold primary-text-color dark:text-backgroundTextColor'>{item.postedBy}</p>
                       </div>
@@ -128,9 +145,26 @@ const Sports = () => {
 
           <OffTopics />
 
-          <div className='background-color w-full mt-[30px] flex justify-between p-4 rounded-[15px]'>
-            <h1 className='text-[28px] background-text-color px-3 montserrat-primary-font font-semibold'>The PP Team</h1>
-            <Image src={maximize} alt='minimize' height={35} width={35} />
+          <div
+            className={`w-full flex justify-between items-center p-4 mt-[20px] rounded-[15px] ${isMinimized ? 'bg-white' : 'background-color'
+              }`}
+          >
+            <h1
+              className={`text-[28px] px-3 montserrat-primary-font font-semibold ${isMinimized ? 'text-black' : 'background-text-color'
+                }`}
+            >
+              The PP Team
+            </h1>
+            <button onClick={() => setIsMinimized(!isMinimized)}>
+              <Image
+                src={isMinimized ? maximize : minimize}
+                alt="toggle"
+                height={20}
+                width={22}
+                className={`cursor-pointer ${isMinimized ? 'text-black w-[12]' : 'background-text-color'
+                  }`}
+              />
+            </button>
           </div>
         </div>
 
@@ -138,19 +172,27 @@ const Sports = () => {
         <div className='w-full lg:flex-1 p-2 flex flex-col gap-4'>
 
           {/* Staff Online */}
-          <div className='card-background-color dark:bg-primaryColor outline-none shadow-2xl border border-secondaryColor/50 py-4 md:px-6 rounded-[20px]'>
+          <div className='card-background-color dark:bg-backgroundTextColor/10 outline-none py-4 px-4 sm:py-5 sm:px-8 border border-secondaryColor/50 md:px-6 rounded-[20px]'>
             <div className='flex justify-between items-center'>
               <div className='flex gap-2'>
-                <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color dark:text-backgroundTextColor montserrat-primary-font'>Staff Online</h1>
+                <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color dark:text-backgroundTextColor montserrat-primary-font'>
+                  Staff Online
+                </h1>
                 <p className='text-[20px] sm:text-[24px] font-bold register-text-color montserrat-primary-font'>(2)</p>
               </div>
-              <button onClick={() => setIsDarkMinimized(!isDarkMinimized)}>
-                <Image src={isDarkMinimized ? darkmaximize : darkminimize} alt='toggle' height={35} width={35} className='cursor-pointer' />
+              <button onClick={() => setIsStaffMinimized(!isStaffMinimized)}>
+                <Image
+                  src={isStaffMinimized ? greenmaximize : greenminimize}
+                  alt='toggle'
+                  height={20}
+                  width={20}
+                  className='cursor-pointer'
+                />
               </button>
             </div>
 
             <AnimatePresence>
-              {!isDarkMinimized && (
+              {!isStaffMinimized && (
                 <motion.div
                   key="staff-online"
                   initial={{ opacity: 0, y: -20 }}
@@ -165,7 +207,7 @@ const Sports = () => {
                       </div>
                       <div className='flex flex-col'>
                         <h1 className='montserrat-primary-font text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color'>{member.userName}</h1>
-                        <p className='montserrat-secondary-font text-[12px] sm:text-[14px] font-bold secondary-text-color'>{member.userRole}</p>
+                        <p className='montserrat-secondary-font text-[12px] font-bold secondary-text-color dark:font-[600] dark:text-registerTextColor dark:font-openSans'>{member.userRole}</p>
                       </div>
                     </div>
                   ))}
@@ -174,20 +216,29 @@ const Sports = () => {
             </AnimatePresence>
           </div>
 
+
           {/* Members Online */}
-          <div className='card-background-color dark:bg-primaryColor outline-none shadow-2xl border border-secondaryColor/50 py-4 md:px-6 rounded-[20px]'>
+          <div className='card-background-color dark:bg-backgroundTextColor/10 outline-none py-4 px-4 sm:py-5 sm:px-8 border border-secondaryColor/50 md:px-6 rounded-[20px]'>
             <div className='flex justify-between items-center'>
               <div className='flex gap-2'>
-                <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Members Online</h1>
-                <p className='text-[20px] sm:text-[24px] font-bold register-text-color montserrat-primary-font'>(4)</p>
+                <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color dark:text-backgroundTextColor montserrat-primary-font'>
+                  Members Online
+                </h1>
+                <p className='text-[20px] sm:text-[24px] font-bold register-text-color montserrat-primary-font'>(2)</p>
               </div>
-              <button onClick={() => setIsDarkMinimized(!isDarkMinimized)}>
-                <Image src={isDarkMinimized ? darkmaximize : darkminimize} alt='toggle' height={35} width={35} className='cursor-pointer' />
+              <button onClick={() => setIsMembersMinimized(!isMembersMinimized)}>
+                <Image
+                  src={isMembersMinimized ? greenmaximize : greenminimize}
+                  alt='toggle'
+                  height={20}
+                  width={20}
+                  className='cursor-pointer'
+                />
               </button>
             </div>
 
             <AnimatePresence>
-              {!isDarkMinimized && (
+              {!isMembersMinimized && (
                 <motion.div
                   key="members-online"
                   initial={{ opacity: 0, y: -20 }}
@@ -198,11 +249,11 @@ const Sports = () => {
                   {staffOnline.map((member, index) => (
                     <div key={index} className='flex items-center gap-2 mt-3'>
                       <div className='w-[45px] h-[34px]'>
-                        <Image src={member.userImage} alt='user' height={34} width={45} className='rounded-full object-cover' />
+                        <Image src={member.userImage} alt='user' height={45} width={45} className='object-cover' />
                       </div>
                       <div className='flex flex-col'>
                         <h1 className='montserrat-primary-font text-[12px] sm:text-[14px] font-bold primary-text-color dark:text-backgroundTextColor'>{member.userName}</h1>
-                        <p className='montserrat-secondary-font text-[12px] sm:text-[14px] font-bold secondary-text-color'>{member.userRole}</p>
+                        <p className='montserrat-secondary-font text-[12px] font-bold secondary-text-color dark:font-[600] dark:text-registerTextColor dark:font-openSans'>{member.userRole}</p>
                       </div>
                     </div>
                   ))}
@@ -210,9 +261,8 @@ const Sports = () => {
               )}
             </AnimatePresence>
           </div>
-
           {/* Guests */}
-          <div className='card-background-color py-4 px-6 rounded-[20px] dark:bg-primaryColor outline-none shadow-2xl border border-secondaryColor/50'>
+          <div className='card-background-color py-4 px-6 rounded-[20px] dark:bg-backgroundTextColor/10 outline-none  border border-secondaryColor/50'>
             <div className='flex gap-2'>
               <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Guests Online</h1>
               <p className='text-[20px] sm:text-[24px] font-bold register-text-color montserrat-primary-font'>(18)</p>

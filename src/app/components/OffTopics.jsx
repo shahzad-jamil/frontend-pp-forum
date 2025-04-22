@@ -2,10 +2,10 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-import minimize from "../../../public/icons8_macos_minimize 1.svg"
-import maximize from "../../../public/icons8_Plus 3.svg"
+import minimize from "../../../public/icons8_expand_arrow 1.svg"
+import maximize from "../../../public/Vector.svg"
 
-import postedByUser from "../../../public/Rectangle 56.svg"
+import postedByUser from "../../../public/Ellipse 1 (1).svg"
 import Image from 'next/image'
 import post4 from "../../../public/Rectangle 24 (1).svg"
 import post5 from "../../../public/Rectangle 24.svg"
@@ -38,22 +38,27 @@ const OffTopics = () => {
 
   return (
     <>
-      <div className='background-color w-full mt-[30px] flex justify-between p-4 rounded-[15px]'>
-        <h1 className='text-[28px] background-text-color px-3 montserrat-primary-font font-semibold'>
-          Off Topic
+      <div
+        className={`w-full flex justify-between items-center mt-[20px] p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'background-color'
+          }`}
+      >
+        <h1
+          className={`text-[28px] px-3 montserrat-primary-font font-semibold ${isMinimized ? 'text-black' : 'background-text-color'
+            }`}
+        >
+          Off Topics
         </h1>
         <button onClick={() => setIsMinimized(!isMinimized)}>
           <Image
             src={isMinimized ? maximize : minimize}
-            alt='toggle'
-            height={35}
-            width={35}
-            className='cursor-pointer'
-
+            alt="toggle"
+            height={20}
+            width={22}
+            className={`cursor-pointer ${isMinimized ? 'text-black w-[12]' : 'background-text-color'
+              }`}
           />
         </button>
       </div>
-
       <AnimatePresence>
         {!isMinimized && (
           <motion.div
