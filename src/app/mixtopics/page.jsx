@@ -4,7 +4,7 @@ import Image from 'next/image';
 import create from "../../../public/icons8_create 1.svg"
 import user from "../../../public/Group 2008.svg"
 import postImage from "../../../public/image 115.svg"
-import pin from "../../../public/Pin.svg"
+import pin from "../../../public/pin.svg"
 import postvideo from "../../../public/image 115 (1).svg"
 import question from '../../../public/icons8_questions 1.svg';
 import arrow from "../../../public/icons8_expand_arrow black.svg"
