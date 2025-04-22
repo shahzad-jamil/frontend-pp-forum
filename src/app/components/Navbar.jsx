@@ -88,7 +88,7 @@ const Navbar = () => {
           />
           <div className=' z-50 hidden xl:flex gap-[50px]'>
             {navlinks.map((item, index) => (
-              <Link href={item.path} key={index} className='background-text-color  text-[14px]'>
+              <Link href={item.path} key={index} className='background-text-color font-openSans font-[600] text-[14px]'>
                 {item.name}
               </Link>
             ))}
@@ -130,16 +130,16 @@ const Navbar = () => {
 
 
 
-            <Link href="/profile">
-              {/* <button className='navbar-button-background py-3 px-8 cursor-pointer text-[14px] rounded-[100px]'>
+            {/* <Link href="/profile"> */}
+            {/* <button className='navbar-button-background py-3 px-8 cursor-pointer text-[14px] rounded-[100px]'>
                 Login/Register
               </button> */}
 
-              <Image src={profileImage}
-                alt="profileImage"
-                height={42}
-                width={42} />
-            </Link>
+            <Image src={profileImage}
+              alt="profileImage"
+              height={42}
+              width={42} />
+            {/* </Link> */}
           </div>
 
 

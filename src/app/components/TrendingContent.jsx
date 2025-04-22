@@ -83,21 +83,21 @@ const TrendingContent = () => {
                 </p>
                 <div className='flex flex-col sm:flex-row justify-between mt-[10px] sm:items-center'>
                   <div className='flex  items-center gap-2'>
-                    <h1 className='montserrat-primary-font dark:font-[400]  dark:font-openSans text-[11px]  font-bold primary-text-color dark:text-backgroundTextColor'>
+                    <h1 className='font-openSans font-[400] dark:font-[400]  dark:font-openSans text-[11px]  font-bold secondary-text-color dark:text-backgroundTextColor'>
                       {trending.postedBy}
 
                     </h1>
-                    <h1 className='montserrat-primary-font text-[11px] dark:font-[400]  dark:font-openSans text-[11px] dark:text-backgroundTextColor font-bold primary-text-color'>
+                    <h1 className='font-openSans font-[400] text-[11px] dark:font-[400]  dark:font-openSans text-[11px] dark:text-backgroundTextColor font-bold secondary-text-color'>
                       {trending.Time}
 
                     </h1>
                   </div>
 
                   <div className='flex items-center  gap-1'>
-                    <h1 className='text-[11px] font-bold primary-text-color dark:font-[400]  dark:font-openSans text-[11px] montserrat-primary-font dark:text-backgroundTextColor'>
+                    <h1 className='text-[11px] font-bold text-buttonBackgroundColor dark:font-[400]  dark:font-openSans text-[11px] font-openSans dark:text-backgroundTextColor'>
                       Replies:
                     </h1>
-                    <p className='text-[11px] register-text-color dark:font-[400]  dark:font-openSans  montserrat-primary-font'>
+                    <p className='text-[11px] text-buttonBackgroundColor dark:font-[400]  dark:font-openSans  montserrat-primary-font'>
                       {trending.Replies}
                     </p>
                   </div>

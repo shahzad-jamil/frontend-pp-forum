@@ -27,7 +27,9 @@ module.exports = {
         "articleButtonColor": "#FFA500",
         "pollButtonColor": "#8A2BE2",
         "questionButtonColor": "#E53935",
-        "searchBorderColor": "#E6E6E7"
+        "searchBorderColor": "#E6E6E7",
+        "mixTopicBackgroundColor": "#3F94051A"
+
       },
       fontFamily: {
         openSans: ['"Open Sans"', 'sans-serif'],
