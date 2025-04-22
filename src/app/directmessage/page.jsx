@@ -30,7 +30,7 @@ import attach from "../../../public/attachment.svg"
 import dp from "../../../public/profilePic.svg"
 import dp2 from "../../../public/dp2.svg"
 
-import pin from "../../../public/pin.svg"
+import pin from "../../../public/Pin.svg"
 import singletick from "../../../public/singletick.svg"
 import doubletick from "../../../public/doubletick.svg"
 

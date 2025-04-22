@@ -79,11 +79,11 @@ const CreateComponent = () => {
 
       {/* Dropdown Menu */}
       {showDropdown && (
-        <div className='absolute top-[100%] mt-3 flex flex-col justify-center gap-[20px] dark:bg-primaryColor card-background-color p-4 rounded-[20px] shadow-2xl w-[300px] z-50'>
+        <div className='absolute top-[100%] mt-3 flex flex-col justify-center gap-[10px] dark:bg-primaryColor card-background-color p-4 rounded-[20px] shadow-2xl w-[224px] z-50'>
           {actions.map((action, index) => (
             <Link href={action.path} key={index}>
               <button
-                className={`px-12 text-[16px] w-full rounded-[100px] py-7 flex items-center gap-3 ${action.color}`}
+                className={` text-[16px] w-full rounded-[100px] py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3 ${action.color}`}
               >
                 <Image
                   src={action.image}

@@ -1,8 +1,8 @@
 import React from 'react'
 import postedByUser from "../../../public/Rectangle 56.svg"
 import Image from 'next/image'
-import darkmaximize from "../../../public/icons8_Plus_2 1.svg"
-import darkminimize from "../../../public/icons8_macos_minimize 1 (1).svg"
+// import greenmaximize from "../../../public/icons8_expand_arrow 1 (1).svg"
+// import greenminimize from "../../../public/icons8_expand_arrow 1 (2).svg"
 
 const TrendingContent = () => {
   const trendingContent = [
@@ -56,7 +56,7 @@ const TrendingContent = () => {
   return (
     <>
 
-      <div className='w-[100%] card-background-color flex flex-col mt-[30px] dark:bg-primaryColor outline-none shadow-2xl border border-secondaryColor/50    py-4 md:px-12 rounded-[20px]'>
+      <div className='w-[100%] card-background-color flex flex-col mt-[30px] dark:bg-backgroundTextColor/10 outline-none  border border-secondaryColor/50 py-4 px-4 sm:py-5 sm:px-8 rounded-[20px]'>
         <div className=' w-[100%] flex  justify-between  rounded-[15px]'>
           <div>
             <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>
@@ -83,21 +83,21 @@ const TrendingContent = () => {
                 </p>
                 <div className='flex flex-col sm:flex-row justify-between mt-[10px] sm:items-center'>
                   <div className='flex  items-center gap-2'>
-                    <h1 className='montserrat-primary-font text-[11px]  font-bold primary-text-color dark:text-backgroundTextColor'>
+                    <h1 className='montserrat-primary-font dark:font-[400]  dark:font-openSans text-[11px]  font-bold primary-text-color dark:text-backgroundTextColor'>
                       {trending.postedBy}
 
                     </h1>
-                    <h1 className='montserrat-primary-font text-[11px] dark:text-backgroundTextColor font-bold primary-text-color'>
+                    <h1 className='montserrat-primary-font text-[11px] dark:font-[400]  dark:font-openSans text-[11px] dark:text-backgroundTextColor font-bold primary-text-color'>
                       {trending.Time}
 
                     </h1>
                   </div>
 
                   <div className='flex items-center  gap-1'>
-                    <h1 className='text-[11px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>
+                    <h1 className='text-[11px] font-bold primary-text-color dark:font-[400]  dark:font-openSans text-[11px] montserrat-primary-font dark:text-backgroundTextColor'>
                       Replies:
                     </h1>
-                    <p className='text-[11px] register-text-color montserrat-primary-font'>
+                    <p className='text-[11px] register-text-color dark:font-[400]  dark:font-openSans  montserrat-primary-font'>
                       {trending.Replies}
                     </p>
                   </div>

@@ -13,6 +13,12 @@ import searchIcon from "../../../public/Search Icon.svg"
 import navImage from "../../../public/Rectangle 100.svg"
 import profileImage from "../../../public/Ellipse 443.svg"
 
+
+import lightModeActive from "../../../public/lightmodeactive.svg"
+import lightModeOff from "../../../public/lightmodeoff.svg"
+import darkModeActive from "../../../public/darkmodeactive.svg"
+import darkModeOff from "../../../public/darkmodeoff.svg"
+
 const Navbar = () => {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
@@ -102,24 +108,22 @@ const Navbar = () => {
               width={18}
               className='cursor-pointer'
             />
-            <div className='navbar-button-background py-3 px-5 gap-[10px] rounded-[100px] flex'>
+            <div className='navbar-button-background dark:bg-backgroundTextColor/20 dark:border dark:border-secondaryColor/60 py-3 px-5 gap-[10px] rounded-[100px] flex'>
               <Image
-                src={lightmode}
-                alt='lightmode'
+                src={theme === 'light' ? lightModeActive : lightModeOff}
+                alt='lightmode-toggle'
                 height={20}
                 width={26}
-                className={`cursor-pointer transition-all duration-200 ${theme === 'light' ? 'drop-shadow-[0_0_6px_#facc15]' : 'opacity-50'
-                  }`}
+                className='cursor-pointer transition-all duration-200'
                 onClick={() => setTheme('light')}
               />
 
               <Image
-                src={darkmode}
-                alt='darkmode'
-                height={18}
+                src={theme === 'dark' ? darkModeActive : darkModeOff}
+                alt='darkmode-toggle'
+                height={20}
                 width={26}
-                className={`cursor-pointer transition-all duration-200 ${theme === 'dark' ? 'drop-shadow-[0_0_6px_#38bdf8]' : 'opacity-50'
-                  }`}
+                className='cursor-pointer transition-all duration-200'
                 onClick={() => setTheme('dark')}
               />
             </div>
@@ -180,23 +184,25 @@ const Navbar = () => {
             </div>
 
             <div className='navbar-button-background z-50 py-3 px-4 gap-[10px] text-[14px] rounded-[100px] flex mt-2'>
-
               <Image
-                src={lightmode}
-                alt='lightmode'
-                height={18}
+                src={theme === 'light' ? lightModeActive : lightModeOff}
+                alt='lightmode-toggle'
+                height={20}
                 width={18}
-                className='cursor-pointer'
+                className='cursor-pointer transition-all duration-200'
+                onClick={() => setTheme('light')}
               />
 
               <Image
-                src={darkmode}
-                alt='darkmode'
-                height={18}
+                src={theme === 'dark' ? darkModeActive : darkModeOff}
+                alt='darkmode-toggle'
+                height={20}
                 width={18}
-                className='cursor-pointer'
+                className='cursor-pointer transition-all duration-200'
+                onClick={() => setTheme('dark')}
               />
             </div>
+
 
             {/* <button className='navbar-button-background z-50 py-3 px-8 cursor-pointer text-[14px] rounded-[100px] mt-2'>
               Login/Register

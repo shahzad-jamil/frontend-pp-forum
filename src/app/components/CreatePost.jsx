@@ -38,12 +38,24 @@ const CreatePost = () => {
       });
       setEasyMDE(instance);
 
-      // Get the editor wrapper element and make it scrollable if needed
-      const editorContainer = instance.codemirror.getWrapperElement();
-      editorContainer.style.overflowY = 'auto'; // Enable vertical scrolling
-      editorContainer.style.maxHeight = '250px'; // Optional fixed height
+      // Ensure editor is initialized before modifying styles
+      instance.codemirror.on('refresh', () => {
+        const editorContainer = instance.codemirror.getWrapperElement();
+
+        // Apply overflow styles to the editor container
+        editorContainer.style.overflowY = 'auto'; // Enable vertical scrolling
+        editorContainer.style.maxHeight = '250px'; // Optional fixed height
+
+        // Get the textarea inside EasyMDE and apply the same styles
+        const editorTextArea = editorContainer.querySelector('textarea');
+        if (editorTextArea) {
+          editorTextArea.style.maxHeight = '250px'; // Max height for textarea
+          editorTextArea.style.overflowY = 'auto'; // Enable scroll on the textarea
+        }
+      });
     });
   }, []);
+
 
   const handleBold = () => {
     if (EasyMDE) EasyMDE.codemirror.replaceSelection("**bold text**");
@@ -259,12 +271,23 @@ const CreatePost = () => {
         </div>
 
 
-
         <textarea
           ref={editorRef}
           placeholder="Start a conversation... What’s on your mind?"
-          className={`${EasyMDE ? 'hidden' : ''} outline-none p-5 text-[18px] w-full h-[250px] resize-none no-repeat`}
+          className={`${EasyMDE ? '' : ''} outline-none p-5 text-[18px] w-full h-[250px] overflow-y-auto`}
+          style={{
+            maxHeight: '250px', // Ensure it has a max height to activate scrolling
+          }}
         />
+
+        {/* <textarea
+          ref={editorRef}
+          placeholder="Start a conversation... What’s on your mind?"
+          className={`outline-none p-5 text-[18px] w-full h-[250px] overflow-y-auto`}
+          style={{
+            maxHeight: '250px', // Ensure it has a max height to activate scrolling
+          }}
+        /> */}
       </div>
       <div className='flex justify-center w-[100%] mx-auto px-[10px] xl:px-0 xl:max-w-[82%]  mt-[150px] mb-[10px] lg:justify-end'>
         <button className='button-background-color rounded-[100px] justify-center py-4 md:py-5 px-8 flex items-center gap-3'>

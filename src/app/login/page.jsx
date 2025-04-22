@@ -136,7 +136,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="order-1 lg:order-1 flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-[10%]">
+        <div className="order-1 lg:order-1 flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-[9%] lg:top-[8%] xl:top-[12%]">
           <Image
             src={LoginImage}
             alt='logo image'
