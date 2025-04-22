@@ -29,12 +29,9 @@ import chatpic from "../../../public/chatwindow.svg"
 import attach from "../../../public/attachment.svg"
 import dp from "../../../public/profilePic.svg"
 import dp2 from "../../../public/dp2.svg"
-
-import pin from "../../../public/Pin.svg"
+import pin from "../../../public/pin.svg"
 import singletick from "../../../public/singletick.svg"
 import doubletick from "../../../public/doubletick.svg"
-
-
 import EmptyChat from "../pages/EmptyChat";
 import WithoutOpenChat from "../pages/WithoutOpenChat";
 import OpenChat from "../pages/OpenChat";
