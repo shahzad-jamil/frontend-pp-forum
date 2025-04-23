@@ -80,6 +80,8 @@ const page = () => {
     },
   ];
 
+
+
   // const Topics = [
 
   //   {
@@ -168,7 +170,7 @@ const page = () => {
             </div>
             {/* Dropdown Menu */}
             {showDropdown && (
-              <div className='absolute top-[100%] mt-3 flex flex-col justify-center gap-[10px] dark:bg-primaryColor card-background-color p-4 rounded-[20px] shadow-2xl w-[224px] z-50'>
+              <div ref={dropdownRef} className='absolute top-[100%] right-[10%] mt-3 flex flex-col justify-center gap-[10px] dark:bg-primaryColor card-background-color p-4 rounded-[20px] shadow-2xl w-[224px] z-50'>
                 {actions.map((action, index) => (
                   <Link href={action.path} key={index}>
                     <button
