@@ -1,4 +1,6 @@
-import React, { use } from 'react'
+"use client"
+import { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image'
 import report from "../../../public/report.svg"
 import search from "../../../public/search.svg"
@@ -14,101 +16,125 @@ import messgaePic from "../../../public/1 7.svg"
 
 
 const OpenChat = ({ selectedUser }) => {
-  const users = [
-    {
-      profileImage: dp,
-      name: "John Doe",
-      isPin: pin,
-      message: "How are you doing Today",
-      time: "16:45",
-      status: doubletick
-    },
-    {
-      profileImage: dp,
-      name: "Travis Barker",
-      isPin: pin,
-      message: "Smells like design spirit..",
-      time: "16:45",
-      status: singletick
-    },
-    {
-      profileImage: dp,
-      name: "Kate Rose",
-      isPin: pin,
-      message: "you: See you tomorrow!",
-      time: "16:45",
-      status: doubletick
-    },
-    {
-      profileImage: dp,
-      name: "Robert Parker",
-      isPin: pin,
-      message: "Awesome!",
-      time: "16:45",
-      status: doubletick
-    },
-    {
-      profileImage: dp,
-      name: "Rick Owens",
-      isPin: pin,
-      message: "Good idea 🤩",
-      time: "16:45",
-      status: doubletick
-    },
-    {
-      profileImage: dp,
-      name: "George Orwell",
-      isPin: pin,
-      message: "you: Literally 1984 🤨",
-      time: "16:45",
-      status: doubletick
-    },
-    {
-      profileImage: dp,
-      name: "Franz Kafka",
-      isPin: pin,
-      message: "Are you interested in insectitides for..",
-      time: "16:45",
-      status: doubletick
-    },
-    {
-      profileImage: dp,
-      name: "Tom Hardy",
-      isPin: pin,
-      message: "Smells like design spirit..",
-      time: "16:45",
-      status: doubletick
-    },
-    {
-      profileImage: dp,
-      name: "Vivienne Westwood",
-      isPin: pin,
-      message: "This cat is so funny 😸",
-      time: "16:45",
-      status: doubletick
-    },
-    {
-      profileImage: dp,
-      name: "Anthony Paul",
-      isPin: pin,
-      message: "Check out my page 🤩",
-      time: "16:45",
-      status: doubletick
-    },
-    {
-      profileImage: dp,
-      name: "Stan Smith",
-      isPin: pin,
-      message: "Want to see this kicks rn",
-      time: "16:45",
-      status: doubletick
-    },
-  ]
+  const [reportPopup, setReportPopup] = useState(false)
+  const dropdownRef = useRef(null); // Ref to detect outside clicks
 
-
-  const handelSelectedUser = () => {
-    console.log(">>>>>>>>>>>>", selectedUser)
+  const toggleReportPopUp = () => {
+    setReportPopup((prev) => !prev)
   }
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target)
+      ) {
+        setReportPopup(false)
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  // const users = [
+  //   {
+  //     profileImage: dp,
+  //     name: "John Doe",
+  //     isPin: pin,
+  //     message: "How are you doing Today",
+  //     time: "16:45",
+  //     status: doubletick
+  //   },
+  //   {
+  //     profileImage: dp,
+  //     name: "Travis Barker",
+  //     isPin: pin,
+  //     message: "Smells like design spirit..",
+  //     time: "16:45",
+  //     status: singletick
+  //   },
+  //   {
+  //     profileImage: dp,
+  //     name: "Kate Rose",
+  //     isPin: pin,
+  //     message: "you: See you tomorrow!",
+  //     time: "16:45",
+  //     status: doubletick
+  //   },
+  //   {
+  //     profileImage: dp,
+  //     name: "Robert Parker",
+  //     isPin: pin,
+  //     message: "Awesome!",
+  //     time: "16:45",
+  //     status: doubletick
+  //   },
+  //   {
+  //     profileImage: dp,
+  //     name: "Rick Owens",
+  //     isPin: pin,
+  //     message: "Good idea 🤩",
+  //     time: "16:45",
+  //     status: doubletick
+  //   },
+  //   {
+  //     profileImage: dp,
+  //     name: "George Orwell",
+  //     isPin: pin,
+  //     message: "you: Literally 1984 🤨",
+  //     time: "16:45",
+  //     status: doubletick
+  //   },
+  //   {
+  //     profileImage: dp,
+  //     name: "Franz Kafka",
+  //     isPin: pin,
+  //     message: "Are you interested in insectitides for..",
+  //     time: "16:45",
+  //     status: doubletick
+  //   },
+  //   {
+  //     profileImage: dp,
+  //     name: "Tom Hardy",
+  //     isPin: pin,
+  //     message: "Smells like design spirit..",
+  //     time: "16:45",
+  //     status: doubletick
+  //   },
+  //   {
+  //     profileImage: dp,
+  //     name: "Vivienne Westwood",
+  //     isPin: pin,
+  //     message: "This cat is so funny 😸",
+  //     time: "16:45",
+  //     status: doubletick
+  //   },
+  //   {
+  //     profileImage: dp,
+  //     name: "Anthony Paul",
+  //     isPin: pin,
+  //     message: "Check out my page 🤩",
+  //     time: "16:45",
+  //     status: doubletick
+  //   },
+  //   {
+  //     profileImage: dp,
+  //     name: "Stan Smith",
+  //     isPin: pin,
+  //     message: "Want to see this kicks rn",
+  //     time: "16:45",
+  //     status: doubletick
+  //   },
+  // ]
+
+
+  // const handelSelectedUser = () => {
+  //   console.log(">>>>>>>>>>>>", selectedUser)
+  // }
 
   return (
     <>
@@ -131,7 +157,65 @@ const OpenChat = ({ selectedUser }) => {
               </p>
             </div>
           </div>
-          <Image src={report} alt='search icon' width={42} height={42} className='cursor-pointer' />
+          <Image src={report} onClick={toggleReportPopUp} alt='search icon' width={42} height={42} className='cursor-pointer' />
+
+          {reportPopup && (
+            <div
+              ref={dropdownRef}
+              className="absolute top-[34%] sm:top-[30%] right-[1%] sm:right-[10%]  flex flex-col gap-[10px] dark:bg-primaryColor card-background-color p-6 rounded-[20px] shadow-2xl w-[300px] sm:w-[520px] z-10"
+            >
+              {/* Title */}
+              <h1 className="text-[20px] sm:text-[24px] font-semibold montserrat-primary-font text-primaryColor dark:text-backgroundTextColor">
+                Report
+              </h1>
+
+              {/* Info Text */}
+              <h1 className="text-[20px] sm:text-[24px] font-semibold montserrat-primary-font text-primaryColor dark:text-backgroundTextColor">
+                Why are you reporting this post?
+              </h1>
+              <p className="text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color">
+                If someone is in immediate danger, get help before reporting to Forum PakPassion. Don't wait.
+              </p>
+
+              {/* Checkboxes */}
+              {[
+                'Problem involving someone under 18',
+                'Bullying, harassment or abuse',
+                'Suicide or self-harm',
+                'Violent, hateful or disturbing content',
+                'Selling or promoting restricted items',
+                'Adult content',
+                'Scam, fraud or false information',
+                'Intellectual property',
+                "I don't want to see this",
+                'Others'
+              ].map((label, idx) => (
+                <label
+                  key={idx}
+                  className="flex items-center gap-3 text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color"
+                >
+                  <input type="checkbox" className="w-5 h-5 dark:bg-primaryColor" />
+                  {label}
+                </label>
+              ))}
+
+              {/* Description Textarea */}
+              <div className="relative w-full">
+                <textarea
+                  placeholder="Describe your concern (optional)"
+                  rows="3"
+                  className="w-full border-1 border-color dark:bg-primaryColor outline-none p-4 rounded-[20px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color resize-none"
+                ></textarea>
+              </div>
+
+              {/* Send Report Button */}
+              <div className="flex justify-end">
+                <button className="button-background-color text-white py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
+                  Send Report
+                </button>
+              </div>
+            </div>
+          )}
         </div>
         <div className='flex w-[100%]  chatbox-background-color dark:bg-primaryColor m-3 h-[585px]'>
           <div className=' flex flex-col w-[100%]   gap-4'>
