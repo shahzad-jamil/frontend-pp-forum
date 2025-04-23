@@ -9,6 +9,7 @@ import postedByUser from "../../../public/Ellipse 1 (1).svg"
 import Image from 'next/image'
 import post4 from "../../../public/Rectangle 24 (1).svg"
 import post5 from "../../../public/Rectangle 24.svg"
+import Link from 'next/link'
 
 const OffTopics = () => {
   const [isMinimized, setIsMinimized] = useState(false)
@@ -70,36 +71,38 @@ const OffTopics = () => {
             className='w-full'
           >
             {offTopics.map((item, index) => (
-              <div key={index} className='flex flex-col sm:flex-row mt-[20px] gap-[20px] border-b border-secondaryColor/50 pb-4'>
-                <Image src={item.image} alt='post 1' height={228} width={260} className='w-full sm:w-[260px] h-auto object-cover' />
-                <div className='flex flex-col'>
-                  <div className='flex items-center justify-between'>
-                    <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font '>{item.title}</h1>
-                    <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1>
-                  </div>
-                  <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>{item.description}</p>
+              <Link href="/mixtopics">
+                <div key={index} className='flex flex-col sm:flex-row mt-[20px] gap-[20px] border-b border-secondaryColor/50 pb-4'>
+                  <Image src={item.image} alt='post 1' height={228} width={260} className='w-full sm:w-[260px] h-auto object-cover' />
+                  <div className='flex flex-col'>
+                    <div className='flex items-center justify-between'>
+                      <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font '>{item.title}</h1>
+                      <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1>
+                    </div>
+                    <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>{item.description}</p>
 
-                  <div className='flex justify-between flex-col sm:flex-row gap-4 my-[10px] sm:items-center flex-wrap'>
-                    <div className='flex items-center gap-1'>
-                      <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Threads:</h1>
-                      <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400]  dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.threads}</p>
+                    <div className='flex justify-between flex-col sm:flex-row gap-4 my-[10px] sm:items-center flex-wrap'>
+                      <div className='flex items-center gap-1'>
+                        <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Threads:</h1>
+                        <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400]  dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.threads}</p>
+                      </div>
+
+                      <div className='flex items-center gap-1'>
+                        <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Latest Post:</h1>
+                        <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400] dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.updatedTime}</p>
+                      </div>
                     </div>
 
-                    <div className='flex items-center gap-1'>
-                      <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Latest Post:</h1>
-                      <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400] dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.updatedTime}</p>
+                    <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>{item.MatchBetweenTeams}</h1>
+                    <div className='flex items-center gap-2 mt-[10px] sm:mt-1'>
+                      <div className='w-[34px] h-[34px]'>
+                        <Image src={item.postedUserImage} alt='posted user' />
+                      </div>
+                      <p className='text-[12px] sm:text-[14px] font-openSans font-bold primary-text-color dark:text-backgroundTextColor'>{item.postedBy}</p>
                     </div>
-                  </div>
-
-                  <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>{item.MatchBetweenTeams}</h1>
-                  <div className='flex items-center gap-2 mt-[10px] sm:mt-1'>
-                    <div className='w-[34px] h-[34px]'>
-                      <Image src={item.postedUserImage} alt='posted user' />
-                    </div>
-                    <p className='text-[12px] sm:text-[14px] font-openSans font-bold primary-text-color dark:text-backgroundTextColor'>{item.postedBy}</p>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}          </motion.div>
         )}
       </AnimatePresence>

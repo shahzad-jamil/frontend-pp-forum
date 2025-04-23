@@ -416,64 +416,68 @@ const page = () => {
             </div>
 
             {/* post 2 */}
-            <div className='w-full bg-backgroundColor/10 rounded-[20px] flex flex-col lg:flex-row gap-2 p-5 mt-5'>
-              <div className='w-full lg:w-[80%]'>
-                <div>
-                  <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>
-                    Mohammad Abbas was unfairly side-lined.
-                  </h1>
-                  <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>
-                    Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match...
-                  </p>
-                </div>
-                <div className='w-full mt-5 flex flex-col lg:flex-row items-center justify-between'>
-                  <div className='flex w-full gap-3'>
-                    <Image
-                      src={user}
-                      alt="user"
-                      width={63}
-                      height={48}
-                    />
-                    <div className='flex flex-col justify-center'>
-                      <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font'>
-                        Today at 3:29 AM
-                      </h1>
-                      <p className='secondary-text-color montserrat-secondary-font'>Bouncer Guy</p>
+            <Link href="/discussiondetails">
+              <div className='w-full bg-backgroundColor/10 rounded-[20px] flex flex-col lg:flex-row gap-2 p-5 mt-5'>
+                <div className='w-full lg:w-[80%]'>
+                  <div>
+                    <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>
+                      Mohammad Abbas was unfairly side-lined.
+                    </h1>
+                    <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>
+                      Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match...
+                    </p>
+                  </div>
+                  <div className='w-full mt-5 flex flex-col lg:flex-row items-center justify-between'>
+                    <div className='flex w-full gap-3'>
+                      <Image
+                        src={user}
+                        alt="user"
+                        width={63}
+                        height={48}
+                      />
+                      <div className='flex flex-col justify-center'>
+                        <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font'>
+                          Today at 3:29 AM
+                        </h1>
+                        <p className='secondary-text-color montserrat-secondary-font'>Bouncer Guy</p>
+                      </div>
+                    </div>
+
+                    <div className='flex w-full justify-between gap-[20px] mt-4 lg:mt-0'>
+                      <div className='flex gap-2'>
+                        <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font flex gap-2'>
+                          Replies: <p className='register-text-color dark:font-[400] dark:text-registerTextColor dark:font-openSans'>10</p>
+                        </h1>
+                        <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font flex gap-2'>
+                          Views: <p className='register-text-color dark:font-[400] dark:text-registerTextColor dark:font-openSans'>226</p>
+                        </h1>
+                      </div>
+
+                      <div className='text-backgroundTextColor px-4 flex items-center gap-1 bg-discussionButtonColor rounded-[100px]'>
+                        <Image src={discussion} alt='post 1' width={10} height={10} />
+                        <h1 className='text-[10px] font-semibold montserrat-secondary-font'>
+                          Discussion
+                        </h1>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className='flex w-full justify-between gap-[20px] mt-4 lg:mt-0'>
-                    <div className='flex gap-2'>
-                      <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font flex gap-2'>
-                        Replies: <p className='register-text-color dark:font-[400] dark:text-registerTextColor dark:font-openSans'>10</p>
-                      </h1>
-                      <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font flex gap-2'>
-                        Views: <p className='register-text-color dark:font-[400] dark:text-registerTextColor dark:font-openSans'>226</p>
-                      </h1>
-                    </div>
-
-                    <div className='text-backgroundTextColor px-4 flex items-center gap-1 bg-discussionButtonColor rounded-[100px]'>
-                      <Image src={discussion} alt='post 1' width={10} height={10} />
-                      <h1 className='text-[10px] font-semibold montserrat-secondary-font'>
-                        Discussion
-                      </h1>
-                    </div>
-                  </div>
+                <div className='w-full lg:w-auto mt-4 lg:mt-0'>
+                  <Image
+                    src={postvideo}
+                    alt="post"
+                    height={160}
+                    width={200}
+                    className="lg:w-[200px] w-full rounded-[15px] object-cover"
+                  />
                 </div>
               </div>
-
-              <div className='w-full lg:w-auto mt-4 lg:mt-0'>
-                <Image
-                  src={postvideo}
-                  alt="post"
-                  height={160}
-                  width={200}
-                  className="lg:w-[200px] w-full rounded-[15px] object-cover"
-                />
-              </div>
-            </div>
+            </Link>
 
             {/* article 2 */}
+
+
             <div className='w-full flex flex-col lg:flex-row gap-2 p-5 mt-5'>
               <div className='w-full'>
                 <div>
