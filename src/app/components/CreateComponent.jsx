@@ -16,7 +16,7 @@ const CreateComponent = () => {
   const dropdownRef = useRef(null); // Ref to detect outside clicks
 
   const toggleDropdown = () => {
-    setShowDropdown((prev) => !prev);
+    setShowDropdown(true);
   };
 
   // 👇 Close on outside click
@@ -66,16 +66,12 @@ const CreateComponent = () => {
   return (
 
     <>
-      <div className='w-[80%] mx-auto flex justify-end '>
-        <div
-          className=' flex justify-end mt-[20px]  px-5'
-        >
-
-
-
+      <div className='w-[80%] mx-auto flex justify-end'>
+        <div className='relative mt-[20px]'>
+          {/* Create Thread Button */}
           <button
             onClick={toggleDropdown}
-            className='button-background-color rounded-[100px] md:justify-end py-4 px-4 sm:py-5 sm:px-8 flex md:items-center gap-3'
+            className='button-background-color rounded-[100px] py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3'
           >
             <Image src={create} alt='post 1' width={20} height={20} />
             <h1 className='text-[14px] background-text-color font-semibold montserrat-secondary-font'>
@@ -83,9 +79,35 @@ const CreateComponent = () => {
             </h1>
           </button>
 
-          {/* Dropdown Menu */}
+          {/* Dropdown
           {showDropdown && (
-            <div className='absolute top-[100%] mt-3 flex flex-col justify-center gap-[10px] dark:bg-primaryColor card-background-color p-4 rounded-[20px] shadow-2xl w-[224px] z-50'>
+            <div
+              ref={dropdownRef}
+              className='absolute top-full right-0 mt-3 flex flex-col gap-[10px] dark:bg-primaryColor card-background-color p-4 rounded-[20px] shadow-2xl w-[224px] z-50'
+            >
+              {actions.map((action, index) => (
+                <Link href={action.path} key={index}>
+                  <button
+                    className={`text-[16px] w-full rounded-[100px] py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3 ${action.color}`}
+                  >
+                    <Image
+                      src={action.image}
+                      alt={action.title}
+                      width={20}
+                      height={20}
+                    />
+                    <span className='text-[16px] background-text-color font-semibold montserrat-secondary-font'>
+                      {action.title}
+                    </span>
+                  </button>
+                </Link>
+              ))}
+            </div>
+          )} */}
+
+
+          {showDropdown && (
+            <div ref={dropdownRef} className='absolute top-[100%] right-[10%] mt-3 flex flex-col justify-center gap-[10px] dark:bg-primaryColor card-background-color p-4 rounded-[20px] shadow-2xl w-[224px] z-50'>
               {actions.map((action, index) => (
                 <Link href={action.path} key={index}>
                   <button
@@ -105,8 +127,19 @@ const CreateComponent = () => {
               ))}
             </div>
           )}
+        </div>
+      </div>
+    </>
+  );
+};
 
-          {/* <div className='flex justify-between'>
+export default CreateComponent;
+
+
+
+
+
+{/* <div className='flex justify-between'>
             <div className='flex gap-2'>
               <Image
                 src={search}
@@ -128,10 +161,3 @@ const CreateComponent = () => {
                 height={20} />
             </div>
           </div> */}
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default CreateComponent;

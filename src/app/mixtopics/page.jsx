@@ -30,12 +30,19 @@ import discussion from '../../../public/discussion.svg';
 import Link from 'next/link';
 const page = () => {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [filterPopUp, setFilterPopup] = useState(false);
+
   const dropdownRef = useRef(null); // Ref to detect outside clicks
 
   const toggleDropdown = () => {
     setShowDropdown((prev) => !prev);
   };
 
+
+
+  const toggleFilterPopUp = () => {
+    setFilterPopup((prev) => !prev);
+  };
   // 👇 Close on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -44,6 +51,7 @@ const page = () => {
         !dropdownRef.current.contains(event.target)
       ) {
         setShowDropdown(false);
+        setFilterPopup(false)
       }
     };
 
@@ -79,6 +87,8 @@ const page = () => {
       color: 'bg-questionButtonColor',
     },
   ];
+
+
 
   // const Topics = [
 
@@ -157,8 +167,8 @@ const page = () => {
               </button>
 
               <button
-                // onClick={toggleDropdown}
-                className='bg-primaryColor rounded-[100px] md:justify-center py-4 px-4 sm:py-5 sm:px-8 flex md:items-center gap-3'
+                onClick={toggleFilterPopUp}
+                className='bg-primaryColor dark:bg-buttonBackgroundColor rounded-[100px] md:justify-center py-4 px-4 sm:py-5 sm:px-8 flex md:items-center gap-3'
               >
                 {/* <Image src={create} alt='post 1' width={20} height={20} /> */}
                 <h1 className='text-[12px] sm:text-[14px] background-text-color font-semibold montserrat-secondary-font'>
@@ -166,9 +176,105 @@ const page = () => {
                 </h1>
               </button>
             </div>
+            {filterPopUp && (
+              <div
+                ref={dropdownRef}
+                className="absolute top-full right-0 mt-3 flex flex-col gap-[10px] dark:bg-primaryColor card-background-color p-6 rounded-[20px] shadow-2xl w-[280px] sm:w-[520px] z-50"
+              >
+                {/* Heading */}
+                <h1 className="text-[20px] sm:text-[24px] font-semibold montserrat-primary-font text-primaryColor dark:text-backgroundTextColor">Show Only</h1>
+
+                {/* Checkbox */}
+                <label className="flex items-center gap-2 text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color">
+                  <input type="checkbox" className="w-6 h-6  dark:bg-primaryColor " />
+                  Featured threads Only
+                </label>
+
+                {/* Search Input */}
+                <div className="relative my-[2px] w-full">
+                  <input
+                    type="text"
+                    placeholder="Search"
+                    className="w-full border-1 border-color  dark:bg-primaryColor outline-none p-3 sm:p-6 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color"
+                  />
+                </div>
+
+                {/* Started By */}
+                <div className="relative my-[2px] w-full">
+                  <label className="absolute text-[12px] md:text-[14px] -top-3 left-5 px-2 bg-white dark:bg-primaryColor text-primaryColor dark:text-backgroundTextColor font-semibold montserrat-primary-font">
+                    Started By
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Username"
+                    className="w-full border-1 border-color outline-none dark:bg-primaryColor p-3 sm:p-6 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color"
+                  />
+                </div>
+
+                {/* Last Updated (Dropdown Style Input) */}
+                <div className="relative w-full my-[2px]">
+                  <label className="absolute text-[12px] md:text-[14px] -top-3 left-5 px-2 bg-white dark:bg-primaryColor text-primaryColor dark:text-backgroundTextColor font-semibold montserrat-primary-font">
+                    Last Updated
+                  </label>
+                  <select className="w-full border-1 border-color outline-none dark:bg-primaryColor p-3 sm:p-6 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none bg-white">
+                    <option value="">Select Time</option>
+                    <option value="24h">Last 24 Hours</option>
+                    <option value="7d">Last 7 Days</option>
+                    <option value="30d">Last 30 Days</option>
+                  </select>
+                </div>
+
+                {/* Type of Thread */}
+                <div className="relative w-full my-[2px]">
+                  <label className="absolute text-[12px] md:text-[14px] -top-3 left-5 px-2 bg-white dark:bg-primaryColor text-primaryColor dark:text-backgroundTextColor font-semibold montserrat-primary-font">
+                    Type of Thread
+                  </label>
+                  <select className="w-full border-1 border-color dark:bg-primaryColor outline-none p-3 sm:p-6 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none bg-white">
+                    <option value="">Select Type</option>
+                    <option value="discussion">Discussion</option>
+                    <option value="article">Article</option>
+                    <option value="question">Question</option>
+                    <option value="poll">Poll</option>
+                  </select>
+                </div>
+
+                {/* Sort By */}
+                <div className="relative w-full my-[2px]">
+                  <label className="absolute text-[12px] md:text-[14px] -top-3 left-5 px-2 bg-white dark:bg-primaryColor text-primaryColor dark:text-backgroundTextColor font-semibold montserrat-primary-font">
+                    Sort By
+                  </label>
+                  <select className="w-full border-1 border-color dark:bg-primaryColor outline-none p-3 sm:p-6 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none bg-white">
+                    <option value="latest">Latest</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="popular">Most Popular</option>
+                  </select>
+                </div>
+
+                {/* Descending */}
+                <div className="relative w-full my-[2px]">
+                  <label className="absolute text-[12px] md:text-[14px] -top-3 left-5 px-2 bg-white dark:bg-primaryColor text-primaryColor dark:text-backgroundTextColor font-semibold montserrat-primary-font">
+                    Order
+                  </label>
+                  <select className="w-full border-1 border-color dark:bg-primaryColor outline-none p-3 sm:p-6 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none bg-white">
+                    <option value="desc">Descending</option>
+                    <option value="asc">Ascending</option>
+                  </select>
+                </div>
+
+                {/* Filter Button */}
+                <div className='flex justify-end'>
+                  <button className=" button-background-color  text-white py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
+                    Filter
+                  </button>
+                </div>
+              </div>
+            )}
+
+
+
             {/* Dropdown Menu */}
             {showDropdown && (
-              <div className='absolute top-[100%] mt-3 flex flex-col justify-center gap-[10px] dark:bg-primaryColor card-background-color p-4 rounded-[20px] shadow-2xl w-[224px] z-50'>
+              <div ref={dropdownRef} className='absolute top-[100%] right-[10%] mt-3 flex flex-col justify-center gap-[10px] dark:bg-primaryColor card-background-color p-4 rounded-[20px] shadow-2xl w-[224px] z-50'>
                 {actions.map((action, index) => (
                   <Link href={action.path} key={index}>
                     <button
@@ -416,64 +522,68 @@ const page = () => {
             </div>
 
             {/* post 2 */}
-            <div className='w-full bg-backgroundColor/10 rounded-[20px] flex flex-col lg:flex-row gap-2 p-5 mt-5'>
-              <div className='w-full lg:w-[80%]'>
-                <div>
-                  <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>
-                    Mohammad Abbas was unfairly side-lined.
-                  </h1>
-                  <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>
-                    Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match...
-                  </p>
-                </div>
-                <div className='w-full mt-5 flex flex-col lg:flex-row items-center justify-between'>
-                  <div className='flex w-full gap-3'>
-                    <Image
-                      src={user}
-                      alt="user"
-                      width={63}
-                      height={48}
-                    />
-                    <div className='flex flex-col justify-center'>
-                      <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font'>
-                        Today at 3:29 AM
-                      </h1>
-                      <p className='secondary-text-color montserrat-secondary-font'>Bouncer Guy</p>
+            <Link href="/discussiondetails">
+              <div className='w-full bg-backgroundColor/10 rounded-[20px] flex flex-col lg:flex-row gap-2 p-5 mt-5'>
+                <div className='w-full lg:w-[80%]'>
+                  <div>
+                    <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>
+                      Mohammad Abbas was unfairly side-lined.
+                    </h1>
+                    <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>
+                      Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match...
+                    </p>
+                  </div>
+                  <div className='w-full mt-5 flex flex-col lg:flex-row items-center justify-between'>
+                    <div className='flex w-full gap-3'>
+                      <Image
+                        src={user}
+                        alt="user"
+                        width={63}
+                        height={48}
+                      />
+                      <div className='flex flex-col justify-center'>
+                        <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font'>
+                          Today at 3:29 AM
+                        </h1>
+                        <p className='secondary-text-color montserrat-secondary-font'>Bouncer Guy</p>
+                      </div>
+                    </div>
+
+                    <div className='flex w-full justify-between gap-[20px] mt-4 lg:mt-0'>
+                      <div className='flex gap-2'>
+                        <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font flex gap-2'>
+                          Replies: <p className='register-text-color dark:font-[400] dark:text-registerTextColor dark:font-openSans'>10</p>
+                        </h1>
+                        <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font flex gap-2'>
+                          Views: <p className='register-text-color dark:font-[400] dark:text-registerTextColor dark:font-openSans'>226</p>
+                        </h1>
+                      </div>
+
+                      <div className='text-backgroundTextColor px-4 flex items-center gap-1 bg-discussionButtonColor rounded-[100px]'>
+                        <Image src={discussion} alt='post 1' width={10} height={10} />
+                        <h1 className='text-[10px] font-semibold montserrat-secondary-font'>
+                          Discussion
+                        </h1>
+                      </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className='flex w-full justify-between gap-[20px] mt-4 lg:mt-0'>
-                    <div className='flex gap-2'>
-                      <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font flex gap-2'>
-                        Replies: <p className='register-text-color dark:font-[400] dark:text-registerTextColor dark:font-openSans'>10</p>
-                      </h1>
-                      <h1 className='text-[12px] sm:text-[14px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font flex gap-2'>
-                        Views: <p className='register-text-color dark:font-[400] dark:text-registerTextColor dark:font-openSans'>226</p>
-                      </h1>
-                    </div>
-
-                    <div className='text-backgroundTextColor px-4 flex items-center gap-1 bg-discussionButtonColor rounded-[100px]'>
-                      <Image src={discussion} alt='post 1' width={10} height={10} />
-                      <h1 className='text-[10px] font-semibold montserrat-secondary-font'>
-                        Discussion
-                      </h1>
-                    </div>
-                  </div>
+                <div className='w-full lg:w-auto mt-4 lg:mt-0'>
+                  <Image
+                    src={postvideo}
+                    alt="post"
+                    height={160}
+                    width={200}
+                    className="lg:w-[200px] w-full rounded-[15px] object-cover"
+                  />
                 </div>
               </div>
-
-              <div className='w-full lg:w-auto mt-4 lg:mt-0'>
-                <Image
-                  src={postvideo}
-                  alt="post"
-                  height={160}
-                  width={200}
-                  className="lg:w-[200px] w-full rounded-[15px] object-cover"
-                />
-              </div>
-            </div>
+            </Link>
 
             {/* article 2 */}
+
+
             <div className='w-full flex flex-col lg:flex-row gap-2 p-5 mt-5'>
               <div className='w-full'>
                 <div>
