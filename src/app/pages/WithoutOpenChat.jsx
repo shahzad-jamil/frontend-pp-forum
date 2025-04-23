@@ -26,7 +26,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
   return (
     <div className='max-w-[90%] xl:max-w-[82%] my-[20px] mx-auto'>
       <div className='w-full'>
-        <h1 className='text-[24px] text-center pb-[10px] md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
+        <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor text-center pb-[10px] md:text-[36px] primary-text-color dark:backgroundTextColor font-semibold montserrat-primary-font'>
           Direct Messages
         </h1>
       </div>
@@ -37,7 +37,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
         {/* Users List */}
         <div className={`flex-col md:p-4 gap-2 md:flex ${showChat ? 'hidden' : 'flex'}`}>
           <div className='flex flex-col gap-2  justify-center'>
-            <h1 className='text-[24px] primary-text-color font-semibold montserrat-primary-font'>
+            <h1 className='text-[20px] sm:text-[24px] primary-text-color dark:text-backgroundTextColor font-semibold montserrat-primary-font'>
               Messages
             </h1>
             <div className='flex w-full text-secondaryColor gap-1 items-center chatbox-background-color dark:bg-viewmoreButtonColor/10 px-3 rounded-[10px]'>
@@ -102,26 +102,32 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                 <div className='flex p-2 justify-end h-[61px]'>
                   <Image src={report} alt='report' width={42} height={42} className='cursor-pointer' />
                 </div>
-                <div className='flex justify-center chatbox-background-color m-3 flex-col items-center h-[585px]'>
+                <div className='flex justify-center chatbox-background-color dark:bg-primaryColor m-3 flex-col items-center h-[585px]'>
                   <Image src={chatpic} alt='empty chat pic' width={320} height={320} />
                   <p className='text-[14px] secondary-text-color text-center montserrat-smallweigh-font max-w-[350px]'>
                     You haven't opened any message yet, please select a message to start conversation.
                   </p>
                 </div>
 
-                <div className='w-full flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3 p-3 rounded-md'>
-                  <div className='flex items-center gap-2 w-full'>
-                    <Image src={attach} alt='attach' width={32} height={32} className='cursor-pointer shrink-0' />
+                <div className='w-full dark:bg-viewmoreButtonColor/30 flex flex-row items-stretch md:items-center justify-between gap-3 p-1 rounded-md'>
+                  <div className='flex items-center gap-2 w-[100%]'>
+                    <Image
+                      src={attach}
+                      alt='attach'
+                      width={32}
+                      height={32}
+                      className='cursor-pointer shrink-0'
+                    />
                     <input
                       type='text'
                       placeholder='Type your message here...'
-                      className='w-full text-sm outline-none secondary-text-color montserrat-smallweigh-font py-4 px-3 rounded-md'
+                      className='w-full text-[12px] outline-none bg-transparent secondary-text-color montserrat-smallweigh-font py-4 px-3 rounded-md'
                     />
                   </div>
 
-                  <button className='button-background-color w-[100%] md:w-[15%] h-[40px] rounded-[10px] py-3 px-5 flex items-center justify-center gap-3'>
-                    <h1 className='text-sm cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
-                      Send Message
+                  <button className='button-background-color w-[15%] h-[40px] rounded-[10px] py-3 px-4 flex items-center justify-center '>
+                    <h1 className='text-[11px] sm:text-[14px] cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
+                      Send
                     </h1>
                   </button>
                 </div>

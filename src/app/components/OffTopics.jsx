@@ -17,7 +17,7 @@ const OffTopics = () => {
     {
       image: post4,
       title: "Time Pass And Sports",
-      description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you...",
+      description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match and experience the rollercoaster of emotions.",
       threads: "27.7k",
       updatedTime: "53 minutes ago",
       MatchBetweenTeams: "New Zealand (131/2) outclass Pakistan (128/9)...",
@@ -27,7 +27,7 @@ const OffTopics = () => {
     {
       image: post5,
       title: "Member Interviews",
-      description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you...",
+      description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match and experience the rollercoaster of emotions.",
       threads: "27.7k",
       updatedTime: "53 minutes ago",
       MatchBetweenTeams: "New Zealand (131/2) outclass Pakistan (128/9)...",
@@ -39,7 +39,7 @@ const OffTopics = () => {
   return (
     <>
       <div
-        className={`w-full flex justify-between items-center mt-[20px] p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'background-color'
+        className={`w-full flex justify-between items-center mt-[20px] p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-registerTextColor'
           }`}
       >
         <h1
@@ -70,33 +70,33 @@ const OffTopics = () => {
             className='w-full'
           >
             {offTopics.map((item, index) => (
-              <div key={index} className='flex flex-col sm:flex-row mt-[20px] gap-[20px] sport-border-color pb-4'>
+              <div key={index} className='flex flex-col sm:flex-row mt-[20px] gap-[20px] border-b border-secondaryColor/50 pb-4'>
                 <Image src={item.image} alt='post 1' height={228} width={260} className='w-full sm:w-[260px] h-auto object-cover' />
                 <div className='flex flex-col'>
                   <div className='flex items-center justify-between'>
-                    <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>{item.title}</h1>
+                    <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font '>{item.title}</h1>
                     <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1>
                   </div>
                   <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>{item.description}</p>
 
                   <div className='flex justify-between flex-col sm:flex-row gap-4 my-[10px] sm:items-center flex-wrap'>
                     <div className='flex items-center gap-1'>
-                      <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Threads:</h1>
-                      <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font dark:text-registerTextColor dark:montserrat-smallweigh-font'>{item.threads}</p>
+                      <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Threads:</h1>
+                      <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400]  dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.threads}</p>
                     </div>
 
                     <div className='flex items-center gap-1'>
-                      <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Updated:</h1>
-                      <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font dark:text-registerTextColor dark:montserrat-smallweigh-font'>{item.updatedTime}</p>
+                      <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Latest Post:</h1>
+                      <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400] dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.updatedTime}</p>
                     </div>
                   </div>
 
-                  <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>{item.MatchBetweenTeams}</h1>
+                  <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>{item.MatchBetweenTeams}</h1>
                   <div className='flex items-center gap-2 mt-[10px] sm:mt-1'>
                     <div className='w-[34px] h-[34px]'>
-                      <Image src={item.postedUserImage} alt='posted user' height={34} width={34} className='rounded-full object-cover' />
+                      <Image src={item.postedUserImage} alt='posted user' />
                     </div>
-                    <p className='montserrat-primary-font text-[12px] sm:text-[14px]  font-bold primary-text-color dark:text-backgroundTextColor'>{item.postedBy}</p>
+                    <p className='text-[12px] sm:text-[14px] font-openSans font-bold primary-text-color dark:text-backgroundTextColor'>{item.postedBy}</p>
                   </div>
                 </div>
               </div>

@@ -36,7 +36,7 @@ const page = () => {
                 <input type="text" placeholder='312564' className='w-full montserrat-secondary-font secondary-text-color border-color outline-none p-7 rounded-[100px] text-[14px]' />
               </div>
               <div>
-                <button className='w-[100%] background-color p-6 md:p-7 rounded-[100px] button-text-color text-[12px] md:text-[14px] montserrat-secondary-font cursor-pointer my-[30px]'>
+                <button className='w-[100%] background-color p-6 md:p-7 rounded-[100px] button-text-color text-[12px] md:text-[14px] font-openSans font-[600] cursor-pointer my-[30px]'>
                   Verify
                 </button>
               </div>

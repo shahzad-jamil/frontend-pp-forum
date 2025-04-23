@@ -37,7 +37,7 @@ const page = () => {
         <div className='w-[100%] order-2 md:order-1 mb-[40px]'>
           <div className='w-[100%] md:w-[80%] h-[100%] mx-auto flex flex-col justify-center'>
             <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font '>Login</h1>
-            <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-secondary-font'>
+            <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-smallweigh-font'>
               Login to access your PakPassion account
             </p>
             <form action="">
@@ -84,7 +84,7 @@ const page = () => {
                 </Link>
               </div>
               <div>
-                <button onClick={handleNavigate} type="submit" className='w-[100%] background-color p-6 md:p-7 rounded-[100px] button-text-color text-[12px] md:text-[14px] montserrat-secondary-font cursor-pointer my-[30px]'>
+                <button onClick={handleNavigate} type="submit" className='w-[100%] background-color p-6 md:p-7 rounded-[100px] button-text-color text-[12px] md:text-[14px] text-openSans font-[600] cursor-pointer my-[30px]'>
                   Login
                 </button>
               </div>

@@ -33,7 +33,7 @@ const page = () => {
 
       <div className='w-full md:w-[80%] mx-auto h-auto'>
 
-        <div className='flex mt-[10px] w-[100%] border-searchBorderColor border p-4 mx-auto justify-between items-center rounded-[100px]'>
+        <div className='flex mt-[10px] w-[100%] border-searchBorderColor/10 border p-4 mx-auto justify-between items-center rounded-[100px]'>
           <div className='w-[100%] flex gap-3 items-center'>
             <Image
               src={search}
@@ -72,7 +72,7 @@ const page = () => {
               </button>
             </div>
 
-            {isSport && (
+            {!isSport && (
               <div className='px-5 mt-2'>
                 <ul className="list-none">
                   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-lime-500 before:rounded-full secondary-text-color montserrat-secondary-font">
@@ -104,7 +104,7 @@ const page = () => {
               </button>
             </div>
 
-            {isOffTopic && (
+            {!isOffTopic && (
               <div className='px-5 mt-2'>
                 <ul className="list-none">
                   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-lime-500 before:rounded-full secondary-text-color montserrat-secondary-font">
@@ -133,7 +133,7 @@ const page = () => {
               </button>
             </div>
 
-            {isMinimized && (
+            {!isMinimized && (
               <div className='px-5 mt-2'>
                 <ul className="list-none">
                   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-lime-500 before:rounded-full secondary-text-color montserrat-secondary-font">

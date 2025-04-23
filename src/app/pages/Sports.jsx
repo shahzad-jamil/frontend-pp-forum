@@ -66,17 +66,19 @@ const Sports = () => {
   ]
 
   const [isMinimized, setIsMinimized] = useState(false)
+  const [isPPTeam, setIsPPTeam] = useState(false)
+
   // const [isGreenMinimized, setIsGreenMinimized] = useState(false)
   const [isStaffMinimized, setIsStaffMinimized] = useState(false);
   const [isMembersMinimized, setIsMembersMinimized] = useState(false);
 
   return (
     <>
-      <div className='flex flex-col lg:flex-row gap-[30px] w-full lg:max-w-[82%] md:mt-[20px] mx-auto px-4'>
+      <div className='flex flex-col xl:flex-row gap-[30px] w-full md:w-[90%] lg:max-w-[82%] md:mt-[20px] mx-auto px-4'>
         <div className='w-full lg:flex-4 p-3'>
           {/* Header */}
           <div
-            className={`w-full flex justify-between items-center p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'background-color'
+            className={`w-full flex justify-between items-center p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-registerTextColor'
               }`}
           >
             <h1
@@ -119,22 +121,22 @@ const Sports = () => {
 
                       <div className='flex justify-between flex-col sm:flex-row gap-4 my-[10px] sm:items-center flex-wrap'>
                         <div className='flex items-center gap-1'>
-                          <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Threads:</h1>
-                          <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.threads}</p>
+                          <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Threads:</h1>
+                          <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400]  dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.threads}</p>
                         </div>
 
                         <div className='flex items-center gap-1'>
-                          <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Updated:</h1>
-                          <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.updatedTime}</p>
+                          <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Latest Post:</h1>
+                          <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400] dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.updatedTime}</p>
                         </div>
                       </div>
 
-                      <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>{item.MatchBetweenTeams}</h1>
+                      <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>{item.MatchBetweenTeams}</h1>
                       <div className='flex items-center gap-2 mt-[10px] sm:mt-1'>
                         <div className='w-[34px] h-[34px]'>
                           <Image src={item.postedUserImage} alt='posted user' />
                         </div>
-                        <p className='montserrat-primary-font text-[12px] sm:text-[14px]  font-bold primary-text-color dark:text-backgroundTextColor'>{item.postedBy}</p>
+                        <p className='text-[12px] sm:text-[14px] font-openSans font-bold primary-text-color dark:text-backgroundTextColor'>{item.postedBy}</p>
                       </div>
                     </div>
                   </div>
@@ -146,22 +148,22 @@ const Sports = () => {
           <OffTopics />
 
           <div
-            className={`w-full flex justify-between items-center p-4 mt-[20px] rounded-[15px] ${isMinimized ? 'bg-white' : 'background-color'
+            className={`w-full flex justify-between items-center p-4 mt-[20px] rounded-[15px] ${isPPTeam ? 'bg-white' : 'bg-registerTextColor'
               }`}
           >
             <h1
-              className={`text-[28px] px-3 montserrat-primary-font font-semibold ${isMinimized ? 'text-black' : 'background-text-color'
+              className={`text-[28px] px-3 montserrat-primary-font font-semibold ${isPPTeam ? 'text-black' : 'background-text-color'
                 }`}
             >
               The PP Team
             </h1>
-            <button onClick={() => setIsMinimized(!isMinimized)}>
+            <button onClick={() => setIsPPTeam(!isPPTeam)}>
               <Image
-                src={isMinimized ? maximize : minimize}
+                src={isPPTeam ? maximize : minimize}
                 alt="toggle"
                 height={20}
                 width={22}
-                className={`cursor-pointer ${isMinimized ? 'text-black w-[12]' : 'background-text-color'
+                className={`cursor-pointer ${isPPTeam ? 'text-black w-[12]' : 'background-text-color'
                   }`}
               />
             </button>

@@ -30,7 +30,7 @@ const Footer = () => {
             NewsLetter
           </h1>
 
-          <button className='bg-backgroundColor cursor-pointer text-white w-[70%] sm:w-[30%] md:w-[25%] text-[14px] py-4 px-6 sm:px-10 sm:py-5 rounded-full 
+          <button className='bg-backgroundColor font-openSans font-[600] cursor-pointer text-white w-[70%] sm:w-[30%] md:w-[25%] text-[14px] py-4 px-6 sm:px-10 sm:py-5 rounded-full 
             absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
             Subscribed To Get Updated
           </button>
@@ -39,7 +39,7 @@ const Footer = () => {
         <div className='flex flex-col lg:flex-row justify-between items-center w-full gap-6 mt-12'>
           <div className='flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8'>
             {footerlinks.map((item, index) => (
-              <Link href={item.path} key={index} className='text-white text-[14px]'>
+              <Link href={item.path} key={index} className='text-white text-[14px] font-openSans font-[600]'>
                 {item.name}
               </Link>
             ))}
@@ -52,7 +52,7 @@ const Footer = () => {
             <Image src={youtube} alt='YouTube' height={26} width={26} className='cursor-pointer' />
           </div>
 
-          <p className='text-[14px] text-white text-center mt-6 lg:mt-0'>
+          <p className='text-[14px] font-openSans font-[400] text-white text-center mt-6 lg:mt-0'>
             Forum PakPassion.net™ © copyright 2025 All Rights Reserved.
           </p>
         </div>
