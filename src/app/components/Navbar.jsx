@@ -94,13 +94,13 @@ const Navbar = () => {
             ))}
           </div>
           <div className=' z-50 hidden xl:flex items-center gap-[20px]'>
-            <Image
+            {/* <Image
               src={searchIcon}
               alt='search'
               height={18}
               width={18}
               className='cursor-pointer'
-            />
+            /> */}
             <Image
               src={notificationImage}
               alt='notification'
@@ -167,13 +167,13 @@ const Navbar = () => {
             ))}
 
             <div className='flex items-center z-50 gap-[20px] mt-2'>
-              <Image
+              {/* <Image
                 src={searchIcon}
                 alt='search'
                 height={18}
                 width={18}
                 className='cursor-pointer'
-              />
+              /> */}
               <Image
                 src={notificationImage}
                 alt='notification'

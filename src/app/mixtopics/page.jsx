@@ -13,6 +13,7 @@ import close from "../../../public/icons8_multiply 2.svg"
 import creat from "../../../public/icons8_create 2.svg"
 import dots from "../../../public/icons8_menu_vertical 1.svg"
 import poll from '../../../public/icons8_poll 1.svg';
+import filterbar from "../../../public/icons8_index 1.svg"
 
 import CreateComponent from '../components/CreateComponent';
 import { AnimatePresence, motion } from 'framer-motion'
@@ -131,12 +132,11 @@ const page = () => {
 
 
       <div>
-        <div className='w-full  flex justify-center items-center '>
+        <div className='w-[85%] mx-auto  flex justify-between items-center '>
           <div
-            className=' md:px-6 md:px-0 w-[86%] flex flex-col md:flex-row  gap-[10px] justify-between mt-[20px] relative'
-            ref={dropdownRef}
-          >
-            <div className='flex  w-[100%] md:w-[60%] border-searchBorderColor/10 border md:p-4 mx-auto justify-between items-center rounded-[100px]'>
+            className=' md:px-6 md:px-0 w-[100%] flex flex-col md:flex-row  gap-[10px] justify-center items-center mt-[20px] relative'
+            ref={dropdownRef} >
+            <div className='flex  w-[100%] md:w-[90%] border-searchBorderColor/10 border md:p-4 mx-auto justify-between items-center rounded-[100px]'>
               <div className='w-[100%] flex gap-1 md:gap-3 items-center '>
                 <Image
                   src={search}
@@ -154,8 +154,17 @@ const page = () => {
               />
             </div>
 
+
             {/* Create Thread Button */}
-            <div className='flex md:w-[50%] xl:w-[30%] justify-end   items-center gap-2'>
+            <div className='flex md:w-[100%] xl:w-[40%] justify-end items-center gap-2'>
+              <div className='w-[40px] h-[40px] flex items-center justify-center rounded-[100%] bg-viewmoreButtonColor '>
+                <Image
+                  src={filterbar}
+                  alt='menu'
+                  width={25}
+                  heigh={25}
+                />
+              </div>
               <button
                 onClick={toggleDropdown}
                 className='button-background-color rounded-[100px] md:justify-center py-4 px-4 sm:py-5 sm:px-8 flex md:items-center gap-3'
