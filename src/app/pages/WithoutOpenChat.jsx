@@ -9,6 +9,11 @@ import attach from "../../../public/attachment.svg"
 import OpenChat from './OpenChat'
 
 const WithoutOpenChat = ({ selectedUser, userList }) => {
+  const [reportPopup, setReportPopup] = useState(false)
+
+  const toggleReportPopUp = () => {
+    setReportPopup((prev) => !prev)
+  }
   const [users, setSelectedUser] = useState(null)
   const [showChat, setShowChat] = useState(false)
 
@@ -100,7 +105,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
             ) : (
               <div className='pb-[20px] flex-1'>
                 <div className='flex p-2 justify-end h-[61px]'>
-                  <Image src={report} alt='report' width={42} height={42} className='cursor-pointer' />
+                  <Image src={report} onClick={toggleReportPopUp} alt='report' width={42} height={42} className='cursor-pointer' />
                 </div>
                 <div className='flex justify-center chatbox-background-color dark:bg-primaryColor m-3 flex-col items-center h-[585px]'>
                   <Image src={chatpic} alt='empty chat pic' width={320} height={320} />
@@ -108,7 +113,63 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                     You haven't opened any message yet, please select a message to start conversation.
                   </p>
                 </div>
+                {reportPopup && (
+                  <div
+                    // ref={dropdownRef}
+                    className="absolute top-[30%] right-[10%]  flex flex-col gap-[10px] dark:bg-primaryColor card-background-color p-6 rounded-[20px] shadow-2xl w-[280px] sm:w-[520px] z-50"
+                  >
+                    {/* Title */}
+                    <h1 className="text-[20px] sm:text-[24px] font-semibold montserrat-primary-font text-primaryColor dark:text-backgroundTextColor">
+                      Report
+                    </h1>
 
+                    {/* Info Text */}
+                    <h1 className="text-[20px] sm:text-[24px] font-semibold montserrat-primary-font text-primaryColor dark:text-backgroundTextColor">
+                      Why are you reporting this post?
+                    </h1>
+                    <p className="text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color">
+                      If someone is in immediate danger, get help before reporting to Forum PakPassion. Don't wait.
+                    </p>
+
+                    {/* Checkboxes */}
+                    {[
+                      'Problem involving someone under 18',
+                      'Bullying, harassment or abuse',
+                      'Suicide or self-harm',
+                      'Violent, hateful or disturbing content',
+                      'Selling or promoting restricted items',
+                      'Adult content',
+                      'Scam, fraud or false information',
+                      'Intellectual property',
+                      "I don't want to see this",
+                      'Others'
+                    ].map((label, idx) => (
+                      <label
+                        key={idx}
+                        className="flex items-center gap-3 text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color"
+                      >
+                        <input type="checkbox" className="w-5 h-5 dark:bg-primaryColor" />
+                        {label}
+                      </label>
+                    ))}
+
+                    {/* Description Textarea */}
+                    <div className="relative w-full">
+                      <textarea
+                        placeholder="Describe your concern (optional)"
+                        rows="3"
+                        className="w-full border-1 border-color dark:bg-primaryColor outline-none p-4 rounded-[20px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color resize-none"
+                      ></textarea>
+                    </div>
+
+                    {/* Send Report Button */}
+                    <div className="flex justify-end">
+                      <button className="button-background-color text-white py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
+                        Send Report
+                      </button>
+                    </div>
+                  </div>
+                )}
                 <div className='w-full dark:bg-viewmoreButtonColor/30 flex flex-row items-stretch md:items-center justify-between gap-3 p-1 rounded-md'>
                   <div className='flex items-center gap-2 w-[100%]'>
                     <Image

@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import Image from 'next/image'
 import report from "../../../public/report.svg"
 import search from "../../../public/search.svg"
@@ -7,6 +8,7 @@ import windowpic from "../../../public/windowpic.svg"
 import attach from "../../../public/attachment.svg"
 
 const EmptyChat = () => {
+
   return (
     <>
       <div className='max-w-[82%] my-[50px] mx-auto'>
@@ -49,8 +51,9 @@ const EmptyChat = () => {
             </div>
           </div>
 
+
           <div className=' pb-[20px] flex-3'>
-            <div className='flex p-2 justify-end  h-[61px]'>
+            <div className='flex  p-2 justify-end  h-[61px]'>
               <Image src={report} alt='search icon' width={42} height={42} className='cursor-pointer' />
             </div>
             <div className='flex justify-center chatbox-background-color m-3 flex-col items-center h-[585px]'>

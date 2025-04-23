@@ -70,7 +70,7 @@ const Navbar = () => {
   }
   return (
     <>
-      <div className='relative navbar-background-color p-3 overflow-hidden'>
+      <div className='relative navbar-background-color p-3 overflow-hidden z-50'>
         <Image
           src={navImage}
           alt='navbar background'
@@ -154,7 +154,7 @@ const Navbar = () => {
 
 
         {menuOpen && (
-          <div className='xl:hidden z-50 mt-4 flex items-center flex-col gap-4'>
+          <div className='xl:hidden z-50 mt-4 flex items-center flex-col gap-4 z-50'>
             {navlinks.map((item, index) => (
               <Link
                 href={item.path}
