@@ -79,7 +79,7 @@ const Sports = () => {
         <div className='w-full lg:flex-4 p-3'>
           {/* Header */}
           <div
-            className={`w-full flex justify-between items-center p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-registerTextColor'
+            className={`w-full flex justify-between items-center p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-buttonBackgroundColor'
               }`}
           >
             <h1
@@ -117,7 +117,7 @@ const Sports = () => {
                       <div className='flex flex-col'>
                         <div className='flex items-center justify-between'>
                           <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font '>{item.title}</h1>
-                          <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1>
+                          {/* <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1> */}
                         </div>
                         <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>{item.description}</p>
 
@@ -151,7 +151,7 @@ const Sports = () => {
           <OffTopics />
 
           <div
-            className={`w-full flex justify-between items-center p-4 mt-[20px] rounded-[15px] ${isPPTeam ? 'bg-white' : 'bg-registerTextColor'
+            className={`w-full flex justify-between items-center p-4 mt-[20px] rounded-[15px] ${isPPTeam ? 'bg-white' : 'bg-buttonBackgroundColor'
               }`}
           >
             <h1
@@ -206,7 +206,7 @@ const Sports = () => {
                   transition={{ duration: 0.4 }}
                 >
                   {staffOnline.map((member, index) => (
-                    <div key={index} className='flex items-center gap-2 mt-3'>
+                    <div key={index} className='flex items-center gap-2 mt-3 border-b pb-4 border-searchBorderColor   dark:border-searchBorderColor/20'>
                       <div className='w-[45px] h-[34px]'>
                         <Image src={member.userImage} alt='user' height={34} width={45} className='rounded-full object-cover' />
                       </div>
@@ -252,7 +252,7 @@ const Sports = () => {
                   transition={{ duration: 0.4 }}
                 >
                   {staffOnline.map((member, index) => (
-                    <div key={index} className='flex items-center gap-2 mt-3'>
+                    <div key={index} className='flex items-center gap-2 mt-3 border-b pb-4 border-searchBorderColor dark:border-searchBorderColor/20'>
                       <div className='w-[45px] h-[34px]'>
                         <Image src={member.userImage} alt='user' height={45} width={45} className='object-cover' />
                       </div>

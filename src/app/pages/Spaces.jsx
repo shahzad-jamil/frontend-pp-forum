@@ -3,7 +3,10 @@ import post1 from "../../../public/image 115.svg";
 import post2 from "../../../public/image 115 (2).svg";
 import plus from "../../../public/icons8_Plus 1.svg";
 import post4 from "../../../public/image 115 (3).svg"
-import viewMore from "../../../public/icons8_expand_arrow 1.svg";
+import viewMore from "../../../public/expandLightMode.svg";
+import darkModeExpand from "../../../public/icons8_expand_arrow 1 (1).svg";
+
+
 import Image from 'next/image';
 
 const Spaces = () => {
@@ -84,7 +87,8 @@ const Spaces = () => {
           <div className='flex justify-center my-[10px] md:my-[20px]'>
             <button className='flex items-center gap-2 viewmore-button-color dark:bg-viewmoreButtonColor/10 dark:text-backgroundTextColor text-primaryColor font-[600] font-openSans px-6 py-3 rounded-full text-sm'>
               <span>View More</span>
-              <Image src={viewMore} alt='expand' width={14} height={14} className='fill-primaryColor' />
+              <Image src={viewMore} alt='expand' width={14} height={14} className='fill-primaryColor block dark:hidden' />
+              <Image src={darkModeExpand} alt='expand' width={14} height={14} className='fill-primaryColor hidden dark:block' />
             </button>
           </div>
         </div>

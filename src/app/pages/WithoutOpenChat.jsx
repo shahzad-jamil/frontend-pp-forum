@@ -30,17 +30,17 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
 
   return (
     <div className='max-w-[90%] xl:max-w-[82%] my-[20px] mx-auto'>
-      <div className='w-full'>
+      {/* <div className='w-full'>
         <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor text-center pb-[10px] md:text-[36px] primary-text-color dark:backgroundTextColor font-semibold montserrat-primary-font'>
           Direct Messages
         </h1>
-      </div>
+      </div> */}
 
       {/* Wrapper for layout */}
-      <div className='w-full  h-full flex flex-col md:flex-row gap-2 rounded-[20px]'>
+      <div className='w-full  h-full flex flex-col  md:flex-row gap-2 rounded-[20px]'>
 
         {/* Users List */}
-        <div className={`flex-col md:p-4 gap-2 md:flex ${showChat ? 'hidden' : 'flex'}`}>
+        <div className={`flex-col  h-[100%]  md:p-4 gap-2 md:flex ${showChat ? 'hidden' : 'flex'}`}>
           <div className='flex flex-col gap-2  justify-center'>
             <h1 className='text-[20px] sm:text-[24px] primary-text-color dark:text-backgroundTextColor font-semibold montserrat-primary-font'>
               Messages

@@ -22,17 +22,34 @@ import darkModeOff from "../../../public/darkmodeoff.svg"
 const Navbar = () => {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
-  const [theme, setTheme] = useState('light'); // ✅ now always called
+  const [theme, setTheme] = useState('light');
 
   const hideNavbarPages = ['/login', '/register', '/forgotpassword', '/newpassword', '/verifycode']
 
+
+
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
+
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme);
+      if (storedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     }
-  }, [theme])
+  }, []);
+
+  useEffect(() => {
+    // Whenever theme changes, update class and localStorage
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
 
   const toggleTheme = () => {

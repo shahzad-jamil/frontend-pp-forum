@@ -6,7 +6,7 @@ import LoginImage from "../../../public/login.svg"
 import Link from 'next/link'
 import googleIcon from "../../../public/icons8_google 1.svg"
 import facebookIcon from "../../../public/icons8_facebook_circled 1.svg"
-import twitterIcon from "../../../public/icons8_X 1.svg"
+import appleIcon from "../../../public//icons8_Apple_Inc 1.svg"
 import eye from "../../../public/icons8_hide 1.svg"
 import eyeSlash from "../../../public/viewEye.svg"
 import { useRouter } from 'next/navigation'
@@ -36,7 +36,7 @@ const page = () => {
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto items-center overflow-x-hidden">
         <div className='w-[100%] order-2 md:order-1 mb-[40px]'>
           <div className='w-[100%] md:w-[80%] h-[100%] mx-auto flex flex-col justify-center'>
-            <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font '>Login</h1>
+            <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] dark:text-backgroundTextColor montserrat-primary-font '>Login</h1>
             <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-smallweigh-font'>
               Login to access your PakPassion account
             </p>
@@ -44,16 +44,16 @@ const page = () => {
               <div className="relative mt-[30px] w-full ">
                 <label
                   htmlFor="email"
-                  className="absolute text-[12px] md:text-[14px] -top-3 left-5 px-2 bg-white primary-text-color font-semibold montserrat-primary-font"
+                  className="absolute text-[12px] md:text-[14px] -top-3 left-5 px-2 bg-white primary-text-color font-semibold montserrat-primary-font dark:bg-primaryColor dark:text-backgroundTextColor"
                 >
                   Email
                 </label>
-                <input type="text" placeholder='Enter Your Email' className='w-full montserrat-secondary-font border-1 border-color secondary-text-color outline-none p-6 md:p-7 rounded-[100px] text-[12px] md:text-[14px]' />
+                <input type="text" placeholder='Enter Your Email' className='w-full dark:bg-primaryColor montserrat-secondary-font border-1 border-color secondary-text-color outline-none p-6 md:p-7 rounded-[100px] text-[12px] md:text-[14px]' />
               </div>
               <div className="relative mt-[30px] w-full ">
                 <label
                   htmlFor="password"
-                  className="absolute text-[12px] md:text-[14px] -top-3 left-5 px-2 bg-white primary-text-color font-semibold montserrat-primary-font"
+                  className="absolute text-[12px] md:text-[14px] dark:bg-primaryColor dark:text-backgroundTextColor -top-3 left-5 px-2 bg-white primary-text-color font-semibold montserrat-primary-font"
                 >
                   Password
                 </label>
@@ -61,7 +61,7 @@ const page = () => {
                   <input
                     type={passwordVisible ? 'text' : 'password'}
                     placeholder='Enter Your Password'
-                    className='w-full montserrat-secondary-font secondary-text-color outline-none p-6 md:p-7 rounded-[100px] text-[12px] md:text-[14px]'
+                    className='w-full montserrat-secondary-font dark:bg-primaryColor secondary-text-color outline-none p-6 md:p-7 rounded-[100px] text-[12px] md:text-[14px]'
                   />
                   <Image
                     src={passwordVisible ? eyeSlash : eye}
@@ -75,7 +75,7 @@ const page = () => {
               </div>
               <div className="flex mt-[20px] items-center justify-between mb-4">
                 <label className="flex items-center space-x-2 text-[14px]">
-                  <input type="checkbox" className="form-checkbox cursor-pointer montserrat-secondary-font w-6 h-6 accent-blue-500" />
+                  <input type="checkbox" className="form-checkbox cursor-pointer montserrat-secondary-font w-6 h-6 accent-backgroundColor" />
                   <span className='text-[12px] md:text-[14px] secondary-text-color montserrat-secondary-font'>Remember me</span>
                 </label>
 
@@ -125,7 +125,7 @@ const page = () => {
               </div>
               <div className='flex items-center border-color w-[100%] p-4 cursor-pointer rounded-[100px] justify-center'>
                 <Image
-                  src={twitterIcon}
+                  src={appleIcon}
                   height={34}
                   width={34}
                   alt='twitter'

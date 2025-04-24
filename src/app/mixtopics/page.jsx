@@ -8,12 +8,15 @@ import pin from "../../../public/pin.svg"
 import postvideo from "../../../public/image 115 (1).svg"
 import question from '../../../public/icons8_questions 1.svg';
 import arrow from "../../../public/icons8_expand_arrow black.svg"
-import search from '../../../public/search.svg';
+import search from '../../../public/green search icon.svg';
 import close from "../../../public/icons8_multiply 2.svg"
 import creat from "../../../public/icons8_create 2.svg"
 import dots from "../../../public/icons8_menu_vertical 1.svg"
 import poll from '../../../public/icons8_poll 1.svg';
 import filterbar from "../../../public/icons8_index 1.svg"
+import checkbox from "../../../public/checkbox.svg"
+import uncheckbox from "../../../public/uncheckbox.svg"
+
 
 import CreateComponent from '../components/CreateComponent';
 import { AnimatePresence, motion } from 'framer-motion'
@@ -32,6 +35,7 @@ import Link from 'next/link';
 const page = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [filterPopUp, setFilterPopup] = useState(false);
+  const [selected, setSelected] = useState(null);
 
   const dropdownRef = useRef(null); // Ref to detect outside clicks
 
@@ -136,7 +140,7 @@ const page = () => {
           <div
             className=' md:px-6 md:px-0 w-[100%] flex flex-col md:flex-row  gap-[10px] justify-center items-center mt-[20px] relative'
             ref={dropdownRef} >
-            <div className='flex  w-[100%] md:w-[90%] border-searchBorderColor/10 border md:p-4 mx-auto justify-between items-center rounded-[100px]'>
+            <div className='flex  w-[100%] md:w-[90%] border-searchBorderColor dark:border-searchBorderColor/20 border md:p-4 mx-auto justify-between items-center rounded-[100px]'>
               <div className='w-[100%] flex gap-1 md:gap-3 items-center '>
                 <Image
                   src={search}
@@ -195,7 +199,7 @@ const page = () => {
 
                 {/* Checkbox */}
                 <label className="flex items-center gap-2 text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color">
-                  <input type="checkbox" className="w-6 h-6  dark:bg-primaryColor " />
+                  <input type="checkbox" className="w-6 h-6  dark:bg-primaryColor  accent-registerTextColor" />
                   Featured threads Only
                 </label>
 
@@ -314,7 +318,7 @@ const page = () => {
           {/* left content */}
 
           {/* Sports Section */}
-          <div className='w-[100%] md:w-[30%] mx-auto md:mx-0 mt-10'>
+          <div className='w-[100%] md:w-[30%] mx-auto md:mx-0 mt-10 '>
             {/* w-[30%] */}
             {/* --- Sports --- */}
             <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-registerTextColor'}`}>
@@ -397,7 +401,7 @@ const page = () => {
               </button>
             </div>
 
-            {!isPPTeam && (
+            {/* {!isPPTeam && (
               <div className='px-5 mt-2'>
                 <ul className="list-none">
                   <li className="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-3 before:h-3 before:bg-lime-500 before:rounded-full secondary-text-color montserrat-secondary-font">
@@ -408,7 +412,7 @@ const page = () => {
                   </li>
                 </ul>
               </div>
-            )}
+            )} */}
           </div>
 
 
@@ -762,7 +766,7 @@ const page = () => {
             <div className='w-full flex-col p-5 mt-5'>
               {/* Poll button and arrow section */}
               <div className='w-full flex justify-between items-center'>
-                <div className=' sm:w-[30%] md:w-[50%]'>
+                <div className=' sm:w-[30%] md:w-[45%] lg:w-[20%] '>
                   <button
                     className="text-[12px] sm:text-[16px] w-full rounded-[100px] py-4 px-6 sm:py-5 sm:px-8 flex items-center gap-3 bg-pollButtonColor"
                   >
@@ -805,21 +809,47 @@ const page = () => {
               </div>
 
               {/* Poll answers */}
-              <div className="bg-[#3F94051A] border border-green-500 px-4 py-2 rounded-lg mb-2 cursor-pointer flex items-center justify-between mt-[10px]">
-                <label className='text-[14px] sm:text-[16px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>
+              <div
+                className={`bg-[#3F94051A] border px-4 py-2 rounded-lg mb-2 cursor-pointer flex items-center justify-between mt-[10px] ${selected === "yes" ? "border-green-500 bg-backgroundColor/20" : "border-none bg-secondaryColor/20"
+                  }`}
+                onClick={() => setSelected("yes")}
+              >
+                <label
+                  className={`text-[14px] sm:text-[16px] font-bold montserrat-primary-font ${selected === "yes"
+                    ? ""
+                    : "text-black dark:text-backgroundTextColor"
+                    }`}
+                >
                   Yes
                 </label>
-                <input type="radio" name="poll" className="accent-green-500 p-2 cursor-pointer" />
+                <Image
+                  src={selected === "yes" ? checkbox : uncheckbox}
+                  alt="checkbox"
+                  width={20}
+                  height={20}
+                />
               </div>
 
-              <div className="border bg-[#3F94051A] px-4 py-2 rounded-lg cursor-pointer flex justify-between items-center">
-                <label className='text-[14px] sm:text-[16px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>
+              <div
+                className={`bg-[#3F94051A] border px-4 py-2 rounded-lg cursor-pointer flex justify-between items-center ${selected === "no" ? "border-green-500 bg-backgroundColor/20" : "border-none bg-secondaryColor/20"
+                  }`}
+                onClick={() => setSelected("no")}
+              >
+                <label
+                  className={`text-[14px] sm:text-[16px] font-bold montserrat-primary-font ${selected === "no"
+                    ? ""
+                    : "text-black dark:text-backgroundTextColor"
+                    }`}
+                >
                   No
                 </label>
-                <input type="radio" name="poll" className="accent-green-500 p-2 cursor-pointer" />
-              </div>
-
-              {/* Votes and action buttons */}
+                <Image
+                  src={selected === "no" ? checkbox : uncheckbox}
+                  alt="checkbox"
+                  width={20}
+                  height={20}
+                />
+              </div>              {/* Votes and action buttons */}
               <div className="flex justify-between items-center text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-bolder-font mt-4">
                 <span>0 Votes - 24h left</span>
                 <div className="flex gap-2">

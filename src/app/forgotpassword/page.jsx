@@ -25,7 +25,7 @@ const page = () => {
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
         <div className='w-[100%] order-2 md:order-1'>
           <div className='w-[100%] md:w-[80%] sm:h-[100vh] mx-auto flex flex-col justify-center'>
-            <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font '>Forget Password?</h1>
+            <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font dark:text-backgroundTextColor '>Forget Password?</h1>
             <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-secondary-font'>
               Registered email is required to reset your password.
             </p>
@@ -33,16 +33,16 @@ const page = () => {
               <div className="relative mt-[30px] w-full border-color rounded-[100px] ">
                 <label
                   htmlFor="email"
-                  className="absolute text-[12px] md:text-[14px] -top-3 left-5 px-2 bg-white primary-text-color font-semibold montserrat-primary-font"
+                  className="absolute text-[12px] md:text-[14px] -top-3 left-5 px-2 bg-white dark:bg-primaryColor dark:text-backgroundTextColor primary-text-color font-semibold montserrat-primary-font"
                 >
                   Email
                 </label>
-                <input type="text" placeholder='user@gmail.com' className='w-full montserrat-secondary-font border-1 outline-none p-7 rounded-[100px] text-[14px] secondary-text-color' />
+                <input type="text" placeholder='user@gmail.com' className='w-full dark:bg-primaryColor montserrat-secondary-font border-1 outline-none p-7 rounded-[100px] text-[14px] secondary-text-color' />
               </div>
               <div className="mt-[20px] mb-4">
                 <div className='flex justify-between items-center montserrat-secondary-font'>
                   <label className="flex items-center space-x-2 text-[14px]">
-                    <input type="checkbox" className="form-checkbox w-6 h-6 cursor-pointer secondary-text-color accent-blue-500" />
+                    <input type="checkbox" className="form-checkbox  w-6 h-6 cursor-pointer secondary-text-color accent-backgroundColor" />
                     <span className='text-[12px] md:text-[14px] secondary-text-color montserrat-secondary-font'>I am human</span>
                   </label>
                   <Image
@@ -57,10 +57,13 @@ const page = () => {
                   Reset
                 </button>
               </div>
+              <div className='flex justify-center mt-[-20px]'>
+                <span className='text-[12px] md:text-[14px] secondary-text-color montserrat-secondary-font'>Need help?</span>
+              </div>
             </form>
           </div>
         </div>
-        <div className="order-1 md:order-2 flex flex-col lg:flex-row items-center justify-center overflow-y-hidden  lg:fixed right-[6%] lg:top-[8%] xl:top-[12%] ">
+        <div className="order-1 md:order-2 dark:bg-primaryColor flex flex-col lg:flex-row items-center justify-center overflow-y-hidden  lg:fixed right-[6%] lg:top-[8%] xl:top-[12%] ">
           <Image
             src={forgotImage}
             alt='logo image'
