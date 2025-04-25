@@ -44,13 +44,13 @@ const page = () => {
                 <label htmlFor="username" className="absolute text-[12px] dark:bg-primaryColor dark:text-backgroundTextColor md:text-[14px] -top-3 left-5 px-2 bg-white primary-text-color font-semibold montserrat-primary-font">
                   User Name
                 </label>
-                <input type="text" id="username" placeholder='username' className="w-full montserrat-secondary-font secondary-text-color border-1 outline-none p-6 md:p-7 rounded-[100px] text-[12px] md:text-[14px] dark:bg-primaryColor " />
+                <input type="text" id="username" placeholder='username' className="w-full montserrat-secondary-font secondary-text-color border-1 outline-none p-5 md:p-5 rounded-[100px] text-[12px] md:text-[14px] dark:bg-primaryColor " />
               </div>
               <div className="relative mt-[30px] w-full border-color rounded-[100px]">
                 <label htmlFor="email" className="absolute text-[12px] dark:bg-primaryColor dark:text-backgroundTextColor md:text-[14px] -top-3 left-5 px-2 bg-white primary-text-color font-semibold montserrat-primary-font">
                   Email
                 </label>
-                <input type="text" placeholder='user@gmail.com' className='w-full montserrat-secondary-font secondary-text-color dark:bg-primaryColor  border-1 outline-none p-6 md:p-7 rounded-[100px] text-[12px] md:text-[14px]' />
+                <input type="text" placeholder='user@gmail.com' className='w-full montserrat-secondary-font secondary-text-color dark:bg-primaryColor  border-1 outline-none p-5 md:p-5 rounded-[100px] text-[12px] md:text-[14px]' />
               </div>
               <div className="relative mt-[30px] w-full">
                 <label htmlFor="password" className="absolute text-[12px] md:text-[14px] dark:bg-primaryColor dark:text-backgroundTextColor -top-3 left-5 px-2 bg-white primary-text-color font-semibold montserrat-primary-font">
@@ -60,7 +60,7 @@ const page = () => {
                   <input
                     type={showPassword ? 'text' : 'password'}
                     placeholder='Enter Your Password'
-                    className='w-full montserrat-secondary-font dark:bg-primaryColor  secondary-text-color outline-none p-6 md:p-7 rounded-[100px] text-[12px] md:text-[14px]'
+                    className='w-full montserrat-secondary-font dark:bg-primaryColor  secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[12px] md:text-[14px]'
                   />
                   <Image
                     src={showPassword ? viewEye : eye}
@@ -88,7 +88,7 @@ const page = () => {
                 </div>
               </div>
               <div>
-                <button onClick={handleNavigate} className='w-[100%] background-color p-6 md:p-7 rounded-[100px] button-text-color text-[12px] md:text-[14px] font-openSans
+                <button onClick={handleNavigate} className='w-[100%] bg-backgroundColor text-backgroundTextColor hover:bg-registerTextColor p-5 md:p-5 rounded-[100px]  text-[12px] md:text-[14px] font-openSans
                 font-[600] cursor-pointer my-[30px]'>
                   Register
                 </button>
@@ -110,13 +110,13 @@ const page = () => {
               </div>
             </form>
             <div className='w-[100%] flex gap-[30px] mt-[10px]'>
-              <div className='flex items-center border-color w-[100%] cursor-pointer p-4 rounded-[100px] justify-center'>
+              <div className='flex items-center border-color dark:hover:bg-secondaryColor/30 w-[100%] hover:bg-primaryColor/20 cursor-pointer p-3 rounded-[100px] justify-center'>
                 <Image src={googleIcon} height={34} width={34} />
               </div>
-              <div className='flex items-center border-color w-[100%] p-4 cursor-pointer rounded-[100px] justify-center'>
+              <div className='flex items-center border-color w-[100%] dark:hover:bg-secondaryColor/30 hover:bg-primaryColor/20 p-3 cursor-pointer rounded-[100px] justify-center'>
                 <Image src={facebookIcon} height={34} width={34} />
               </div>
-              <div className='flex items-center border-color w-[100%] p-4 cursor-pointer rounded-[100px] justify-center'>
+              <div className='flex items-center border-color w-[100%] dark:hover:bg-secondaryColor/30 hover:bg-primaryColor/20 p-3 cursor-pointer rounded-[100px] justify-center'>
                 <Image src={appleIcon} height={34} width={34} />
               </div>
             </div>

@@ -92,7 +92,12 @@ const page = () => {
       color: 'bg-questionButtonColor',
     },
   ];
-
+  const hoverColors = {
+    'bg-discussionButtonColor': 'hover:bg-discussionButtonColor/30',
+    'bg-articleButtonColor': 'hover:bg-articleButtonColor/30',
+    'bg-pollButtonColor': 'hover:bg-pollButtonColor/30',
+    'bg-questionButtonColor': 'hover:bg-questionButtonColor/30',
+  };
 
 
   // const Topics = [
@@ -171,7 +176,7 @@ const page = () => {
               </div>
               <button
                 onClick={toggleDropdown}
-                className='button-background-color rounded-[100px] md:justify-center py-4 px-4 sm:py-5 sm:px-8 flex md:items-center gap-3'
+                className='button-background-color hover:bg-backgroundColor rounded-[100px] md:justify-center py-4 px-4 sm:py-5 sm:px-8 flex md:items-center gap-3'
               >
                 <Image src={create} alt='post 1' width={20} height={20} />
                 <h1 className=' text-[12px] sm:text-[14px] background-text-color font-semibold montserrat-secondary-font'>
@@ -181,7 +186,7 @@ const page = () => {
 
               <button
                 onClick={toggleFilterPopUp}
-                className='bg-primaryColor dark:bg-buttonBackgroundColor rounded-[100px] md:justify-center py-4 px-4 sm:py-5 sm:px-8 flex md:items-center gap-3'
+                className='bg-primaryColor dark:bg-buttonBackgroundColor hover:bg-primaryColor/90 rounded-[100px] md:justify-center py-4 px-4 sm:py-5 sm:px-8 flex md:items-center gap-3 '
               >
                 {/* <Image src={create} alt='post 1' width={20} height={20} /> */}
                 <h1 className='text-[12px] sm:text-[14px] background-text-color font-semibold montserrat-secondary-font'>
@@ -291,7 +296,7 @@ const page = () => {
                 {actions.map((action, index) => (
                   <Link href={action.path} key={index}>
                     <button
-                      className={` text-[16px] w-full rounded-[100px] py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3 ${action.color}`}
+                      className={`text-[16px] w-full rounded-[100px] py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3 ${action.color} ${hoverColors[action.color]}`}
                     >
                       <Image
                         src={action.image}
@@ -313,7 +318,7 @@ const page = () => {
       {/* create button */}
       <div className='w-fulL md:max-w-[80%] mx-auto h-auto flex lg:flex-col items-center'>
 
-        <div className='w-[100%] p-3 md:flex-row h-full flex-col  flex gap-[20px] '>
+        <div className='w-[100%] p-3 md:flex-row h-full flex-col  flex gap-[20px]  '>
           {/* md:flex-row */}
           {/* left content */}
 
@@ -321,7 +326,7 @@ const page = () => {
           <div className='w-[100%] md:w-[30%] mx-auto md:mx-0 mt-10 '>
             {/* w-[30%] */}
             {/* --- Sports --- */}
-            <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-registerTextColor'}`}>
+            <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-registerTextColor hover:bg-backgroundColor'}`}>
               <h1 className={`text-[20px] px-3 montserrat-primary-font font-semibold ${isMinimized ? 'text-black' : 'background-text-color'}`}>
                 Sports
               </h1>
@@ -332,7 +337,7 @@ const page = () => {
                   alt="toggle"
                   height={20}
                   width={22}
-                  className={`cursor-pointer ${isMinimized ? 'text-black w-[12]' : 'background-text-color'
+                  className={`cursor-pointer ${isMinimized ? 'text-black h-[22px]' : 'background-text-color'
                     }`}
                 />
               </button>
@@ -355,7 +360,7 @@ const page = () => {
             )}
 
             {/* --- Off Topic --- */}
-            <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isOffTopic ? 'bg-white' : 'bg-registerTextColor'}`}>
+            <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isOffTopic ? 'bg-white' : 'bg-registerTextColor hover:bg-backgroundColor'}`}>
               <h1 className={`text-[20px] px-3 montserrat-primary-font font-semibold ${isOffTopic ? 'text-black' : 'background-text-color'}`}>
                 Off Topic
               </h1>
@@ -365,7 +370,7 @@ const page = () => {
                   alt="toggle"
                   height={20}
                   width={22}
-                  className={`cursor-pointer ${isOffTopic ? 'text-black w-[12]' : 'background-text-color'
+                  className={`cursor-pointer ${isOffTopic ? 'text-black h-[22px]' : 'background-text-color'
                     }`}
                 />
               </button>
@@ -385,8 +390,8 @@ const page = () => {
             )}
 
             {/* --- The PP Team --- */}
-            <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isPPTeam ? 'bg-white' : 'bg-registerTextColor'}`}>
-              <h1 className={`text-[20px] px-3 montserrat-primary-font font-semibold ${isPPTeam ? 'text-black' : 'background-text-color'}`}>
+            <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isPPTeam ? 'bg-white' : 'bg-registerTextColor hover:bg-backgroundColor'}`}>
+              <h1 className={`text-[20px] px-3 montserrat-primary-font font-semibold ${isPPTeam ? 'text-black' : 'background-text-color '}`}>
                 The PP Team
               </h1>
               <button onClick={() => setIsPPTeam(!isPPTeam)}>
@@ -395,7 +400,7 @@ const page = () => {
                   alt="toggle"
                   height={20}
                   width={22}
-                  className={`cursor-pointer ${isPPTeam ? 'text-black w-[12]' : 'background-text-color'
+                  className={`cursor-pointer ${isPPTeam ? 'text-black h-[22px]' : 'background-text-color'
                     }`}
                 />
               </button>
@@ -651,7 +656,7 @@ const page = () => {
 
             <div className='w-full flex-col p-5 mt-5'>
               <div className='w-full flex justify-between items-center '>
-                <div className=' sm:w-[30%] md:w-[50%] xl:w-[30%]'>
+                <div className=' sm:w-[30%] md:w-[50%] lg:w-[37%] xl:w-[25%]'>
                   <button
                     className="text-[12px] sm:text-[14px] w-full rounded-[100px] py-4 px-5 sm:py-5 sm:px-8 flex items-center gap-3 bg-questionButtonColor"
                   >
@@ -766,7 +771,7 @@ const page = () => {
             <div className='w-full flex-col p-5 mt-5'>
               {/* Poll button and arrow section */}
               <div className='w-full flex justify-between items-center'>
-                <div className=' sm:w-[30%] md:w-[45%] lg:w-[20%] '>
+                <div className=' sm:w-[30%] md:w-[45%] lg:w-[30%] xl:w-[22%] '>
                   <button
                     className="text-[12px] sm:text-[16px] w-full rounded-[100px] py-4 px-6 sm:py-5 sm:px-8 flex items-center gap-3 bg-pollButtonColor"
                   >

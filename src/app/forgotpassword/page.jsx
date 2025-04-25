@@ -5,12 +5,17 @@ import Logo from "../../../public/logo.svg"
 import forgotImage from "../../../public/forgotpassword.svg"
 import Link from 'next/link'
 import captchaIcon from "../../../public/captcha.svg 1.svg"
-
+import { useRouter } from 'next/navigation'
 
 
 
 
 const page = () => {
+  const router = useRouter()
+  const handelNavigate = (e) => {
+    e.preventDefault()
+    router.push("/verifycode")
+  }
   return (
     <>
 
@@ -24,7 +29,7 @@ const page = () => {
       </div >
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
         <div className='w-[100%] order-2 md:order-1'>
-          <div className='w-[100%] md:w-[80%] sm:h-[100vh] mx-auto flex flex-col justify-center'>
+          <div className='w-[100%] md:w-[80%] sm:h-[70vh] mx-auto flex flex-col justify-center'>
             <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font dark:text-backgroundTextColor '>Forget Password?</h1>
             <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-secondary-font'>
               Registered email is required to reset your password.
@@ -37,7 +42,7 @@ const page = () => {
                 >
                   Email
                 </label>
-                <input type="text" placeholder='user@gmail.com' className='w-full dark:bg-primaryColor montserrat-secondary-font border-1 outline-none p-7 rounded-[100px] text-[14px] secondary-text-color' />
+                <input type="text" placeholder='user@gmail.com' className='w-full dark:bg-primaryColor montserrat-secondary-font border-1 outline-none p-5 md:p-5 rounded-[100px] text-[14px] secondary-text-color' />
               </div>
               <div className="mt-[20px] mb-4">
                 <div className='flex justify-between items-center montserrat-secondary-font'>
@@ -53,7 +58,7 @@ const page = () => {
                 </div>
               </div>
               <div>
-                <button className='w-[100%] background-color p-6 md:p-7 rounded-[100px] button-text-color text-[12px] md:text-[14px] font-openSans font-[600] cursor-pointer my-[30px]'>
+                <button className='w-[100%] bg-backgroundColor text-backgroundTextColor hover:bg-registerTextColor p-5 md:p-5 rounded-[100px]  text-[12px] md:text-[14px] font-openSans font-[600] cursor-pointer my-[30px]' onClick={handelNavigate}>
                   Reset
                 </button>
               </div>

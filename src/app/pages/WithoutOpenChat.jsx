@@ -5,7 +5,8 @@ import report from "../../../public/report.svg"
 import search from "../../../public/search.svg"
 import message from "../../../public/message.svg"
 import chatpic from "../../../public/chatwindow.svg"
-import attach from "../../../public/attachment.svg"
+import { ReactComponent as Attach } from "../../../public/attachment.svg"
+import send from "../../../public/icons8_paper_plane 1.svg"
 import OpenChat from './OpenChat'
 
 const WithoutOpenChat = ({ selectedUser, userList }) => {
@@ -172,13 +173,14 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                 )}
                 <div className='w-full dark:bg-viewmoreButtonColor/30 flex flex-row items-stretch md:items-center justify-between gap-3 p-1 rounded-md'>
                   <div className='flex items-center gap-2 w-[100%]'>
-                    <Image
+                    {/* <Image
                       src={attach}
                       alt='attach'
                       width={32}
                       height={32}
-                      className='cursor-pointer shrink-0'
-                    />
+                      className='cursor-pointer shrink-0 fill-red-'
+                    /> */}
+                    <Attach className="text-red-500" />
                     <input
                       type='text'
                       placeholder='Type your message here...'
@@ -186,10 +188,17 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                     />
                   </div>
 
-                  <button className='button-background-color w-[15%] h-[40px] rounded-[10px] py-3 px-4 flex items-center justify-center '>
+                  <button className='button-background-color sm:w-[50%] md:w-[70%] lg:w-[35%] xl:w-[25%] 2xl:w-[22%] h-[40px] rounded-[100px] py-3 px-4 flex items-center justify-center '>
                     <h1 className='text-[11px] sm:text-[14px] cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
-                      Send
+                      Send Message
                     </h1>
+                    <Image
+                      src={send}
+                      alt='attach'
+                      width={18}
+                      height={18}
+                      className='cursor-pointer shrink-0'
+                    />
                   </button>
                 </div>
               </div>

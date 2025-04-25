@@ -16,7 +16,7 @@ import darkmaximize from "../../../public/icons8_expand_arrow black.svg"
 import { Input } from 'postcss'
 import Comments from '../components/Comments'
 import { useState, useRef, useEffect } from 'react';
-import maximize from "../../../public/icons8_expand_arrow 1.svg"
+import maximize from "../../../public/newArrowExpand.svg"
 import minimize from "../../../public/Vector.svg"
 import search from '../../../public/search.svg';
 import close from "../../../public/icons8_multiply 2.svg"
@@ -33,7 +33,7 @@ const page = () => {
 
       <div className='w-full md:w-[80%] mx-auto h-auto'>
 
-        <div className='flex mt-[10px] w-[100%] border-searchBorderColor/10 border p-4 mx-auto justify-between items-center rounded-[100px]'>
+        <div className='flex mt-[10px] w-[100%] border-searchBorderColor dark:border-searchBorderColor/20 border p-4 mx-auto justify-between items-center rounded-[100px]'>
           <div className='w-[100%] flex gap-3 items-center'>
             <Image
               src={search}
@@ -57,8 +57,8 @@ const page = () => {
           <div className='w-[100%] sm:h-[20%] md:w-[100%] lg:w-[30%] mx-auto md:mx-0 '>
             {/* w-[30%] */}
             {/* --- Sports --- */}
-            <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isSport ? 'bg-white' : 'background-color'}`}>
-              <h1 className={`text-[20px] px-3 montserrat-primary-font font-semibold ${isSport ? 'text-black' : 'background-text-color'}`}>
+            <div className="w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] bg-white">
+              <h1 className="text-[20px] px-3 montserrat-primary-font font-semibold text-primaryColor">
                 Sports
               </h1>
               <button onClick={() => setIsSport(!isSport)}>
@@ -67,7 +67,7 @@ const page = () => {
                   alt="toggle"
                   height={20}
                   width={22}
-                  className={`cursor-pointer ${isSport ? 'text-black w-[12]' : 'background-text-color'}`}
+                  className={`cursor-pointer ${isSport ? 'text-black h-[22px]' : 'text-black'}`}
                 />
               </button>
             </div>
@@ -89,8 +89,8 @@ const page = () => {
             )}
 
             {/* --- Off Topic --- */}
-            <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isOffTopic ? 'bg-white' : 'background-color'}`}>
-              <h1 className={`text-[20px] px-3 montserrat-primary-font font-semibold ${isOffTopic ? 'text-black' : 'background-text-color'}`}>
+            <div className="w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] bg-white">
+              <h1 className="text-[20px] px-3 montserrat-primary-font font-semibold text-primaryColor">
                 Off Topic
               </h1>
               <button onClick={() => setIsOffTopic(!isOffTopic)}>
@@ -99,7 +99,7 @@ const page = () => {
                   alt="toggle"
                   height={20}
                   width={22}
-                  className={`cursor-pointer ${isOffTopic ? 'text-black w-[12]' : 'background-text-color'}`}
+                  className={`cursor-pointer ${isOffTopic ? 'text-black h-[22px]' : 'background-text-color'}`}
                 />
               </button>
             </div>
@@ -118,8 +118,8 @@ const page = () => {
             )}
 
             {/* --- The PP Team --- */}
-            <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isMinimized ? 'bg-white' : 'background-color'}`}>
-              <h1 className={`text-[20px] px-3 montserrat-primary-font font-semibold ${isMinimized ? 'text-black' : 'background-text-color'}`}>
+            <div className={`w-full flex justify-between items-center p-2 mt-[20px] rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-white'}`}>
+              <h1 className={`text-[20px] px-3 montserrat-primary-font font-semibold text-primaryColor`}>
                 The PP Team
               </h1>
               <button onClick={() => setIsMinimized(!isMinimized)}>
@@ -128,11 +128,11 @@ const page = () => {
                   alt="toggle"
                   height={20}
                   width={22}
-                  className={`cursor-pointer ${isMinimized ? 'text-black w-[12]' : 'background-text-color'}`}
+                  className={`cursor-pointer ${isMinimized ? ' h-[22px]' : ''}`}
                 />
               </button>
             </div>
-
+            {/* 
             {!isMinimized && (
               <div className='px-5 mt-2'>
                 <ul className="list-none">
@@ -144,7 +144,7 @@ const page = () => {
                   </li>
                 </ul>
               </div>
-            )}
+            )} */}
           </div>
 
           <div className='flex-col justify-center w-full lg:w-[65%] mt-10'>

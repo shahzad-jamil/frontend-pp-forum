@@ -48,7 +48,7 @@ const page = () => {
                 >
                   Email
                 </label>
-                <input type="text" placeholder='Enter Your Email' className='w-full dark:bg-primaryColor montserrat-secondary-font border-1 border-color secondary-text-color outline-none p-6 md:p-7 rounded-[100px] text-[12px] md:text-[14px]' />
+                <input type="text" placeholder='Enter Your Email' className='w-full dark:bg-primaryColor montserrat-secondary-font border-1 border-color secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[12px] md:text-[14px]' />
               </div>
               <div className="relative mt-[30px] w-full ">
                 <label
@@ -61,7 +61,7 @@ const page = () => {
                   <input
                     type={passwordVisible ? 'text' : 'password'}
                     placeholder='Enter Your Password'
-                    className='w-full montserrat-secondary-font dark:bg-primaryColor secondary-text-color outline-none p-6 md:p-7 rounded-[100px] text-[12px] md:text-[14px]'
+                    className='w-full montserrat-secondary-font dark:bg-primaryColor secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[12px] md:text-[14px]'
                   />
                   <Image
                     src={passwordVisible ? eyeSlash : eye}
@@ -84,12 +84,12 @@ const page = () => {
                 </Link>
               </div>
               <div>
-                <button onClick={handleNavigate} type="submit" className='w-[100%] background-color p-6 md:p-7 rounded-[100px] button-text-color text-[12px] md:text-[14px] text-openSans font-[600] cursor-pointer my-[30px]'>
+                <button onClick={handleNavigate} type="submit" className='w-[100%] bg-backgroundColor text-backgroundTextColor hover:bg-registerTextColor p-5 md:p-5 rounded-[100px]  text-[12px] md:text-[14px] text-openSans font-[600] cursor-pointer my-[30px]  '>
                   Login
                 </button>
               </div>
               <div className='text-center text-[12px] md:text-[14px] mt-[-20px] tracking-[1px] montserrat-secondary-font'>
-                <h1 className='secondary-text-color montserrat-secondary-font'>
+                <h1 className='text-secondaryColor montserrat-secondary-font'>
                   Don't have an account? <Link href="/register" className='text-[12px] md:text-[14px] register-text-color font-semibold'>
                     Register now</Link>
                 </h1>
@@ -106,7 +106,7 @@ const page = () => {
             </form>
 
             <div className='w-[100%] flex gap-[30px] mt-[20px]'>
-              <div className='flex items-center w-[100%] border-color cursor-pointer p-4 rounded-[100px] justify-center'>
+              <div className='flex items-center w-[100%] border-color cursor-pointer hover:bg-primaryColor/20 dark:hover:bg-secondaryColor/30  rounded-[100px] justify-center'>
                 <Image
                   src={googleIcon}
                   height={34}
@@ -114,7 +114,7 @@ const page = () => {
                   alt='google'
                 />
               </div>
-              <div className='flex items-center w-[100%] border-color p-4 cursor-pointer rounded-[100px] justify-center'>
+              <div className='flex items-center w-[100%] border-color  cursor-pointer hover:bg-primaryColor/20 dark:hover:bg-secondaryColor/30 rounded-[100px] justify-center'>
                 <Image
                   src={facebookIcon}
                   height={34}
@@ -123,7 +123,7 @@ const page = () => {
 
                 />
               </div>
-              <div className='flex items-center border-color w-[100%] p-4 cursor-pointer rounded-[100px] justify-center'>
+              <div className='flex items-center border-color w-[100%] p-3 cursor-pointer hover:bg-primaryColor/20 dark:hover:bg-secondaryColor/30 rounded-[100px] justify-center'>
                 <Image
                   src={appleIcon}
                   height={34}
