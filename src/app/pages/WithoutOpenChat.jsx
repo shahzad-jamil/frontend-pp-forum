@@ -5,7 +5,7 @@ import report from "../../../public/report.svg"
 import search from "../../../public/search.svg"
 import message from "../../../public/message.svg"
 import chatpic from "../../../public/chatwindow.svg"
-import { ReactComponent as Attach } from "../../../public/attachment.svg"
+import attach from "../../../public/attachment.svg"
 import send from "../../../public/icons8_paper_plane 1.svg"
 import OpenChat from './OpenChat'
 
@@ -173,14 +173,13 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                 )}
                 <div className='w-full dark:bg-viewmoreButtonColor/30 flex flex-row items-stretch md:items-center justify-between gap-3 p-1 rounded-md'>
                   <div className='flex items-center gap-2 w-[100%]'>
-                    {/* <Image
+                    <Image
                       src={attach}
                       alt='attach'
                       width={32}
                       height={32}
                       className='cursor-pointer shrink-0 fill-red-'
-                    /> */}
-                    <Attach className="text-red-500" />
+                    />
                     <input
                       type='text'
                       placeholder='Type your message here...'
