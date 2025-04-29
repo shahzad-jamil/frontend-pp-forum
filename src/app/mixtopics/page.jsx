@@ -815,46 +815,56 @@ const page = () => {
 
               {/* Poll answers */}
               <div
-                className={`bg-[#3F94051A] border px-4 py-2 rounded-lg mb-2 cursor-pointer flex items-center justify-between mt-[10px] ${selected === "yes" ? "border-green-500 bg-backgroundColor/20" : "border-none bg-secondaryColor/20"
+                className={`bg-[#3F94051A] border px-4 py-2 rounded-lg mb-2 cursor-pointer flex items-center justify-between mt-[10px] ${selected === "yes"
+                  ? "border-green-500 bg-backgroundColor/20"
+                  : "border-none bg-secondaryColor/20"
                   }`}
                 onClick={() => setSelected("yes")}
               >
+                {/* Text on the left */}
                 <label
-                  className={`text-[14px] sm:text-[16px] font-bold montserrat-primary-font ${selected === "yes"
-                    ? ""
-                    : "text-black dark:text-backgroundTextColor"
+                  className={`text-[14px] sm:text-[16px] font-bold montserrat-primary-font cursor-pointer ${selected === "yes" ? "text-primaryColor dark:text-backgroundTextColor" : "text-primaryColor dark:text-backgroundTextColor"
                     }`}
                 >
                   Yes
                 </label>
-                <Image
-                  src={selected === "yes" ? checkbox : uncheckbox}
-                  alt="checkbox"
-                  width={20}
-                  height={20}
+
+                {/* Radio button on the right */}
+                <input
+                  type="radio"
+                  name="selectOption"
+                  value="yes"
+                  checked={selected === "yes"}
+                  onChange={() => setSelected("yes")}
+                  className="accent-[#3F9405] w-6 h-6  cursor-pointer"
                 />
               </div>
 
               <div
-                className={`bg-[#3F94051A] border px-4 py-2 rounded-lg cursor-pointer flex justify-between items-center ${selected === "no" ? "border-green-500 bg-backgroundColor/20" : "border-none bg-secondaryColor/20"
+                className={`bg-[#3F94051A] border px-4 py-2 rounded-lg cursor-pointer flex items-center justify-between ${selected === "no"
+                  ? "border-green-500 bg-backgroundColor/20"
+                  : "border-none bg-secondaryColor/20"
                   }`}
                 onClick={() => setSelected("no")}
               >
+                {/* Text on the left */}
                 <label
-                  className={`text-[14px] sm:text-[16px] font-bold montserrat-primary-font ${selected === "no"
-                    ? ""
-                    : "text-black dark:text-backgroundTextColor"
+                  className={`text-[14px] sm:text-[16px] font-bold montserrat-primary-font cursor-pointer ${selected === "no" ? "text-primaryColor dark:text-backgroundTextColor" : "text-primaryColor dark:text-backgroundTextColor"
                     }`}
                 >
                   No
                 </label>
-                <Image
-                  src={selected === "no" ? checkbox : uncheckbox}
-                  alt="checkbox"
-                  width={20}
-                  height={20}
+
+                {/* Radio button on the right */}
+                <input
+                  type="radio"
+                  name="selectOption"
+                  value="no"
+                  checked={selected === "no"}
+                  onChange={() => setSelected("no")}
+                  className="accent-[#3F9405] w-6 h-6 cursor-pointer"
                 />
-              </div>              {/* Votes and action buttons */}
+              </div>             {/* Votes and action buttons */}
               <div className="flex justify-between items-center text-[12px] sm:text-[14px] font-bold primary-text-color montserrat-bolder-font mt-4">
                 <span>0 Votes - 24h left</span>
                 <div className="flex gap-2">

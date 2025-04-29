@@ -7,6 +7,26 @@ import switchOff from "../../../public/Switch off.svg";
 const LoginHistory = () => {
   const [bestAnswer, setBestAnswer] = useState(true);
 
+
+  const Toggle = ({ enabled, setEnabled }) => (
+    <button
+      onClick={() => setEnabled(!enabled)}
+      className={`relative inline-flex items-center transition-colors duration-300 
+    ${enabled ? "bg-buttonBackgroundColor" : "bg-toggleBackgroundColor border-toggleButtonColor border-[2px]"}
+    w-16 h-10 rounded-full`}
+    >
+      <span
+        className={`absolute top-1/2 transform -translate-y-1/2 rounded-full transition-all duration-300
+        ${enabled
+            ? "translate-x-8 w-7 h-7 bg-white"  // When enabled: bigger ball, white color
+            : "translate-x-1 w-5 h-5 bg-toggleButtonColor" // When disabled: smaller ball, default color
+          }
+      `}
+      />
+    </button>
+  );
+
+
   return (
     <div className='flex justify-center'>
       <div className='w-full max-w-6xl flex flex-col items-center px-4 sm:px-6'>
@@ -141,9 +161,7 @@ const LoginHistory = () => {
 
 
         <div className="flex gap-5">
-          <button onClick={() => setBestAnswer(!bestAnswer)}>
-            <Image src={bestAnswer ? switchOn : switchOff} width={44} height={28} alt="Toggle" />
-          </button>
+          <Toggle enabled={bestAnswer} setEnabled={setBestAnswer} />
           <div>
             <h1 className="text-[18px] primary-text-color font-semibold montserrat-primary-font">
               Best answer
@@ -156,15 +174,7 @@ const LoginHistory = () => {
         {/* Other content... */}
 
         <div className="flex flex-col md:flex-row gap-5 items-center mt-10">
-          <button onClick={() => setBestAnswer(!bestAnswer)}>
-            <Image
-              src={bestAnswer ? switchOn : switchOff}
-              width={44}
-              height={28}
-              alt="Toggle"
-              priority
-            />
-          </button>
+          <Toggle enabled={bestAnswer} setEnabled={setBestAnswer} />
           <div>
             <h1 className="text-[18px] primary-text-color font-semibold montserrat-primary-font">
               Best answer

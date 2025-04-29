@@ -28,7 +28,10 @@ module.exports = {
         "pollButtonColor": "#8A2BE2",
         "questionButtonColor": "#E53935",
         "searchBorderColor": "#E6E6E7",
-        "mixTopicBackgroundColor": "#3F94051A"
+        "mixTopicBackgroundColor": "#3F94051A",
+        "toggleButtonColor": "#79747E",
+        "toggleBackgroundColor": "#E6E0E9",
+        "chatBubbleColor": "#F4FFE5"
 
       },
       fontFamily: {
