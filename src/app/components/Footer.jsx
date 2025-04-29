@@ -30,7 +30,7 @@ const Footer = () => {
             NewsLetter
           </h1>
 
-          <button className='bg-backgroundColor font-openSans font-[600] cursor-pointer text-white w-[70%] sm:w-[30%] md:w-[25%] text-[14px] py-4 px-6 sm:px-10 sm:py-5 rounded-full 
+          <button className='bg-backgroundColor hover:bg-registerTextColor font-openSans font-[600] cursor-pointer text-white w-[70%] sm:w-[30%] md:w-[25%] text-[14px] py-4 px-6 sm:px-10 sm:py-5 rounded-full 
             absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
             Subscribed To Get Updated
           </button>

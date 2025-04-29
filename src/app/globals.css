@@ -15,7 +15,6 @@
   --viewmore-button-color: #E9ECF5;
   --chatbox-background-color: #F4F4F7;
 
-
 }
 
 .navbar-background-color {
@@ -169,4 +168,9 @@
 
 .border-bottom {
   border-bottom: 0.5px solid color-mix(in srgb, var(--secondary-color) 30%, transparent);
+}
+
+html.theme-transition,
+body.theme-transition {
+  transition: var(--background-color) 0.5s ease, color 0.5s ease;
 }

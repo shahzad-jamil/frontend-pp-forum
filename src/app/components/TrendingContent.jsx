@@ -68,7 +68,7 @@ const TrendingContent = () => {
         </div>
         {
           trendingContent.map((trending, index) => {
-            return <div className='flex  gap-2 mt-[10px] border-b pb-1 border-secondaryColor/50 ' key={index}>
+            return <div className='flex  gap-2 mt-[10px] border-b py-4 border-searchBorderColor dark:border-searchBorderColor/20  ' key={index}>
               <div className='w-[75px] h-[34px] flex justify-center items-center p-0 rounded-full '>
                 <Image src={trending.image} alt='post 1' height={34} width={75} className='rounded-full object-cover' />
               </div>

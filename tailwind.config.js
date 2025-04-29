@@ -33,6 +33,7 @@ module.exports = {
       },
       fontFamily: {
         openSans: ['"Open Sans"', 'sans-serif'],
+        Montserrat: ["Montserrat"]
       },
     },
   },

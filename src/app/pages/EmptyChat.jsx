@@ -13,9 +13,9 @@ const EmptyChat = () => {
     <>
       <div className='max-w-[82%] my-[50px] mx-auto'>
         <div className='w-[100%]'>
-          <h1 className='text-[24px] text-center pb-[10px] md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
+          {/* <h1 className='text-[24px] text-center pb-[10px] md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
             Direct Messages
-          </h1>
+          </h1> */}
           {/* <p className='text-[14px] text-center secondary-text-color montserrat-smallweigh-font'>
             Anything and everything to do with the great game.
           </p> */}

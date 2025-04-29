@@ -3,7 +3,10 @@ import post1 from "../../../public/image 115.svg";
 import post2 from "../../../public/image 115 (2).svg";
 import plus from "../../../public/icons8_Plus 1.svg";
 import post4 from "../../../public/image 115 (3).svg"
-import viewMore from "../../../public/icons8_expand_arrow 1.svg";
+import viewMore from "../../../public/expandLightMode.svg";
+import darkModeExpand from "../../../public/icons8_expand_arrow 1 (1).svg";
+
+
 import Image from 'next/image';
 
 const Spaces = () => {
@@ -38,7 +41,7 @@ const Spaces = () => {
   ];
 
   return (
-    <div className='max-w-[90%] xl:max-w-[80%] mx-auto mt-8 pt-6'>
+    <div className='max-w-[90%] xl:max-w-[80%] mx-auto  pt-6'>
       {/* Header */}
       <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
         <div className='text-center md:text-left'>
@@ -49,7 +52,7 @@ const Spaces = () => {
             Anything and everything to do with the great game.
           </p>
         </div>
-        <button className='button-background-color rounded-full flex items-center gap-3 py-3 px-6'>
+        <button className='button-background-color hover:bg-backgroundColor rounded-full flex items-center gap-3 py-4 px-6'>
           <Image src={plus} alt='plus' width={20} height={20} />
           <span className='text-sm sm:text-base text-white font-semibold montserrat-secondary-font'>
             Create A Space
@@ -73,7 +76,7 @@ const Spaces = () => {
                   <p className='text-[14px] text-secondaryColor mt-2 montserrat-smallweigh-font flex-1'>
                     {item.description}
                   </p>
-                  <button className='mt-4 rounded-[100px] spaces-button-color font-openSans text-white py-2 px-6 text-[14px] font-[400]'>
+                  <button className='mt-4 rounded-[100px] hover:bg-primaryColor/90  dark:hover:bg-primaryColor/50 spaces-button-color font-openSans text-white py-2 px-6 text-[14px] font-[400]'>
                     Follow
                   </button>
                 </div>
@@ -84,7 +87,8 @@ const Spaces = () => {
           <div className='flex justify-center my-[10px] md:my-[20px]'>
             <button className='flex items-center gap-2 viewmore-button-color dark:bg-viewmoreButtonColor/10 dark:text-backgroundTextColor text-primaryColor font-[600] font-openSans px-6 py-3 rounded-full text-sm'>
               <span>View More</span>
-              <Image src={viewMore} alt='expand' width={14} height={14} className='fill-primaryColor' />
+              <Image src={viewMore} alt='expand' width={14} height={14} className='fill-primaryColor block dark:hidden' />
+              <Image src={darkModeExpand} alt='expand' width={14} height={14} className='fill-primaryColor hidden dark:block' />
             </button>
           </div>
         </div>

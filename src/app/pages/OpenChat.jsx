@@ -311,7 +311,7 @@ const OpenChat = ({ selectedUser }) => {
 
           <button className='button-background-color w-[15%] h-[40px] rounded-[10px] py-3 px-4 flex items-center justify-center '>
             <h1 className='text-[11px] sm:text-[14px] cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
-              Send
+              Send Message
             </h1>
           </button>
         </div>

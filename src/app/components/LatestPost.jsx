@@ -67,7 +67,7 @@ const LatestPost = () => {
         </div>
         {
           latestPost.map((latest, index) => {
-            return <div className='flex   py-4 px-2 border-b pb-1 border-secondaryColor/50  gap-2 mt-[2px] sm:mt-[20px] ' key={index}>
+            return <div className='flex   py-4 px-2 border-b border-searchBorderColor  dark:border-searchBorderColor/20  gap-2 mt-[2px] sm:mt-[20px] ' key={index}>
               <div className='w-[75px] h-[34px] flex justify-center items-center p-0 rounded-full '>
                 <Image src={latest.image} alt='post 1' height={34} width={75} className='rounded-full object-cover' />
               </div>
@@ -76,7 +76,7 @@ const LatestPost = () => {
                 <h1 className='montserrat-primary-font dark:text-backgroundTextColor text-[14px] flex-1 font-bold primary-text-color'>
                   {latest.title}
                 </h1>
-                <div className='flex  flex-col sm:flex-row justify-between  mt-[5px] smitems-center'>
+                <div className='flex  flex-col sm:flex-row justify-between  mt-[5px] sm:items-center'>
                   <div className='flex items-center gap-2 '>
                     <h1 className='montserrat-secondary-font dark:font-[400]  dark:font-openSans  text-[11px] font-bold secondary-text-color'>
                       Latest:

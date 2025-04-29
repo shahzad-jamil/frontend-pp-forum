@@ -6,6 +6,7 @@ import search from "../../../public/search.svg"
 import message from "../../../public/message.svg"
 import chatpic from "../../../public/chatwindow.svg"
 import attach from "../../../public/attachment.svg"
+import send from "../../../public/icons8_paper_plane 1.svg"
 import OpenChat from './OpenChat'
 
 const WithoutOpenChat = ({ selectedUser, userList }) => {
@@ -30,17 +31,17 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
 
   return (
     <div className='max-w-[90%] xl:max-w-[82%] my-[20px] mx-auto'>
-      <div className='w-full'>
+      {/* <div className='w-full'>
         <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor text-center pb-[10px] md:text-[36px] primary-text-color dark:backgroundTextColor font-semibold montserrat-primary-font'>
           Direct Messages
         </h1>
-      </div>
+      </div> */}
 
       {/* Wrapper for layout */}
-      <div className='w-full  h-full flex flex-col md:flex-row gap-2 rounded-[20px]'>
+      <div className='w-full  h-full flex flex-col  md:flex-row gap-2 rounded-[20px]'>
 
         {/* Users List */}
-        <div className={`flex-col md:p-4 gap-2 md:flex ${showChat ? 'hidden' : 'flex'}`}>
+        <div className={`flex-col  h-[100%]  md:p-4 gap-2 md:flex ${showChat ? 'hidden' : 'flex'}`}>
           <div className='flex flex-col gap-2  justify-center'>
             <h1 className='text-[20px] sm:text-[24px] primary-text-color dark:text-backgroundTextColor font-semibold montserrat-primary-font'>
               Messages
@@ -177,7 +178,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                       alt='attach'
                       width={32}
                       height={32}
-                      className='cursor-pointer shrink-0'
+                      className='cursor-pointer shrink-0 fill-red-'
                     />
                     <input
                       type='text'
@@ -186,10 +187,17 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                     />
                   </div>
 
-                  <button className='button-background-color w-[15%] h-[40px] rounded-[10px] py-3 px-4 flex items-center justify-center '>
+                  <button className='button-background-color sm:w-[50%] md:w-[70%] lg:w-[35%] xl:w-[25%] 2xl:w-[22%] h-[40px] rounded-[100px] py-3 px-4 flex items-center justify-center '>
                     <h1 className='text-[11px] sm:text-[14px] cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
-                      Send
+                      Send Message
                     </h1>
+                    <Image
+                      src={send}
+                      alt='attach'
+                      width={18}
+                      height={18}
+                      className='cursor-pointer shrink-0'
+                    />
                   </button>
                 </div>
               </div>

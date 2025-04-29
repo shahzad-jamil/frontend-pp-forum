@@ -22,17 +22,58 @@ import darkModeOff from "../../../public/darkmodeoff.svg"
 const Navbar = () => {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
-  const [theme, setTheme] = useState('light'); // ✅ now always called
+  const [theme, setTheme] = useState('light');
 
   const hideNavbarPages = ['/login', '/register', '/forgotpassword', '/newpassword', '/verifycode']
 
+
+
   useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
+
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setTheme(storedTheme);
+      if (storedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     }
-  }, [theme])
+  }, []);
+
+  // useEffect(() => {
+  //   // Whenever theme changes, update class and localStorage
+  //   if (theme === 'dark') {
+  //     document.documentElement.classList.add('dark');
+  //   } else {
+  //     document.documentElement.classList.remove('dark');
+  //   }
+  //   localStorage.setItem('theme', theme);
+  // }, [theme]);
+
+  useEffect(() => {
+    const root = document.documentElement;
+
+    // Add transition class
+    root.classList.add('theme-transition');
+
+    // Update theme class
+    if (theme === 'dark') {
+      root.classList.add('dark');
+    } else {
+      root.classList.remove('dark');
+    }
+
+    // Save to local storage
+    localStorage.setItem('theme', theme);
+
+    // Remove transition class after animation
+    const timeout = setTimeout(() => {
+      root.classList.remove('theme-transition');
+    }, 500); // Match with CSS transition duration
+
+    return () => clearTimeout(timeout);
+  }, [theme]);
 
 
   const toggleTheme = () => {
@@ -123,7 +164,7 @@ const Navbar = () => {
                 alt='darkmode-toggle'
                 height={20}
                 width={26}
-                className='cursor-pointer transition-all duration-200'
+                className='cursor-pointer'
                 onClick={() => setTheme('dark')}
               />
             </div>

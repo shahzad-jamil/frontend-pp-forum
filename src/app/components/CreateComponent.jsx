@@ -63,6 +63,13 @@ const CreateComponent = () => {
     },
   ];
 
+  const hoverColors = {
+    'bg-discussionButtonColor': 'hover:bg-discussionButtonColor/30',
+    'bg-articleButtonColor': 'hover:bg-articleButtonColor/30',
+    'bg-pollButtonColor': 'hover:bg-pollButtonColor/30',
+    'bg-questionButtonColor': 'hover:bg-questionButtonColor/30',
+  };
+
   return (
 
     <>
@@ -71,10 +78,10 @@ const CreateComponent = () => {
           {/* Create Thread Button */}
           <button
             onClick={toggleDropdown}
-            className='button-background-color rounded-[100px] py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3'
+            className='button-background-color rounded-[100px] hover:bg-backgroundColor py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3'
           >
             <Image src={create} alt='post 1' width={20} height={20} />
-            <h1 className='text-[14px] background-text-color font-semibold montserrat-secondary-font'>
+            <h1 className='text-[14px] background-text-color  font-semibold montserrat-secondary-font'>
               Create Thread
             </h1>
           </button>
@@ -108,10 +115,29 @@ const CreateComponent = () => {
 
           {showDropdown && (
             <div ref={dropdownRef} className='absolute top-[100%] right-[10%] mt-3 flex flex-col justify-center gap-[10px] dark:bg-primaryColor card-background-color p-4 rounded-[20px] shadow-2xl w-[224px] z-50'>
+              {/* {actions.map((action, index) => (
+                <Link href={action.path} key={index}>
+                  <button
+                    className={` hover:b/30 text-[16px] w-full rounded-[100px] py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3 ${action.color}`}
+                  >
+                    <Image
+                      src={action.image}
+                      alt='discussion'
+                      width={20}
+                      height={20}
+                    />
+                    <span className='text-[16px] background-text-color font-semibold montserrat-secondary-font'>
+                      {action.title}
+                    </span>
+                  </button>
+                </Link>
+              ))} */}
+
+
               {actions.map((action, index) => (
                 <Link href={action.path} key={index}>
                   <button
-                    className={` text-[16px] w-full rounded-[100px] py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3 ${action.color}`}
+                    className={`text-[16px] w-full rounded-[100px] py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3 ${action.color} ${hoverColors[action.color]}`}
                   >
                     <Image
                       src={action.image}

@@ -40,7 +40,7 @@ const OffTopics = () => {
   return (
     <>
       <div
-        className={`w-full flex justify-between items-center mt-[20px] p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-registerTextColor'
+        className={`w-full flex justify-between items-center mt-[20px] p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-registerTextColor hover:bg-backgroundColor'
           }`}
       >
         <h1
@@ -55,7 +55,7 @@ const OffTopics = () => {
             alt="toggle"
             height={20}
             width={22}
-            className={`cursor-pointer ${isMinimized ? 'text-black w-[12]' : 'background-text-color'
+            className={`cursor-pointer ${isMinimized ? 'text-black h-[22px]' : 'background-text-color'
               }`}
           />
         </button>
@@ -77,19 +77,19 @@ const OffTopics = () => {
                   <div className='flex flex-col'>
                     <div className='flex items-center justify-between'>
                       <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font '>{item.title}</h1>
-                      <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1>
+                      {/* <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1> */}
                     </div>
                     <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>{item.description}</p>
 
                     <div className='flex justify-between flex-col sm:flex-row gap-4 my-[10px] sm:items-center flex-wrap'>
                       <div className='flex items-center gap-1'>
-                        <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Threads:</h1>
-                        <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400]  dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.threads}</p>
+                        <h1 className='text-[12px] sm:text-[14px] font-[700] primary-text-color font-openSans dark:text-backgroundTextColor'>Threads:</h1>
+                        <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400]  dark:text-registerTextColor dark:font-openSans'>{item.threads}</p>
                       </div>
 
                       <div className='flex items-center gap-1'>
-                        <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Latest Post:</h1>
-                        <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400] dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.updatedTime}</p>
+                        <h1 className='text-[12px] sm:text-[14px] font-[700] primary-text-color font-openSans dark:text-backgroundTextColor'>Latest Post:</h1>
+                        <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400]  dark:text-registerTextColor '>{item.updatedTime}</p>
                       </div>
                     </div>
 

@@ -76,10 +76,10 @@ const Sports = () => {
   return (
     <>
       <div className='flex flex-col xl:flex-row gap-[30px] w-full md:w-[90%] lg:max-w-[82%] md:mt-[20px] mx-auto px-4'>
-        <div className='w-full lg:flex-4 p-3'>
+        <div className=' lg:flex-4 dark:flex-4 p-3'>
           {/* Header */}
           <div
-            className={`w-full flex justify-between items-center p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-registerTextColor'
+            className={`w-full flex justify-between items-center p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-buttonBackgroundColor hover:bg-backgroundColor'
               }`}
           >
             <h1
@@ -94,7 +94,7 @@ const Sports = () => {
                 alt="toggle"
                 height={20}
                 width={22}
-                className={`cursor-pointer ${isMinimized ? 'text-black w-[12]' : 'background-text-color'
+                className={`cursor-pointer ${isMinimized ? 'text-black h-[22px]' : 'background-text-color'
                   }`}
               />
             </button>
@@ -117,7 +117,7 @@ const Sports = () => {
                       <div className='flex flex-col'>
                         <div className='flex items-center justify-between'>
                           <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font '>{item.title}</h1>
-                          <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1>
+                          {/* <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1> */}
                         </div>
                         <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>{item.description}</p>
 
@@ -151,7 +151,7 @@ const Sports = () => {
           <OffTopics />
 
           <div
-            className={`w-full flex justify-between items-center p-4 mt-[20px] rounded-[15px] ${isPPTeam ? 'bg-white' : 'bg-registerTextColor'
+            className={`w-full flex justify-between items-center p-4 mt-[20px] rounded-[15px] ${isPPTeam ? 'bg-white' : 'bg-buttonBackgroundColor hover:bg-backgroundColor'
               }`}
           >
             <h1
@@ -166,7 +166,7 @@ const Sports = () => {
                 alt="toggle"
                 height={20}
                 width={22}
-                className={`cursor-pointer ${isPPTeam ? 'text-black w-[12]' : 'background-text-color'
+                className={`cursor-pointer ${isPPTeam ? 'text-black h-[22px]' : 'background-text-color'
                   }`}
               />
             </button>
@@ -174,7 +174,7 @@ const Sports = () => {
         </div>
 
         {/* Right Sidebar */}
-        <div className='w-full lg:flex-1 p-2 flex flex-col gap-4'>
+        <div className='dark:flex-1 lg:flex-1 p-2 flex flex-col gap-4'>
 
           {/* Staff Online */}
           <div className='card-background-color dark:bg-backgroundTextColor/10 outline-none py-4 px-4 sm:py-5 sm:px-8 border border-secondaryColor/50 md:px-6 rounded-[20px]'>
@@ -206,7 +206,7 @@ const Sports = () => {
                   transition={{ duration: 0.4 }}
                 >
                   {staffOnline.map((member, index) => (
-                    <div key={index} className='flex items-center gap-2 mt-3'>
+                    <div key={index} className='flex items-center gap-2 mt-3 border-b pb-4 border-searchBorderColor   dark:border-searchBorderColor/20'>
                       <div className='w-[45px] h-[34px]'>
                         <Image src={member.userImage} alt='user' height={34} width={45} className='rounded-full object-cover' />
                       </div>
@@ -252,7 +252,7 @@ const Sports = () => {
                   transition={{ duration: 0.4 }}
                 >
                   {staffOnline.map((member, index) => (
-                    <div key={index} className='flex items-center gap-2 mt-3'>
+                    <div key={index} className='flex items-center gap-2 mt-3 border-b pb-4 border-searchBorderColor dark:border-searchBorderColor/20'>
                       <div className='w-[45px] h-[34px]'>
                         <Image src={member.userImage} alt='user' height={45} width={45} className='object-cover' />
                       </div>
