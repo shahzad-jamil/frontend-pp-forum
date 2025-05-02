@@ -75,16 +75,15 @@ const Sports = () => {
 
   return (
     <>
-      <div className='flex flex-col xl:flex-row gap-[30px] w-full md:w-[90%] lg:max-w-[82%] md:mt-[20px] mx-auto px-4'>
-        <div className=' lg:flex-4 dark:flex-4 p-3'>
+      <div className='flex flex-col xl:flex-row gap-[30px] w-full  md:w-[100%] xl:max-w-[82%] md:mt-[20px] mx-auto px-4'>
+        {/* Left Side: Sports Section */}
+        <div className='flex-1  p-3'>
           {/* Header */}
           <div
-            className={`w-full flex justify-between items-center p-4 rounded-[15px] ${isMinimized ? 'bg-white' : 'bg-buttonBackgroundColor hover:bg-backgroundColor'
-              }`}
+            className={`w-full flex justify-between items-center p-4 rounded-[15px] ${isMinimized ? 'bg-cardBackgroundColor dark:bg-homeTabBackgroundColor' : 'bg-buttonBackgroundColor hover:bg-backgroundColor'}`}
           >
             <h1
-              className={`text-[28px] px-3 montserrat-primary-font font-semibold ${isMinimized ? 'text-black' : 'background-text-color'
-                }`}
+              className={`text-[28px] px-3 montserrat-primary-font font-semibold ${isMinimized ? 'text-primaryColor dark:text-backgroundTextColor' : 'background-text-color'}`}
             >
               Sports
             </h1>
@@ -94,11 +93,11 @@ const Sports = () => {
                 alt="toggle"
                 height={20}
                 width={22}
-                className={`cursor-pointer ${isMinimized ? 'text-black h-[22px]' : 'background-text-color'
-                  }`}
+                className={`cursor-pointer ${isMinimized ? 'text-black h-[22px]' : 'background-text-color'}`}
               />
             </button>
           </div>
+
           {/* Sports Topics */}
           <AnimatePresence>
             {!isMinimized && (
@@ -111,20 +110,19 @@ const Sports = () => {
                 className='w-full'
               >
                 {sportsTopic.map((item, index) => (
-                  <Link href="/mixtopics">
-                    <div key={index} className='flex flex-col sm:flex-row mt-[20px] gap-[20px] border-b border-secondaryColor/50 pb-4'>
+                  <Link href="/mixtopics" key={index}>
+                    <div className='flex flex-col sm:flex-row mt-[20px] gap-[20px] border-b border-searchBorderColor dark:border-searchBorderColor/20 pb-4'>
                       <Image src={item.image} alt='post 1' height={228} width={260} className='w-full sm:w-[260px] h-auto object-cover' />
                       <div className='flex flex-col'>
                         <div className='flex items-center justify-between'>
                           <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor font-bold primary-text-color montserrat-primary-font '>{item.title}</h1>
-                          {/* <h1 className='text-[12px] sm:text-[14px] font-semibold following-text-color montserrat-primary-font'>Following</h1> */}
                         </div>
-                        <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font'>{item.description}</p>
+                        <p className='text-[12px] sm:text-[14px] secondary-text-color montserrat-secondary-font '>{item.description}</p>
 
-                        <div className='flex justify-between flex-col sm:flex-row gap-4 my-[10px] sm:items-center flex-wrap'>
+                        <div className='flex justify-between flex-col sm:flex-row gap-4 my-[10px] sm:items-center flex-wrap border-b border-searchBorderColor dark:border-searchBorderColor/20 pb-4'>
                           <div className='flex items-center gap-1'>
                             <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>Threads:</h1>
-                            <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400]  dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.threads}</p>
+                            <p className='text-[12px] sm:text-[14px] secondary-text-color font-openSans font-[400] dark:font-[400] dark:text-registerTextColor dark:font-openSans'>{item.threads}</p>
                           </div>
 
                           <div className='flex items-center gap-1'>
@@ -133,12 +131,12 @@ const Sports = () => {
                           </div>
                         </div>
 
-                        <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor'>{item.MatchBetweenTeams}</h1>
-                        <div className='flex items-center gap-2 mt-[10px] sm:mt-1'>
-                          <div className='w-[34px] h-[34px]'>
+                        <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor mt-5 '>{item.MatchBetweenTeams}</h1>
+                        <div className='flex items-center gap-2 mt-[10px] sm:mt-3 md:mt-7 '>
+                          <div className='w-[34px] h-[34px] '>
                             <Image src={item.postedUserImage} alt='posted user' />
                           </div>
-                          <p className='text-[12px] sm:text-[14px] font-openSans font-bold primary-text-color dark:text-backgroundTextColor'>{item.postedBy}</p>
+                          <p className='text-[12px] sm:text-[14px] font-openSans font-bold primary-text-color dark:text-backgroundTextColor '>{item.postedBy}</p>
                         </div>
                       </div>
                     </div>
@@ -151,12 +149,10 @@ const Sports = () => {
           <OffTopics />
 
           <div
-            className={`w-full flex justify-between items-center p-4 mt-[20px] rounded-[15px] ${isPPTeam ? 'bg-white' : 'bg-buttonBackgroundColor hover:bg-backgroundColor'
-              }`}
+            className={`w-full flex justify-between items-center p-4 mt-[20px] rounded-[15px] ${isPPTeam ? 'bg-cardBackgroundColor dark:bg-homeTabBackgroundColor' : 'bg-buttonBackgroundColor hover:bg-backgroundColor'}`}
           >
             <h1
-              className={`text-[28px] px-3 montserrat-primary-font font-semibold ${isPPTeam ? 'text-black' : 'background-text-color'
-                }`}
+              className={`text-[28px] px-3 montserrat-primary-font font-semibold ${isPPTeam ? 'text-primaryColor dark:text-backgroundTextColor' : 'background-text-color'}`}
             >
               The PP Team
             </h1>
@@ -166,22 +162,20 @@ const Sports = () => {
                 alt="toggle"
                 height={20}
                 width={22}
-                className={`cursor-pointer ${isPPTeam ? 'text-black h-[22px]' : 'background-text-color'
-                  }`}
+                className={`cursor-pointer ${isPPTeam ? 'text-black h-[22px]' : 'background-text-color'}`}
               />
             </button>
           </div>
         </div>
 
         {/* Right Sidebar */}
-        <div className='dark:flex-1 lg:flex-1 p-2 flex flex-col gap-4'>
-
+        <div className=' w-[100%] xl:w-[400px] p-2 flex flex-col gap-4'>
           {/* Staff Online */}
-          <div className='card-background-color dark:bg-backgroundTextColor/10 outline-none py-4 px-4 sm:py-5 sm:px-8 border border-secondaryColor/50 md:px-6 rounded-[20px]'>
+          <div className='card-background-color dark:bg-searchBorderColor/5 outline-none py-4 px-4 sm:py-5 sm:px-8 border border-searchBorderColor dark:border-sportCardsDarkBorder/20 md:px-6 rounded-[20px]'>
             <div className='flex justify-between items-center'>
               <div className='flex gap-2'>
                 <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color dark:text-backgroundTextColor montserrat-primary-font'>
-                  Staff Online
+                  Moderators Online
                 </h1>
                 <p className='text-[20px] sm:text-[24px] font-bold register-text-color montserrat-primary-font'>(2)</p>
               </div>
@@ -221,9 +215,8 @@ const Sports = () => {
             </AnimatePresence>
           </div>
 
-
           {/* Members Online */}
-          <div className='card-background-color dark:bg-backgroundTextColor/10 outline-none py-4 px-4 sm:py-5 sm:px-8 border border-secondaryColor/50 md:px-6 rounded-[20px]'>
+          <div className='card-background-color dark:bg-searchBorderColor/5 outline-none py-4 px-4 sm:py-5 sm:px-8 border border-searchBorderColor dark:border-sportCardsDarkBorder/20 md:px-6 rounded-[20px]'>
             <div className='flex justify-between items-center'>
               <div className='flex gap-2'>
                 <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color dark:text-backgroundTextColor montserrat-primary-font'>
@@ -267,7 +260,7 @@ const Sports = () => {
             </AnimatePresence>
           </div>
           {/* Guests */}
-          <div className='card-background-color py-4 px-6 rounded-[20px] dark:bg-backgroundTextColor/10 outline-none  border border-secondaryColor/50'>
+          <div className='card-background-color py-4 px-6 rounded-[20px] dark:bg-searchBorderColor/5 outline-none  border border-searchBorderColor dark:border-sportCardsDarkBorder/20'>
             <div className='flex gap-2'>
               <h1 className='text-[20px] sm:text-[24px] font-bold primary-text-color montserrat-primary-font dark:text-backgroundTextColor'>Guests Online</h1>
               <p className='text-[20px] sm:text-[24px] font-bold register-text-color montserrat-primary-font'>(18)</p>

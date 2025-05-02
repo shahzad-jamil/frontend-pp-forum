@@ -13,14 +13,14 @@ const Comments = () => {
       title: "CricketerWarior",
       postedBy: "Bouncer Guy",
       time: "1:12AM",
-      message: "This is the main comment 1.",
+      message: "How do you always manage to think up such unique analogies for all your answers? How do you always manage to think up such unique analogies for all your answers? ",
       likes: "10k",
       dislike: "1k",
       userReply: [
         {
           image: user,
-          title: "ReplyUser1",
-          postedBy: "Reply Guy",
+          title: "CricketerWarior",
+          postedBy: "Bouncer Guy",
           time: "2:00AM",
           message: "How do you always manage to think up such unique analogies for all your answers? How do you always manage to think up such unique analogies for all your answers? ",
           likes: "2k",
@@ -106,59 +106,81 @@ const Comments = () => {
   };
 
   return (
-    <div className='mt-3'>
-      <h1 className='text-[20px] font-bold primary-text-color montserrat-primary-font'>
-        Comments
-      </h1>
-
+    <div className='mt-3 overflow-y-auto h-[500px]'>
+      <div className=' pb-5 border-b border-searchBorderColor dark:border-searchBorderColor/20'>
+        <h1 className='text-[20px] primary-text-color font-openSans font-[700] dark:text-backgroundTextColor'>
+          Comments
+        </h1>
+      </div>
       {commentOfUser.slice(0, visibleComments).map((comment, index) => (
-        <div key={index}>
+        <div key={index} >
           <div className='mt-7 flex gap-3'>
-            <Image src={comment.image} alt="user" width={63} height={48} />
-            <div>
-              <h1 className='text-[14px] font-bold primary-text-color  dark:text-backgroundTextColor'>{comment.title}</h1>
-              <p className='secondary-text-color'>{comment.postedBy}</p>
-              <p className='secondary-text-color'>Today at: {comment.time}</p>
+            <Image src={comment.image} alt="user" width={50} height={50} />
+            <div className='flex gap-4'>
+              <div>
+                <h1 className='text-[14px] primary-text-color font-openSans font-[600] dark:text-backgroundTextColor'>{comment.title}</h1>
+                <p className='text-[14px] secondary-text-color font-openSans font-[700]'>{comment.postedBy}</p>
+              </div>
+              <div>
+                <p className='text-[12px] secondary-text-color font-openSans font-[600]'>Today at: {comment.time}</p>
+              </div>
             </div>
           </div>
 
           <div className='ml-[66px] mt-2'>
-            <p className='text-[14px] font-bold primary-text-color  dark:text-backgroundTextColor'>{comment.message}</p>
+            <p className='text-[14px] primary-text-color font-openSans font-[600] dark:text-backgroundTextColor'>
+              {comment.message}
+            </p>
 
             <div className='w-[40%] flex gap-5 items-center mt-2'>
-              <div className='flex items-center bg-[#3F94051A] p-2 rounded-full'>
-                <Image src={like} alt='like' width={25} height={25} />
-                <span className='text-[12px] font-bold primary-text-color ml-1  dark:text-backgroundTextColor'>{comment.likes}</span>
+              <div className='flex items-center bg-viewmoreButtonColor pr-8 p-2 sm:p-2 rounded-full'>
+                <Image src={like} alt='like' width={18} height={18} />
+                <span className='text-[8px] primary-text-color font-openSans font-[600] ml-1 dark:text-primaryColor'>
+                  {comment.likes}
+                </span>
               </div>
-              <div className='flex items-center bg-[#3F94051A] p-2 rounded-full'>
-                <Image src={dislike} alt='dislike' width={25} height={25} />
-                <span className='text-[12px] font-bold primary-text-color ml-1  dark:text-backgroundTextColor'>{comment.dislike}</span>
+              <div className='flex items-center bg-viewmoreButtonColor pr-8 p-2 sm:p-2 rounded-full'>
+                <Image src={dislike} alt='dislike' width={22} height={22} />
+                <span className='text-[8px] primary-text-color font-openSans font-[600] ml-1  dark:text-primaryColor'>
+                  {comment.dislike}
+                </span>
               </div>
-              <span className='text-[12px] font-bold primary-text-color'>Reply</span>
+              <span className='text-[12px] primary-text-color font-openSans font-[600] dark:text-backgroundTextColor'>Reply</span>
             </div>
 
             {/* Replies */}
             {comment.userReply.slice(0, expandedReplies[index] ? comment.userReply.length : 1).map((reply, i) => (
               <div key={i} className='ml-5 mt-5 border-l-2 pl-3 border-gray-300'>
-                <div className='flex gap-3'>
-                  <Image src={reply.image} alt="user" width={40} height={40} />
+                <div className='flex flex-col gap-3'>
+                  <div className='flex gap-4'>
+                    <Image src={reply.image} alt="user" width={34} height={34} />
+                    <div>
+                      <h1 className='text-[14px] primary-text-color font-openSans font-[600] dark:text-backgroundTextColor'>
+                        {reply.title}
+                      </h1>
+                      <p className='text-[14px] secondary-text-color font-openSans font-[700]'>{reply.postedBy}</p>
+                    </div>
+                    <div>
+                      <p className='text-[12px] secondary-text-color font-openSans font-[600]'>Today at: {reply.time}</p>
+                    </div>
+                  </div>
                   <div>
-                    <h1 className='text-[13px] font-bold primary-text-color  dark:text-backgroundTextColor'>{reply.title}</h1>
-                    <p className='secondary-text-color'>{reply.postedBy} • {reply.time}</p>
-                    <p className='text-[13px] primary-text-color mt-1  dark:text-backgroundTextColor'>{reply.message}</p>
+                    <p className='text-[14px] primary-text-color font-openSans font-[600] dark:text-backgroundTextColor'>
+                      {reply.message}
+                    </p>
                   </div>
                 </div>
 
                 <div className='w-[40%] flex gap-5 items-center mt-2 ml-10'>
-                  <div className='flex items-center bg-[#3F94051A] p-2 rounded-full'>
-                    <Image src={like} alt='like' width={20} height={20} />
-                    <span className='text-[12px] font-bold primary-text-color ml-1  dark:text-backgroundTextColor'>{reply.likes}</span>
+                  <div className='flex items-center bg-viewmoreButtonColor pr-8 p-2 sm:p-2 rounded-full'>
+                    <Image src={like} alt='like' width={18} height={18} />
+                    <span className='text-[8px] font-bold primary-text-color ml-1  dark:text-primaryColor'>{reply.likes}</span>
                   </div>
-                  <div className='flex items-center bg-[#3F94051A] p-2 rounded-full'>
-                    <Image src={dislike} alt='dislike' width={20} height={20} />
-                    <span className='text-[12px] font-bold primary-text-color ml-1  dark:text-backgroundTextColor'>{reply.dislike}</span>
+                  <div className='flex items-center bg-viewmoreButtonColor pr-8 p-2 sm:p-2 rounded-full'>
+                    <Image src={dislike} alt='dislike' width={18} height={18} />
+                    <span className='text-[8px] font-bold primary-text-color ml-1  dark:text-primaryColor'>{reply.dislike}</span>
                   </div>
-                  <span className='text-[12px] font-bold primary-text-color'>Reply</span>
+                  <span className='text-[12px] primary-text-color font-openSans font-[600] dark:text-backgroundTextColor'>Reply</span>
                 </div>
               </div>
             ))}

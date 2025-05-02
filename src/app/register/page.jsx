@@ -33,8 +33,8 @@ const page = () => {
       </div>
 
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
-        <div className='w-[100%] order-2 md:order-1 mb-[40px]'>
-          <div className='w-[100%] md:w-[80%] h-[100%] mx-auto flex flex-col justify-center'>
+        <div className='w-[100%]  mb-[40px]'>
+          <div className='w-[100%] md:w-[80%] h-[80vh] mx-auto flex flex-col justify-center'>
             <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font dark:bg-primaryColor dark:text-backgroundTextColor '>Register</h1>
             <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-secondary-font'>
               Create a account to use PakPassion
@@ -109,6 +109,13 @@ const page = () => {
                 <div className='flex-1 line-background-color h-[1px]' />
               </div>
             </form>
+
+
+
+
+
+
+
             <div className='w-[100%] flex gap-[30px] mt-[10px]'>
               <div className='flex items-center border-color dark:hover:bg-secondaryColor/30 w-[100%] hover:bg-primaryColor/20 cursor-pointer p-3 rounded-[100px] justify-center'>
                 <Image src={googleIcon} height={34} width={34} />
@@ -122,8 +129,8 @@ const page = () => {
             </div>
           </div>
         </div>
-        <div className="order-1 lg:order-1 flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-[10%] lg:top-[20%] xl:top-[16%]">
-          <Image src={registerImage} alt='register' width={447} height={900} className="object-contain" />
+        <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-0 xl:right-[6%] lg:bottom-[10%] xl:bottom-[8%] xl:top-[8%]">
+          <Image src={registerImage} alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
         </div>
       </div>
     </>

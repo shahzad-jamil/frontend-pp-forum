@@ -28,7 +28,7 @@ const page = () => {
         />
       </div >
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
-        <div className='w-[100%] order-2 md:order-1'>
+        <div className='w-[100%]'>
           <div className='w-[100%] md:w-[80%] sm:h-[70vh] mx-auto flex flex-col justify-center'>
             <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font dark:text-backgroundTextColor'>Verify Code</h1>
             <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-secondary-font'>
@@ -53,14 +53,8 @@ const page = () => {
           </div>
         </div>
 
-        <div className="order-1 md:order-2 flex flex-col lg:flex-row items-center justify-center overflow-y-hidden  lg:fixed right-[6%] lg:top-[7%] xl:top-[12%] ">
-          <Image
-            src={verifyImage}
-            alt='verify image'
-            width={447}
-            height={900}
-            className="object-contain"
-          />
+        <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-0 xl:right-[6%] lg:bottom-[10%] xl:bottom-[8%] xl:top-[8%]">
+          <Image src={verifyImage} alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
         </div>
       </div>
     </>

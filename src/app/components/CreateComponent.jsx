@@ -73,18 +73,37 @@ const CreateComponent = () => {
   return (
 
     <>
-      <div className='w-[80%] mx-auto flex justify-end'>
-        <div className='relative mt-[20px]'>
+      <div className='w-full md:w-[95%] xl:w-[80%] mx-auto p-4 sm:p-0 flex justify-end'>
+        <div className='w-[100%] mx-auto flex flex-col md:flex-row gap-[10px] md:justify-between items-center mt-[20px] relative'>
+          <div className='flex w-[100%] md:w-[80%] lg:w-[80%] border-searchBorderColor dark:border-searchBorderColor/20 border p-3 md:p-4 mx-auto justify-between items-center rounded-[100px]'>
+            <div className='w-[100%] flex gap-1 md:gap-3 items-center '>
+              <Image
+                src={search}
+                alt='search'
+                width={20}
+                heigh={20}
+              />
+              <input type="text" placeholder='Search threads, posts and posters' className='w-[100%] text-[10px] md:text-[14px] p-2 outline-none bg-transparent text-secondaryColor montserrat-secondary-font  ' />
+            </div>
+            <Image
+              src={close}
+              alt='close'
+              width={20}
+              heigh={20}
+            />
+          </div>
           {/* Create Thread Button */}
-          <button
-            onClick={toggleDropdown}
-            className='button-background-color rounded-[100px] hover:bg-backgroundColor py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3'
-          >
-            <Image src={create} alt='post 1' width={20} height={20} />
-            <h1 className='text-[14px] background-text-color  font-semibold montserrat-secondary-font'>
-              Create Thread
-            </h1>
-          </button>
+          <div className='w-full md:w-[30%] flex justify-center md:flex-row md:justify-end lg:w-[22%]'>
+            <button
+              onClick={toggleDropdown}
+              className='button-background-color rounded-[100px] hover:bg-backgroundColor py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3'
+            >
+              <Image src={create} alt='post 1' width={20} height={20} />
+              <h1 className='text-[14px] background-text-color  font-semibold montserrat-secondary-font'>
+                Create Thread
+              </h1>
+            </button>
+          </div>
 
           {/* Dropdown
           {showDropdown && (

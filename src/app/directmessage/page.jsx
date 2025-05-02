@@ -150,6 +150,102 @@ const Page = () => {
       userMessage1: "Loving the new sneakers drop.",
       userMessage2: "Where can I cop those?"
     },
+    {
+      profileImage: dp,
+      name: "Stan Smith",
+      isPin: pin,
+      message: "Want to see this kicks rn",
+      time: "16:45",
+      status: doubletick,
+      userMessage1: "Loving the new sneakers drop.",
+      userMessage2: "Where can I cop those?"
+    },
+
+    {
+      profileImage: dp,
+      name: "Stan Smith",
+      isPin: pin,
+      message: "Want to see this kicks rn",
+      time: "16:45",
+      status: doubletick,
+      userMessage1: "Loving the new sneakers drop.",
+      userMessage2: "Where can I cop those?"
+    },
+    {
+      profileImage: dp,
+      name: "Stan Smith",
+      isPin: pin,
+      message: "Want to see this kicks rn",
+      time: "16:45",
+      status: doubletick,
+      userMessage1: "Loving the new sneakers drop.",
+      userMessage2: "Where can I cop those?"
+    },
+    {
+      profileImage: dp,
+      name: "Stan Smith",
+      isPin: pin,
+      message: "Want to see this kicks rn",
+      time: "16:45",
+      status: doubletick,
+      userMessage1: "Loving the new sneakers drop.",
+      userMessage2: "Where can I cop those?"
+    },
+    {
+      profileImage: dp,
+      name: "Stan Smith",
+      isPin: pin,
+      message: "Want to see this kicks rn",
+      time: "16:45",
+      status: doubletick,
+      userMessage1: "Loving the new sneakers drop.",
+      userMessage2: "Where can I cop those?"
+    },
+
+    {
+      profileImage: dp,
+      name: "Stan Smith",
+      isPin: pin,
+      message: "Want to see this kicks rn",
+      time: "16:45",
+      status: doubletick,
+      userMessage1: "Loving the new sneakers drop.",
+      userMessage2: "Where can I cop those?"
+    },
+
+    {
+      profileImage: dp,
+      name: "Stan Smith",
+      isPin: pin,
+      message: "Want to see this kicks rn",
+      time: "16:45",
+      status: doubletick,
+      userMessage1: "Loving the new sneakers drop.",
+      userMessage2: "Where can I cop those?"
+    },
+
+    {
+      profileImage: dp,
+      name: "Stan Smith",
+      isPin: pin,
+      message: "Want to see this kicks rn",
+      time: "16:45",
+      status: doubletick,
+      userMessage1: "Loving the new sneakers drop.",
+      userMessage2: "Where can I cop those?"
+    },
+
+    {
+      profileImage: dp,
+      name: "Stan Smith",
+      isPin: pin,
+      message: "Want to see this kicks rn",
+      time: "16:45",
+      status: doubletick,
+      userMessage1: "Loving the new sneakers drop.",
+      userMessage2: "Where can I cop those?"
+    },
+
 
   ]);
   // You can set this based on actual user data

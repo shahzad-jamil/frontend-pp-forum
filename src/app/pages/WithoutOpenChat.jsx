@@ -11,12 +11,12 @@ import OpenChat from './OpenChat'
 
 const WithoutOpenChat = ({ selectedUser, userList }) => {
   const [reportPopup, setReportPopup] = useState(false)
+  const [users, setSelectedUser] = useState(null)
+  const [showChat, setShowChat] = useState(false)
 
   const toggleReportPopUp = () => {
     setReportPopup((prev) => !prev)
   }
-  const [users, setSelectedUser] = useState(null)
-  const [showChat, setShowChat] = useState(false)
 
   const handleSelectedUser = (user) => {
     setSelectedUser(user)
@@ -30,25 +30,18 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
   }
 
   return (
-    <div className='max-w-[90%] xl:max-w-[82%] my-[20px] mx-auto'>
-      {/* <div className='w-full'>
-        <h1 className='text-[20px] sm:text-[24px] dark:text-backgroundTextColor text-center pb-[10px] md:text-[36px] primary-text-color dark:backgroundTextColor font-semibold montserrat-primary-font'>
-          Direct Messages
-        </h1>
-      </div> */}
-
-      {/* Wrapper for layout */}
-      <div className='w-full  h-full flex flex-col  md:flex-row gap-2 rounded-[20px]'>
-
+    <div className='w-[100%] h-[91vh]  overflow-hidden mx-auto  p-2 sm:p-0'>
+      <div className='w-full h-full flex flex-col md:flex-row gap-2 rounded-[20px]'>
         {/* Users List */}
-        <div className={`flex-col  h-[100%]  md:p-4 gap-2 md:flex ${showChat ? 'hidden' : 'flex'}`}>
-          <div className='flex flex-col gap-2  justify-center'>
+        <div className={`flex-col h-full md:p-4 gap-2 md:flex ${showChat ? 'hidden' : 'flex'}`}>
+          <div className='flex flex-col gap-2 justify-center'>
             <h1 className='text-[20px] sm:text-[24px] primary-text-color dark:text-backgroundTextColor font-semibold montserrat-primary-font'>
               Messages
             </h1>
+
             <div className='flex w-full text-secondaryColor gap-1 items-center chatbox-background-color dark:bg-viewmoreButtonColor/10 px-3 rounded-[10px]'>
               <Image src={search} alt='search icon' width={14} height={14} className='cursor-pointer' />
-              <input type="text" placeholder='Search' className='outline-none bg-transparent w-[100%] p-3' />
+              <input type="text" placeholder='Search' className='outline-none bg-transparent w-full p-3' />
             </div>
 
             <div className='text-[11px] secondary-text-color montserrat-smallweigh-font flex items-center gap-1'>
@@ -60,7 +53,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
               </select>
             </div>
 
-            <div className='flex flex-col gap-5 overflow-y-auto pr-1'>
+            <div className='flex flex-col gap-5 h-[78vh] overflow-y-auto p-3 md:pr-1'>
               {userList.map((user, index) => (
                 <div key={index} onClick={() => handleSelectedUser(user)} className='flex gap-4 cursor-pointer'>
                   <Image src={user.profileImage} alt='profile' width={42} height={42} />
@@ -70,14 +63,10 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                         <Image src={user.isPin} alt='pin' width={12} height={12} />
                         <h1 className='text-[14px] primary-text-color dark:text-backgroundTextColor font-semibold montserrat-primary-font'>{user.name}</h1>
                       </div>
-                      <p className='text-[12px] secondary-text-color montserrat-smallweigh-font'>
-                        {user.message}
-                      </p>
+                      <p className='text-[12px] secondary-text-color montserrat-smallweigh-font'>{user.message}</p>
                     </div>
                     <div className='flex flex-col items-end'>
-                      <p className='text-[12px] secondary-text-color montserrat-smallweigh-font'>
-                        {user.time}
-                      </p>
+                      <p className='text-[12px] secondary-text-color montserrat-smallweigh-font'>{user.time}</p>
                       <Image src={user.status} alt='status' width={12} height={12} />
                     </div>
                   </div>
@@ -88,43 +77,35 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
         </div>
 
         {/* Chat Area */}
-        <div className={`w-full md:flex-1 ${!showChat ? 'hidden md:block' : ''}`}>
-          {
-            users ? (
-              <>
-                {/* Back button for mobile */}
-                <div className='md:hidden p-2'>
+        <div className={`w-full md:flex-1 h-[92vh]  flex flex-col ${!showChat ? 'hidden md:flex' : ''}`}>
+          {users ? (
+            <>
+              {/* Back Button */}
 
-                  <button onClick={handleBackToUsers} className='button-background-color  rounded-[10px] py-2 px-5 flex items-center justify-center '>
-                    <h1 className='text-[11px] sm:text-[14px] cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
-                      Back
-                    </h1>
-                  </button>
-                </div>
-                <OpenChat selectedUser={users} />
-              </>
-            ) : (
-              <div className='pb-[20px] flex-1'>
+
+              <OpenChat selectedUser={users} onClose={handleBackToUsers} />
+
+            </>
+          ) : (
+            <div className='flex flex-col justify-between flex-1 pb-[20px]'>
+              <div>
                 <div className='flex p-2 justify-end h-[61px]'>
                   <Image src={report} onClick={toggleReportPopUp} alt='report' width={42} height={42} className='cursor-pointer' />
                 </div>
-                <div className='flex justify-center chatbox-background-color dark:bg-primaryColor m-3 flex-col items-center h-[585px]'>
+                <div className='flex justify-center  chatbox-background-color h-[78vh] dark:bg-primaryColor flex-col items-center'>
                   <Image src={chatpic} alt='empty chat pic' width={320} height={320} />
                   <p className='text-[14px] secondary-text-color text-center montserrat-smallweigh-font max-w-[350px]'>
                     You haven't opened any message yet, please select a message to start conversation.
                   </p>
                 </div>
-                {reportPopup && (
-                  <div
-                    // ref={dropdownRef}
-                    className="absolute top-[30%] right-[10%]  flex flex-col gap-[10px] dark:bg-primaryColor card-background-color p-6 rounded-[20px] shadow-2xl w-[280px] sm:w-[520px] z-50"
-                  >
-                    {/* Title */}
+              </div>
+
+              {reportPopup && (
+                <div className="fixed top-0 left-0 inset-0 z-50 flex items-center justify-center bg-black/30 p-4">
+                  <div className="w-full max-w-[520px] card-background-color dark:bg-primaryColor p-6 rounded-[20px] shadow-2xl flex flex-col gap-[10px]">
                     <h1 className="text-[20px] sm:text-[24px] font-semibold montserrat-primary-font text-primaryColor dark:text-backgroundTextColor">
                       Report
                     </h1>
-
-                    {/* Info Text */}
                     <h1 className="text-[20px] sm:text-[24px] font-semibold montserrat-primary-font text-primaryColor dark:text-backgroundTextColor">
                       Why are you reporting this post?
                     </h1>
@@ -132,7 +113,6 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                       If someone is in immediate danger, get help before reporting to Forum PakPassion. Don't wait.
                     </p>
 
-                    {/* Checkboxes */}
                     {[
                       'Problem involving someone under 18',
                       'Bullying, harassment or abuse',
@@ -145,16 +125,12 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                       "I don't want to see this",
                       'Others'
                     ].map((label, idx) => (
-                      <label
-                        key={idx}
-                        className="flex items-center gap-3 text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color"
-                      >
+                      <label key={idx} className="flex items-center gap-3 text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color">
                         <input type="checkbox" className="w-5 h-5 dark:bg-primaryColor" />
                         {label}
                       </label>
                     ))}
 
-                    {/* Description Textarea */}
                     <div className="relative w-full">
                       <textarea
                         placeholder="Describe your concern (optional)"
@@ -163,46 +139,43 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                       ></textarea>
                     </div>
 
-                    {/* Send Report Button */}
                     <div className="flex justify-end">
                       <button className="button-background-color text-white py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
                         Send Report
                       </button>
                     </div>
                   </div>
-                )}
-                <div className='w-full dark:bg-viewmoreButtonColor/30 flex flex-row items-stretch md:items-center justify-between gap-3 p-1 rounded-md'>
-                  <div className='flex items-center gap-2 w-[100%]'>
-                    <Image
-                      src={attach}
-                      alt='attach'
-                      width={32}
-                      height={32}
-                      className='cursor-pointer shrink-0 fill-red-'
-                    />
-                    <input
-                      type='text'
-                      placeholder='Type your message here...'
-                      className='w-full text-[12px] outline-none bg-transparent secondary-text-color montserrat-smallweigh-font py-4 px-3 rounded-md'
-                    />
-                  </div>
+                </div>
+              )}
 
-                  <button className='button-background-color sm:w-[50%] md:w-[70%] lg:w-[35%] xl:w-[25%] 2xl:w-[22%] h-[40px] rounded-[100px] py-3 px-4 flex items-center justify-center '>
-                    <h1 className='text-[11px] sm:text-[14px] cursor-pointer background-text-color font-semibold montserrat-secondary-font'>
+
+              {/* Sticky Chat Input */}
+              <div className="w-full dark:bg-homeTabBackgroundColor/5 flex flex-col sm:flex-row items-center gap-3 p-2 rounded-md">
+                <div className="w-full flex">
+                  <Image src={attach} alt="attach" width={40} height={40} className="cursor-pointer" />
+                  <input
+                    type="text"
+                    placeholder="Type your message here..."
+                    className=" w-full text-[14px] bg-cardBackgroundColor dark:bg-homeTabBackgroundColor rounded-[100px] montserrat-secondary-font secondary-text-color
+             dark:text-white outline-none py-4 px-5"
+                  /> </div>
+                <div className="md:w-full sm:w-[35%] lg:w-[35%] xl:w-[22%] h-full flex items-center justify-end">
+                  <button className="button-background-color w-full sm:w-auto h-[40px] rounded-[100px] px-6 py-8 sm:px-8 flex items-center justify-center gap-2">
+                    <h1 className="text-[11px] sm:text-[12px] cursor-pointer background-text-color font-semibold montserrat-secondary-font">
                       Send Message
                     </h1>
                     <Image
                       src={send}
-                      alt='attach'
+                      alt="send"
                       width={18}
                       height={18}
-                      className='cursor-pointer shrink-0'
+                      className="cursor-pointer"
                     />
                   </button>
                 </div>
               </div>
-            )
-          }
+            </div>
+          )}
         </div>
       </div>
     </div>

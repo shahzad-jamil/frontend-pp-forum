@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import Logo from "../../../public/logo.svg"
-import LoginImage from "../../../public/login.svg"
+import LoginImage from "../../../public/loginImage.svg"
 import Link from 'next/link'
 import googleIcon from "../../../public/icons8_google 1.svg"
 import facebookIcon from "../../../public/icons8_facebook_circled 1.svg"
@@ -34,8 +34,8 @@ const page = () => {
         />
       </div >
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto items-center overflow-x-hidden">
-        <div className='w-[100%] order-2 md:order-1 mb-[40px]'>
-          <div className='w-[100%] md:w-[80%] h-[100%] mx-auto flex flex-col justify-center'>
+        <div className='w-[100%] lg:order-1 mb-[40px]'>
+          <div className='w-[100%] md:w-[80%] h-[70vh] mx-auto flex flex-col justify-center'>
             <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] dark:text-backgroundTextColor montserrat-primary-font '>Login</h1>
             <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-smallweigh-font'>
               Login to access your PakPassion account
@@ -136,15 +136,10 @@ const page = () => {
           </div>
         </div>
 
-        <div className="order-1 lg:order-1 flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-[9%] lg:top-[8%] xl:top-[12%]">
-          <Image
-            src={LoginImage}
-            alt='logo image'
-            width={447}
-            height={600}
-            className="object-contain"
-          />
+        <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-0 xl:right-[6%] lg:bottom-[10%] xl:bottom-[8%] xl:top-[8%]">
+          <Image src={LoginImage} alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
         </div>
+
       </div>
     </>
   )
