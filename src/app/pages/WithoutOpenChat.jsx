@@ -126,7 +126,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                       'Others'
                     ].map((label, idx) => (
                       <label key={idx} className="flex items-center gap-3 text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color">
-                        <input type="checkbox" className="w-5 h-5 dark:bg-primaryColor" />
+                        <input type="checkbox" className="w-5 h-5 dark:bg-primaryColor accent-green-600" />
                         {label}
                       </label>
                     ))}
@@ -135,12 +135,12 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                       <textarea
                         placeholder="Describe your concern (optional)"
                         rows="3"
-                        className="w-full border-1 border-color dark:bg-primaryColor outline-none p-4 rounded-[20px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color resize-none"
+                        className="w-full border-1 border-color bg-transparent dark:bg-primaryColor outline-none p-4 rounded-[20px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color resize-none"
                       ></textarea>
                     </div>
 
                     <div className="flex justify-end">
-                      <button className="button-background-color text-white py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
+                      <button className="button-background-color text-backgroundTextColor py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
                         Send Report
                       </button>
                     </div>

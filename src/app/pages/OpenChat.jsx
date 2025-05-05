@@ -71,41 +71,51 @@ const OpenChat = ({ selectedUser, onClose }) => {
           {reportPopup && (
             <div
               ref={dropdownRef}
-              className="absolute top-20 right-4 lg:right-10 z-50 bg-white dark:bg-primaryColor p-6 rounded-[20px] shadow-2xl w-[90%] sm:w-[400px] lg:w-[500px] max-h-[80vh] overflow-y-auto"
+              className="absolute top-20 right-4 lg:right-10 z-50  dark:bg-primaryColor p-6  w-[90%] sm:w-[400px] lg:w-[500px]"
             >
-              <h1 className="text-[20px] sm:text-[24px] font-semibold mb-2">Report</h1>
-              <p className="text-[14px] text-gray-600">Why are you reporting this post?</p>
-              <p className="text-[12px] text-gray-500 mb-4">
-                If someone is in immediate danger, get help before reporting to Forum PakPassion. Don’t wait.
-              </p>
-              {[
-                "Problem involving someone under 18",
-                "Bullying, harassment or abuse",
-                "Suicide or self-harm",
-                "Violent, hateful or disturbing content",
-                "Selling or promoting restricted items",
-                "Adult content",
-                "Scam, fraud or false information",
-                "Intellectual property",
-                "I don't want to see this",
-                "Others",
-              ].map((label, idx) => (
-                <label key={idx} className="flex items-start gap-3 text-sm mb-2">
-                  <input type="checkbox" className="w-5 h-5 mt-1" />
-                  <span>{label}</span>
-                </label>
-              ))}
-              <textarea
-                placeholder="Describe your concern (optional)"
-                rows="3"
-                className="w-full mt-2 p-3 border rounded-[12px] resize-none"
-              ></textarea>
-              <div className="flex justify-end mt-4">
-                <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">
-                  Send Report
-                </button>
-              </div>
-            </div>
+              <div className="w-full max-w-[520px] card-background-color dark:bg-primaryColor p-6 rounded-[20px] shadow-2xl flex flex-col gap-[10px]">
+                <h1 className="text-[20px] sm:text-[24px] font-semibold montserrat-primary-font text-primaryColor dark:text-backgroundTextColor">
+                  Report
+                </h1>
+                <h1 className="text-[20px] sm:text-[24px] font-semibold montserrat-primary-font text-primaryColor dark:text-backgroundTextColor">
+                  Why are you reporting this post?
+                </h1>
+                <p className="text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color">
+                  If someone is in immediate danger, get help before reporting to Forum PakPassion. Don't wait.
+                </p>
+
+                {[
+                  'Problem involving someone under 18',
+                  'Bullying, harassment or abuse',
+                  'Suicide or self-harm',
+                  'Violent, hateful or disturbing content',
+                  'Selling or promoting restricted items',
+                  'Adult content',
+                  'Scam, fraud or false information',
+                  'Intellectual property',
+                  "I don't want to see this",
+                  'Others'
+                ].map((label, idx) => (
+                  <label key={idx} className="flex items-center gap-3 text-[12px] sm:text-[14px] montserrat-secondary-font secondary-text-color">
+                    <input type="checkbox" className="w-5 h-5 dark:bg-primaryColor accent-green-600" />
+                    {label}
+                  </label>
+                ))}
+
+                <div className="relative w-full">
+                  <textarea
+                    placeholder="Describe your concern (optional)"
+                    rows="3"
+                    className="w-full border-1 border-color bg-transparent dark:bg-primaryColor outline-none p-4 rounded-[20px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color resize-none"
+                  ></textarea>
+                </div>
+
+                <div className="flex justify-end">
+                  <button className="button-background-color text-backgroundTextColor py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
+                    Send Report
+                  </button>
+                </div>
+              </div>            </div>
           )}
         </div>
 
