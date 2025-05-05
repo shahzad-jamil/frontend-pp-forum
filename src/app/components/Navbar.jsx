@@ -73,7 +73,7 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "Spaces", path: "/spaces" },
     { name: "Direct Messages", path: "/directmessage" },
-    { name: "Help Center", path: "/helpcenter" },
+    { name: "Help Center", path: "/help&support" },
   ];
 
   if (hideNavbarPages.includes(pathname)) return null;
