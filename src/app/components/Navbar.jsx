@@ -192,22 +192,22 @@ const Navbar = () => {
       </div>
 
       {menuOpen && (
-        <div className="xl:hidden mt-4 flex items-center flex-col gap-4 z-50">
+        <div className="xl:hidden mt-4 flex items-center flex-col gap-4 z-[1000]">
           {navlinks.map((item, i) => (
             <Link
               href={item.path}
               key={i}
-              className="background-text-color text-[14px] border-b w-full text-center sport-border-color pb-6"
+              className="background-text-color text-[14px] border-b w-full text-center sport-border-color z-20 pb-6"
               onClick={() => setMenuOpen(false)}
             >
               {item.name}
             </Link>
           ))}
-          <div className="flex items-center gap-[20px] mt-2">
+          <div className="flex items-center gap-[20px] mt-2 z-20">
             <Image src='/notification-03.svg' alt="notification" height={18} width={18} className="cursor-pointer" />
           </div>
 
-          <div className="navbar-button-background py-3 px-4 gap-[10px] text-[14px] rounded-[100px] flex mt-2">
+          <div className="navbar-button-background py-3 px-4 gap-[10px] text-[14px] rounded-[100px] flex mt-2 z-20">
             <Image
               src={theme === 'light' ? 'lightmodeactive.svg' : 'lightmodeoff.svg'}
               alt="lightmode-toggle"
