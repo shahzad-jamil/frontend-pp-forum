@@ -2,8 +2,8 @@
 "use client"
 import Image from 'next/image'
 import React from 'react'
-import Logo from "../../../public/logo.svg"
-import verifyImage from "../../../public/otp.svg"
+// import Logo from "../../../public/logo.svg"
+// import verifyImage from "../../../public/otp.svg"
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 

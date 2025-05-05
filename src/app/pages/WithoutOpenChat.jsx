@@ -1,12 +1,12 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import report from "../../../public/report.svg"
-import search from "../../../public/search.svg"
-import message from "../../../public/message.svg"
-import chatpic from "../../../public/chatwindow.svg"
-import attach from "../../../public/attachment.svg"
-import send from "../../../public/icons8_paper_plane 1.svg"
+// import report from "../../../public/report.svg"
+// import search from "../../../public/search.svg"
+// import message from "../../../public/message.svg"
+// import chatpic from "../../../public/chatwindow.svg"
+// import attach from "../../../public/attachment.svg"
+// import send from "../../../public/icons8_paper_plane 1.svg"
 import OpenChat from './OpenChat'
 
 const WithoutOpenChat = ({ selectedUser, userList }) => {
@@ -40,7 +40,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
             </h1>
 
             <div className='flex w-full text-secondaryColor gap-1 items-center chatbox-background-color dark:bg-viewmoreButtonColor/10 px-3 rounded-[10px]'>
-              <Image src={search} alt='search icon' width={14} height={14} className='cursor-pointer' />
+              <Image src="/search.svg" alt='search icon' width={14} height={14} className='cursor-pointer' />
               <input type="text" placeholder='Search' className='outline-none bg-transparent w-full p-3' />
             </div>
 
@@ -90,10 +90,10 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
             <div className='flex flex-col justify-between flex-1 pb-[20px]'>
               <div>
                 <div className='flex p-2 justify-end h-[61px]'>
-                  <Image src={report} onClick={toggleReportPopUp} alt='report' width={42} height={42} className='cursor-pointer' />
+                  <Image src="/report.svg" onClick={toggleReportPopUp} alt='report' width={42} height={42} className='cursor-pointer' />
                 </div>
                 <div className='flex justify-center  chatbox-background-color h-[78vh] dark:bg-primaryColor flex-col items-center'>
-                  <Image src={chatpic} alt='empty chat pic' width={320} height={320} />
+                  <Image src="/chatwindow.svg" alt='empty chat pic' width={320} height={320} />
                   <p className='text-[14px] secondary-text-color text-center montserrat-smallweigh-font max-w-[350px]'>
                     You haven't opened any message yet, please select a message to start conversation.
                   </p>
@@ -152,7 +152,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
               {/* Sticky Chat Input */}
               <div className="w-full dark:bg-homeTabBackgroundColor/5 flex flex-col sm:flex-row items-center gap-3 p-2 rounded-md">
                 <div className="w-full flex">
-                  <Image src={attach} alt="attach" width={40} height={40} className="cursor-pointer" />
+                  <Image src="/attachment.svg" alt="attach" width={40} height={40} className="cursor-pointer" />
                   <input
                     type="text"
                     placeholder="Type your message here..."
@@ -165,7 +165,7 @@ const WithoutOpenChat = ({ selectedUser, userList }) => {
                       Send Message
                     </h1>
                     <Image
-                      src={send}
+                      src="/icons8_paper_plane 1.svg"
                       alt="send"
                       width={18}
                       height={18}

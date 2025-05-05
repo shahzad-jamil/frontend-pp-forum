@@ -57,7 +57,7 @@ const page = () => {
           <div className="mt-[10px] w-full">
             <div className='flex gap-3 items-center border-color pl-5 rounded-[100px]'>
               <Image
-                src="/icons8_plus_1 1.svg"
+                src="/icons8_Plus_1 1.svg"
                 alt="Plus Icon"
                 width={20}
                 height={20}
