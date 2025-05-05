@@ -73,7 +73,7 @@ const page = () => {
     <>
 
       <div className='w-[100%] px-[10px] xl:px-[0px] xl:max-w-[82%] h-[68vh]  xl:h-[47.8vh] mx-auto mt-[1px] lg:mt-[20px] '>
-        <h1 className='text-[32px] text-center md:text-left md:text-[36px] primary-text-color font-semibold montserrat-primary-font '>
+        <h1 className='text-[32px] dark:text-backgroundTextColor text-center md:text-left md:text-[36px] primary-text-color font-semibold montserrat-primary-font '>
           Create Question
         </h1>
         <p className='text-[14px] pt-[2px] secondary-text-color montserrat-primary-font'>

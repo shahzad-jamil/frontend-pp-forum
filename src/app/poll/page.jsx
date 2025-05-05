@@ -5,7 +5,7 @@ const page = () => {
   return (
     <>
       <div className='w-full px-[10px] xl:px-0 xl:max-w-[82%] h-[48vh] xl:h-[37.8vh] mx-auto  my-[20px]'>
-        <h1 className='text-[32px] text-center md:text-left md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
+        <h1 className='text-[32px] text-center dark:text-backgroundTextColor md:text-left md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
           Create A Poll
         </h1>
         <p className='text-[14px] p-[20px] my-[10px] secondary-text-color montserrat-smallweigh-font'>
@@ -15,14 +15,14 @@ const page = () => {
         <div className='w-full flex flex-col gap-[20px] justify-center'>
           {/* Answer 1 */}
           <div className="relative mt-[10px] w-full">
-            <label className="absolute text-[14px] -top-3 left-5 px-2 montserrat-primary-font bg-white primary-text-color font-semibold">
+            <label className="absolute text-[14px] -top-3 left-5 px-2 montserrat-primary-font bg-backgroundTextColor dark:bg-primaryColor dark:text-backgroundTextColor primary-text-color font-semibold">
               Answer
             </label>
             <div className='flex justify-between items-center border-color pr-10 rounded-[100px]'>
               <input
                 type="text"
                 placeholder='Type here..'
-                className='w-full montserrat-secondary-font secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[14px]'
+                className='w-full montserrat-secondary-font dark:bg-transparent secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[14px]'
               />
               <Image
                 src="/icons8_delete 2.svg"
@@ -35,14 +35,14 @@ const page = () => {
 
           {/* Answer 2 */}
           <div className="relative mt-[10px] w-full">
-            <label className="absolute text-[14px] -top-3 left-5 px-2 montserrat-primary-font bg-white primary-text-color font-semibold">
+            <label className="absolute text-[14px] -top-3 left-5 px-2 montserrat-primary-font bg-backgroundTextColor dark:bg-primaryColor dark:text-backgroundTextColor primary-text-color font-semibold">
               Answer
             </label>
             <div className='flex justify-between items-center border-color pr-10 rounded-[100px]'>
               <input
                 type="text"
                 placeholder='Type here..'
-                className='w-full montserrat-secondary-font secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[14px]'
+                className='w-full montserrat-secondary-font dark:bg-transparent secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[14px]'
               />
               <Image
                 src="/icons8_delete 2.svg"
@@ -65,7 +65,7 @@ const page = () => {
               <input
                 type="text"
                 placeholder='Add another answer'
-                className='w-full montserrat-secondary-font secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[14px]'
+                className='w-full montserrat-secondary-font dark:bg-transparent secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[14px]'
               />
             </div>
           </div>
@@ -73,11 +73,11 @@ const page = () => {
 
         {/* Duration */}
         <div className='my-[20px]'>
-          <h1 className='text-[18px] md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
+          <h1 className='text-[18px] dark:text-backgroundTextColor md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
             Duration
           </h1>
           <div className="mt-2">
-            <select className="py-4 px-5 text-[16px] rounded-md border border-gray-300 focus:outline-none">
+            <select className="py-4 px-5 text-[16px] rounded-md border dark:bg-transparent dark:text-backgroundTextColor border-gray-300 focus:outline-none">
               <option value="24_hours">24 hours</option>
               <option value="7_hours">7 hours</option>
               <option value="1_day">1 day</option>
@@ -88,7 +88,7 @@ const page = () => {
 
         {/* Allow Multiple Answers */}
         <div className='my-[20px]'>
-          <h1 className='text-[18px] md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
+          <h1 className='text-[18px] dark:text-backgroundTextColor md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
             Allow Multiple Answers
           </h1>
           <div className='flex gap-2 flex-col'>

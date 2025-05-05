@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <div className='w-full min-h-screen flex justify-center'>
       <div className='w-[80%]'>
-        <h1 className='text-[36px] text-center primary-text-color montserrat-bolder-font mt-10'>
+        <h1 className='text-[36px] dark:text-backgroundTextColor text-center primary-text-color montserrat-bolder-font mt-10'>
           Settings
         </h1>
 
@@ -23,7 +23,7 @@ const Page = () => {
               onClick={() => setActiveTab(tab)}
               className={` rounded-[100px] justify-center py-3 md:py-5 px-8 cursor-pointer flex items-center gap-3 ${activeTab === tab
                 ? 'bg-registerTextColor border-none text-white'
-                : 'text-primaryColor border-color border'
+                : 'text-primaryColor dark:text-backgroundTextColor border-color border'
                 }`}
             >
               <h1 className='text-[14px] font-semibold montserrat-secondary-font'>

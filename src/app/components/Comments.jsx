@@ -1,15 +1,15 @@
 "use client"
 import React, { useState } from 'react'
 import Image from 'next/image'
-import user from "../../../public/Group 2008.svg"
-import like from "../../../public/icons8_thumbs_up_1 1.svg"
-import dislike from "../../../public/icons8_thumbs_down.svg"
-import maximize from "../../../public/icons8_expand_arrow 1 (1).svg"
+// import user from "../../../public/Group 2008.svg"
+// import like from "../../../public/icons8_thumbs_up_1 1.svg"
+// import dislike from "../../../public/icons8_thumbs_down.svg"
+// import maximize from "../../../public/icons8_expand_arrow 1 (1).svg"
 
 const Comments = () => {
   const commentOfUser = [
     {
-      image: user,
+      image: '/Group 2008.svg',
       title: "CricketerWarior",
       postedBy: "Bouncer Guy",
       time: "1:12AM",
@@ -18,7 +18,7 @@ const Comments = () => {
       dislike: "1k",
       userReply: [
         {
-          image: user,
+          image: '/Group 2008.svg',
           title: "CricketerWarior",
           postedBy: "Bouncer Guy",
           time: "2:00AM",
@@ -27,7 +27,7 @@ const Comments = () => {
           dislike: "200"
         },
         {
-          image: user,
+          image: '/Group 2008.svg',
           title: "ReplyUser2",
           postedBy: "Reply Guy",
           time: "2:10AM",
@@ -38,7 +38,7 @@ const Comments = () => {
       ]
     },
     {
-      image: user,
+      image: '/Group 2008.svg',
       title: "CricketerWarior",
       postedBy: "Bouncer Guy",
       time: "1:15AM",
@@ -47,7 +47,7 @@ const Comments = () => {
       dislike: "500",
       userReply: [
         {
-          image: user,
+          image: '/Group 2008.svg',
           title: "ReplyUser3",
           postedBy: "Reply Guy",
           time: "2:20AM",
@@ -56,7 +56,7 @@ const Comments = () => {
           dislike: "50"
         },
         {
-          image: user,
+          image: '/Group 2008.svg',
           title: "ReplyUser4",
           postedBy: "Reply Guy",
           time: "2:30AM",
@@ -67,7 +67,7 @@ const Comments = () => {
       ]
     },
     {
-      image: user,
+      image: '/Group 2008.svg',
       title: "CricketerWarior",
       postedBy: "Bouncer Guy",
       time: "1:15AM",
@@ -76,7 +76,7 @@ const Comments = () => {
       dislike: "500",
       userReply: [
         {
-          image: user,
+          image: '/Group 2008.svg',
           title: "ReplyUser3",
           postedBy: "Reply Guy",
           time: "2:20AM",
@@ -85,7 +85,7 @@ const Comments = () => {
           dislike: "50"
         },
         {
-          image: user,
+          image: '/Group 2008.svg',
           title: "ReplyUser4",
           postedBy: "Reply Guy",
           time: "2:30AM",
@@ -134,13 +134,13 @@ const Comments = () => {
 
             <div className='w-[40%] flex gap-5 items-center mt-2'>
               <div className='flex items-center bg-viewmoreButtonColor pr-8 p-2 sm:p-2 rounded-full'>
-                <Image src={like} alt='like' width={18} height={18} />
+                <Image src='/icons8_thumbs_up_1 1.svg' alt='like' width={18} height={18} />
                 <span className='text-[8px] primary-text-color font-openSans font-[600] ml-1 dark:text-primaryColor'>
                   {comment.likes}
                 </span>
               </div>
               <div className='flex items-center bg-viewmoreButtonColor pr-8 p-2 sm:p-2 rounded-full'>
-                <Image src={dislike} alt='dislike' width={22} height={22} />
+                <Image src='/icons8_thumbs_down.svg' alt='dislike' width={22} height={22} />
                 <span className='text-[8px] primary-text-color font-openSans font-[600] ml-1  dark:text-primaryColor'>
                   {comment.dislike}
                 </span>
@@ -173,11 +173,11 @@ const Comments = () => {
 
                 <div className='w-[40%] flex gap-5 items-center mt-2 ml-10'>
                   <div className='flex items-center bg-viewmoreButtonColor pr-8 p-2 sm:p-2 rounded-full'>
-                    <Image src={like} alt='like' width={18} height={18} />
+                    <Image src='/icons8_thumbs_up_1 1.svg' alt='like' width={18} height={18} />
                     <span className='text-[8px] font-bold primary-text-color ml-1  dark:text-primaryColor'>{reply.likes}</span>
                   </div>
                   <div className='flex items-center bg-viewmoreButtonColor pr-8 p-2 sm:p-2 rounded-full'>
-                    <Image src={dislike} alt='dislike' width={18} height={18} />
+                    <Image src='/icons8_thumbs_down.svg' alt='dislike' width={18} height={18} />
                     <span className='text-[8px] font-bold primary-text-color ml-1  dark:text-primaryColor'>{reply.dislike}</span>
                   </div>
                   <span className='text-[12px] primary-text-color font-openSans font-[600] dark:text-backgroundTextColor'>Reply</span>
@@ -191,7 +191,7 @@ const Comments = () => {
                 <h1 className='text-[13px] register-text-color font-[600]'>
                   {expandedReplies[index] ? 'Hide replies' : 'View more replies'}
                 </h1>
-                <Image src={maximize} alt='toggle' width={20} height={20} />
+                <Image src='/icons8_expand_arrow 1 (1).svg' alt='toggle' width={20} height={20} />
               </div>
             )}
           </div>
@@ -212,7 +212,7 @@ const Comments = () => {
             {visibleComments === commentOfUser.length
               ? 'View less comments'
               : 'View more comments'}
-            <Image src={maximize} alt='toggle comments' width={20} height={20} />
+            <Image src='/icons8_expand_arrow 1 (1).svg' alt='toggle comments' width={20} height={20} />
           </h1>
         </div>
       )}
