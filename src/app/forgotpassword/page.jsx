@@ -1,10 +1,10 @@
 "use client"
 import Image from 'next/image'
 import React from 'react'
-import Logo from "../../../public/logo.svg"
-import forgotImage from "../../../public/forgotpassword.svg"
+// import Logo from "../../../public/logo.svg"
+// import forgotImage from "../../../public/forgotpassword.svg"
 import Link from 'next/link'
-import captchaIcon from "../../../public/captcha.svg 1.svg"
+// import captchaIcon from "../../../public/captcha.svg 1.svg"
 import { useRouter } from 'next/navigation'
 
 
@@ -21,7 +21,7 @@ const page = () => {
 
       <div className='py-[20px]   px-[100px]'>
         <Image
-          src={Logo}
+          src='/logo.svg'
           alt='logo image'
           height={500}
           width={200}
@@ -51,7 +51,7 @@ const page = () => {
                     <span className='text-[12px] md:text-[14px] secondary-text-color montserrat-secondary-font'>I am human</span>
                   </label>
                   <Image
-                    src={captchaIcon}
+                    src='/captcha.svg 1.svg'
                     height={40}
                     width={40}
                   />
@@ -69,7 +69,7 @@ const page = () => {
           </div>
         </div>
         <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-0 xl:right-[6%] lg:bottom-[10%] xl:bottom-[8%] xl:top-[8%]">
-          <Image src={forgotImage} alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
+          <Image src='/forgotpassword.svg' alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
         </div>
       </div>
     </>

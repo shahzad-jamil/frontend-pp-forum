@@ -2,14 +2,14 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import create from '../../../public/icons8_create 1.svg';
-import article from '../../../public/icons8_regular_document 1.svg';
-import question from '../../../public/icons8_questions 1.svg';
-import poll from '../../../public/icons8_poll 1.svg';
-import discussion from '../../../public/discussion.svg';
+// import create from '../../../public/icons8_create 1.svg';
+// import article from '../../../public/icons8_regular_document 1.svg';
+// import question from '../../../public/icons8_questions 1.svg';
+// import poll from '../../../public/icons8_poll 1.svg';
+// import discussion from '../../../public/discussion.svg';
 import Link from 'next/link';
-import search from "../../../public/Search Icon green.svg"
-import close from "../../../public/icons8_multiply 2.svg"
+// import search from "../../../public/Search Icon green.svg"
+// import close from "../../../public/icons8_multiply 2.svg"
 
 const CreateComponent = () => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -38,25 +38,25 @@ const CreateComponent = () => {
 
   const actions = [
     {
-      image: discussion,
+      image: '/discussion.svg',
       title: 'Discussion',
       path: '/post-discussion',
       color: 'bg-discussionButtonColor',
     },
     {
-      image: article,
+      image: '/icons8_regular_document 1.svg',
       title: 'Article',
       path: '/post-article',
       color: 'bg-articleButtonColor',
     },
     {
-      image: poll,
+      image: '/icons8_poll 1.svg',
       title: 'Poll',
       path: '/poll',
       color: 'bg-pollButtonColor',
     },
     {
-      image: question,
+      image: '/icons8_questions 1.svg',
       title: 'Question',
       path: '/post-question',
       color: 'bg-questionButtonColor',
@@ -78,18 +78,19 @@ const CreateComponent = () => {
           <div className='flex w-[100%] md:w-[80%] lg:w-[80%] border-searchBorderColor dark:border-searchBorderColor/20 border p-3 md:p-4 mx-auto justify-between items-center rounded-[100px]'>
             <div className='w-[100%] flex gap-1 md:gap-3 items-center '>
               <Image
-                src={search}
+                src='/Search Icon green.svg'
                 alt='search'
                 width={20}
-                heigh={20}
+                height={20}
+
               />
               <input type="text" placeholder='Search threads, posts and posters' className='w-[100%] text-[10px] md:text-[14px] p-2 outline-none bg-transparent text-secondaryColor montserrat-secondary-font  ' />
             </div>
             <Image
-              src={close}
+              src='/icons8_multiply 2.svg'
               alt='close'
               width={20}
-              heigh={20}
+              height={20}
             />
           </div>
           {/* Create Thread Button */}
@@ -98,7 +99,7 @@ const CreateComponent = () => {
               onClick={toggleDropdown}
               className='button-background-color rounded-[100px] hover:bg-backgroundColor py-4 px-4 sm:py-5 sm:px-8 flex items-center gap-3'
             >
-              <Image src={create} alt='post 1' width={20} height={20} />
+              <Image src='/icons8_create 1.svg' alt='post 1' width={20} height={20} />
               <h1 className='text-[14px] background-text-color  font-semibold montserrat-secondary-font'>
                 Create Thread
               </h1>

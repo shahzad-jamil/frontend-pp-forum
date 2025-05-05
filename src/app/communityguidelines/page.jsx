@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import chatBubble from "../../../public/icons8_chat 1.svg";
+// import chatBubble from "../../../public/icons8_chat 1.svg";
 
 const page = () => {
   const forumRules = [
@@ -111,7 +111,13 @@ const page = () => {
 
       {/* Floating Chat Bubble */}
       <div className="fixed right-[5%] bottom-[5%] flex justify-center items-center rounded-full p-[5px] bg-chatBubbleColor shadow-2xl cursor-pointer w-[60px] h-[60px] sm:w-[70px] sm:h-[70px]">
-        <Image src={chatBubble} alt="Chat Support" width={40} height={40} />
+        {/* <Image src={chatBubble} alt="Chat Support" width={40} height={40} /> */}
+        <Image
+          src="/icons8_chat 1.svg"
+          alt="chat Icon"
+          width={40}
+          height={40}
+        />
       </div>
     </>
   );

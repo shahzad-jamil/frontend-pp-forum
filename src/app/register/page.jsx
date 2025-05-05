@@ -1,16 +1,16 @@
 'use client'
 import Image from 'next/image'
 import React, { useState } from 'react'
-import Logo from "../../../public/logo.svg"
-import registerImage from "../../../public/register.svg"
+// import Logo from "../../../public/logo.svg"
+// import registerImage from "../../../public/register.svg"
 import Link from 'next/link'
-import googleIcon from "../../../public/icons8_google 1.svg"
-import facebookIcon from "../../../public/icons8_facebook_circled 1.svg"
-import appleIcon from "../../../public//icons8_Apple_Inc 1.svg"
+// import googleIcon from "../../../public/icons8_google 1.svg"
+// import facebookIcon from "../../../public/icons8_facebook_circled 1.svg"
+// import appleIcon from "../../../public//icons8_Apple_Inc 1.svg"
 
-import captchaIcon from "../../../public/captcha.svg 1.svg"
-import eye from "../../../public/icons8_hide 1.svg"
-import viewEye from "../../../public/viewEye.svg"
+// import captchaIcon from "../../../public/captcha.svg 1.svg"
+// import eye from "../../../public/icons8_hide 1.svg"
+// import viewEye from "../../../public/viewEye.svg"
 import { useRouter } from 'next/navigation'
 const page = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -29,7 +29,7 @@ const page = () => {
   return (
     <>
       <div className='py-[20px]  px-[20px] md:px-[100px]'>
-        <Image src={Logo} alt='logo image' height={500} width={200} />
+        <Image src='/logo.svg' alt='logo image' height={500} width={200} />
       </div>
 
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
@@ -63,7 +63,7 @@ const page = () => {
                     className='w-full montserrat-secondary-font dark:bg-primaryColor  secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[12px] md:text-[14px]'
                   />
                   <Image
-                    src={showPassword ? viewEye : eye}
+                    src={showPassword ? '/viewEye.svg' : '/icons8_hide 1.svg'}
                     alt='eye icon'
                     height={18}
                     width={18}
@@ -84,7 +84,7 @@ const page = () => {
                     <input type="checkbox" className="form-checkbox w-6 h-6 montserrat-secondary-font cursor-pointer border-color accent-backgroundColor" />
                     <span className='text-[12px] md:text-[14px] secondary-text-color montserrat-secondary-font'>I am human</span>
                   </label>
-                  <Image src={captchaIcon} height={40} width={40} />
+                  <Image src='/captcha.svg 1.svg' height={40} width={40} />
                 </div>
               </div>
               <div>
@@ -118,19 +118,19 @@ const page = () => {
 
             <div className='w-[100%] flex gap-[30px] mt-[10px]'>
               <div className='flex items-center border-color dark:hover:bg-secondaryColor/30 w-[100%] hover:bg-primaryColor/20 cursor-pointer p-3 rounded-[100px] justify-center'>
-                <Image src={googleIcon} height={34} width={34} />
+                <Image src='/icons8_google 1.svg' height={34} width={34} />
               </div>
               <div className='flex items-center border-color w-[100%] dark:hover:bg-secondaryColor/30 hover:bg-primaryColor/20 p-3 cursor-pointer rounded-[100px] justify-center'>
-                <Image src={facebookIcon} height={34} width={34} />
+                <Image src='/icons8_facebook_circled 1.svg' height={34} width={34} />
               </div>
               <div className='flex items-center border-color w-[100%] dark:hover:bg-secondaryColor/30 hover:bg-primaryColor/20 p-3 cursor-pointer rounded-[100px] justify-center'>
-                <Image src={appleIcon} height={34} width={34} />
+                <Image src='/icons8_Apple_Inc 1.svg' height={34} width={34} />
               </div>
             </div>
           </div>
         </div>
         <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-0 xl:right-[6%] lg:bottom-[10%] xl:bottom-[8%] xl:top-[8%]">
-          <Image src={registerImage} alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
+          <Image src='/register.svg' alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
         </div>
       </div>
     </>

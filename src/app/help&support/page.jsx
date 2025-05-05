@@ -1,12 +1,12 @@
 "use client"
 import React, { useState } from "react";
 import Image from "next/image";
-import minus from "../../../public/icons8_minus 2.svg";
-import plus from "../../../public/icons8_Plus 2.svg";
-import email from "../../../public/mail-02.svg";
-import customerService from "../../../public/customer-service-02.svg";
-import chat from "../../../public/comment-01.svg";
-import chatBubble from "../../../public/icons8_chat 1.svg";
+// import minus from "../../../public/icons8_minus 2.svg";
+// import plus from "../../../public/icons8_Plus 2.svg";
+// import email from "../../../public/mail-02.svg";
+// import customerService from "../../../public/customer-service-02.svg";
+// import chat from "../../../public/comment-01.svg";
+// import chatBubble from "../../../public/icons8_chat 1.svg";
 
 const Page = () => {
   const initialFaqList = [
@@ -95,7 +95,7 @@ const Page = () => {
 
                     <div className="w-full sm:w-[40%] flex justify-end mt-2 sm:mt-0 cursor-pointer">
                       <Image
-                        src={isOpen ? minus : plus}
+                        src={isOpen ? '/icons8_minus 2.svg' : '/icons8_Plus 2.svg'}
                         alt={isOpen ? "Collapse" : "Expand"}
                         width={30}
                         height={30}
@@ -120,17 +120,17 @@ const Page = () => {
             {/* Support Card */}
             {[
               {
-                icon: email,
+                icon: '/mail-02.svg',
                 title: "Email:",
                 description: "support@pakpassion.com",
               },
               {
-                icon: chat,
+                icon: '/comment-01.svg',
                 title: "Chat Bot:",
                 description: "Talk to our chat bot.",
               },
               {
-                icon: customerService,
+                icon: '/customer-service-02.svg',
                 title: "Forum Helpdesk:",
                 description: "Support Thread",
               },
@@ -139,7 +139,7 @@ const Page = () => {
                 key={idx}
                 className="bg-white dark:bg-primaryColor/40 flex flex-col gap-[20px] h-[165px] justify-center items-center rounded-[20px]"
               >
-                <Image src={item.icon} alt={item.title} width={40} height={40} />
+                <img src={item.icon} alt={item.title} width={40} height={40} />
                 <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row gap-[5px] sm:gap-[10px] items-center text-center">
                   <h2 className="text-[14px] sm:text-[16px] text-buttonBackgroundColor font-[600] font-Montserrat">
                     {item.title}
@@ -158,7 +158,13 @@ const Page = () => {
       </div>
 
       <div className="fixed right-[5%] bottom-[5%] flex justify-center items-center rounded-full p-[5px] bg-chatBubbleColor shadow-2xl cursor-pointer w-[60px] h-[60px] sm:w-[70px] sm:h-[70px]">
-        <Image src={chatBubble} alt="Chat Support" width={40} height={40} />
+        {/* <Image src={chatBubble} alt="Chat Support" width={40} height={40} /> */}
+        <Image
+          src="/icons8_chat 1.svg"
+          alt="chat Icon"
+          width={40}
+          height={40}
+        />
       </div>
     </>
   );

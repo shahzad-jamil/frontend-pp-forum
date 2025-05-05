@@ -1,18 +1,18 @@
 'use client'
 import React, { useState } from 'react'
-import minimize from "../../../public/icons8_expand_arrow 1.svg"
-import maximize from "../../../public/Vector.svg"
+// import minimize from "../../../public/icons8_expand_arrow 1.svg"
+// import maximize from "../../../public/Vector.svg"
 import { AnimatePresence, motion } from 'framer-motion'
-import postedByUser from "../../../public/Ellipse 1 (1).svg"
-import onlineUser from "../../../public/Rectangle 56.svg"
+// import postedByUser from "../../../public/Ellipse 1 (1).svg"
+// import onlineUser from "../../../public/Rectangle 56.svg"
 import Image from 'next/image'
-import greenmaximize from "../../../public/icons8_expand_arrow 1 (2).svg"
-import greenminimize from "../../../public/icons8_expand_arrow 1 (1).svg"
-import post1 from "../../../public/Rectangle 24 (4).svg"
-import post2 from "../../../public/Rectangle 24 (3).svg"
-import post3 from "../../../public/Rectangle 24 (2).svg"
-import post4 from "../../../public/Rectangle 24 (1).svg"
-import post5 from "../../../public/Rectangle 24.svg"
+// import greenmaximize from "../../../public/icons8_expand_arrow 1 (2).svg"
+// import greenminimize from "../../../public/icons8_expand_arrow 1 (1).svg"
+// import post1 from "../../../public/Rectangle 24 (4).svg"
+// import post2 from "../../../public/Rectangle 24 (3).svg"
+// import post3 from "../../../public/Rectangle 24 (2).svg"
+// import post4 from "../../../public/Rectangle 24 (1).svg"
+// import post5 from "../../../public/Rectangle 24.svg"
 import LatestPost from '../components/LatestPost'
 import TrendingContent from '../components/TrendingContent'
 import ForumStastic from '../components/ForumStastic'
@@ -22,45 +22,45 @@ import Link from 'next/link'
 const Sports = () => {
   const sportsTopic = [
     {
-      image: post1,
+      image: 'Rectangle 24 (4).svg',
       title: "Cricket",
       description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match and experience the rollercoaster of emotions.",
       threads: "27.7k",
       updatedTime: "53 minutes ago",
       MatchBetweenTeams: "New Zealand (131/2) outclass Pakistan (128/9) by 8 wickets in the...",
       postedBy: "Bouncer Guy",
-      postedUserImage: postedByUser
+      postedUserImage: '/Ellipse 1 (1).svg'
     },
     {
-      image: post2,
+      image: 'Rectangle 24 (3).svg',
       title: "My Cricket",
       description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match and experience the rollercoaster of emotions.",
       threads: "27.7k",
       updatedTime: "53 minutes ago",
       MatchBetweenTeams: "New Zealand (131/2) outclass Pakistan (128/9) by 8 wickets in the...",
       postedBy: "Bouncer Guy",
-      postedUserImage: postedByUser
+      postedUserImage: '/Ellipse 1 (1).svg'
     },
     {
-      image: post3,
+      image: 'Rectangle 24 (2).svg',
       title: "Commentary Threads",
       description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match and experience the rollercoaster of emotions.",
       threads: "27.7k",
       updatedTime: "53 minutes ago",
       MatchBetweenTeams: "New Zealand (131/2) outclass Pakistan (128/9) by 8 wickets in the...",
       postedBy: "Bouncer Guy",
-      postedUserImage: postedByUser
+      postedUserImage: '/Ellipse 1 (1).svg'
     },
   ]
 
   const staffOnline = [
     {
-      userImage: onlineUser,
+      userImage: '/Rectangle 56.svg',
       userName: "BouncerGuy",
       userRole: "Super Moderator"
     },
     {
-      userImage: onlineUser,
+      userImage: '/Rectangle 56.svg',
       userName: "Asad T",
       userRole: "Super Moderator"
     },
@@ -89,7 +89,7 @@ const Sports = () => {
             </h1>
             <button onClick={() => setIsMinimized(!isMinimized)}>
               <Image
-                src={isMinimized ? maximize : minimize}
+                src={isMinimized ? '/Vector.svg' : '/icons8_expand_arrow 1.svg'}
                 alt="toggle"
                 height={20}
                 width={22}
@@ -134,7 +134,7 @@ const Sports = () => {
                         <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor mt-5 '>{item.MatchBetweenTeams}</h1>
                         <div className='flex items-center gap-2 mt-[10px] sm:mt-3 md:mt-7 '>
                           <div className='w-[34px] h-[34px] '>
-                            <Image src={item.postedUserImage} alt='posted user' />
+                            <Image src={item.postedUserImage} alt='posted user' width={34} height={34} />
                           </div>
                           <p className='text-[12px] sm:text-[14px] font-openSans font-bold primary-text-color dark:text-backgroundTextColor '>{item.postedBy}</p>
                         </div>
@@ -158,7 +158,7 @@ const Sports = () => {
             </h1>
             <button onClick={() => setIsPPTeam(!isPPTeam)}>
               <Image
-                src={isPPTeam ? maximize : minimize}
+                src={isPPTeam ? '/Vector.svg' : '/icons8_expand_arrow 1.svg'}
                 alt="toggle"
                 height={20}
                 width={22}
@@ -181,7 +181,7 @@ const Sports = () => {
               </div>
               <button onClick={() => setIsStaffMinimized(!isStaffMinimized)}>
                 <Image
-                  src={isStaffMinimized ? greenmaximize : greenminimize}
+                  src={isStaffMinimized ? '/icons8_expand_arrow 1 (2).svg' : '/icons8_expand_arrow 1 (1).svg'}
                   alt='toggle'
                   height={20}
                   width={20}
@@ -226,7 +226,7 @@ const Sports = () => {
               </div>
               <button onClick={() => setIsMembersMinimized(!isMembersMinimized)}>
                 <Image
-                  src={isMembersMinimized ? greenmaximize : greenminimize}
+                  src={isMembersMinimized ? '/icons8_expand_arrow 1 (2).svg' : '/icons8_expand_arrow 1 (1).svg'}
                   alt='toggle'
                   height={20}
                   width={20}

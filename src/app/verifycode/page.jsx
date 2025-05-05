@@ -21,7 +21,7 @@ const page = () => {
     <>
       <div className='py-[20px]   px-[100px]'>
         <Image
-          src={Logo}
+          src='/logo.svg'
           alt='logo image'
           height={500}
           width={200}
@@ -54,7 +54,7 @@ const page = () => {
         </div>
 
         <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-0 xl:right-[6%] lg:bottom-[10%] xl:bottom-[8%] xl:top-[8%]">
-          <Image src={verifyImage} alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
+          <Image src='/otp.svg' alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
         </div>
       </div>
     </>

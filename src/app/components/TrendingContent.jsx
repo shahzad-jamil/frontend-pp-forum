@@ -1,15 +1,15 @@
 "use client";
 import React, { useState } from 'react';
-import postedByUser from "../../../public/Rectangle 56.svg";
+// import postedByUser from "../../../public/Rectangle 56.svg";
 import Image from 'next/image';
-import greenmaximize from "../../../public/icons8_expand_arrow 1 (2).svg";
-import greenminimize from "../../../public/icons8_expand_arrow 1 (1).svg";
+// import greenmaximize from "../../../public/icons8_expand_arrow 1 (2).svg";
+// import greenminimize from "../../../public/icons8_expand_arrow 1 (1).svg";
 import { motion } from "framer-motion";
 
 const TrendingContent = () => {
   const trendingContent = [
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "New Zealand v Pakistan | 5th T20I | Wellington | March 26 | Match Discussion",
       description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       Replies: "27",
@@ -17,7 +17,7 @@ const TrendingContent = () => {
       postedBy: "FearlessRoar ",
     },
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "Hasan Nawaz: The emerging power-hitting sensation in International Cricket",
       description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       Replies: "27",
@@ -25,7 +25,7 @@ const TrendingContent = () => {
       postedBy: "FearlessRoar ",
     },
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "Mohammad Haris - International Performance Watch",
       description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       Replies: "27",
@@ -33,7 +33,7 @@ const TrendingContent = () => {
       postedBy: "FearlessRoar ",
     },
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "We are far behind, can't compete with the world: Atiq-uz-Zaman",
       description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       Replies: "27",
@@ -41,7 +41,7 @@ const TrendingContent = () => {
       postedBy: "FearlessRoar ",
     },
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "We are far behind, can't compete with the world: Atiq-uz-Zaman",
       description: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
       Replies: "27",
@@ -63,7 +63,7 @@ const TrendingContent = () => {
           </div>
           <button onClick={() => setIsContentMinimized(!isContentMinimized)}>
             <Image
-              src={isContentMinimized ? greenmaximize : greenminimize}
+              src={isContentMinimized ? '/icons8_expand_arrow 1 (2).svg' : '/icons8_expand_arrow 1 (1).svg'}
               alt="toggle"
               height={20}
               width={20}

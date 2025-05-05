@@ -1,50 +1,50 @@
 "use client";
 import React, { useState } from 'react';
-import postedByUser from "../../../public/Rectangle 56.svg";
+// import postedByUser from "../../../public/Rectangle 56.svg";
 import Image from 'next/image';
-import greenmaximize from "../../../public/icons8_expand_arrow 1 (2).svg";
-import greenminimize from "../../../public/icons8_expand_arrow 1 (1).svg";
+// import greenmaximize from "../../../public/icons8_expand_arrow 1 (2).svg";
+// import greenminimize from "../../../public/icons8_expand_arrow 1 (1).svg";
 import { motion } from "framer-motion";
 
 const LatestPost = () => {
   const latestPost = [
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "New Zealand v Pakistan | 5th T20I | Wellington | March 26 | Match Discussion",
       subTitle: "Cricket",
       updatedTime: "38 minutes ago",
       updatedBy: "BouncerGuy",
     },
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "Hasan Nawaz: The emerging power-hitting sensation in International Cricket",
       subTitle: "Cricket",
       updatedTime: "38 minutes ago",
       updatedBy: "BouncerGuy",
     },
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "Mohammad Haris - International Performance Watch",
       subTitle: "Cricket",
       updatedTime: "38 minutes ago",
       updatedBy: "BouncerGuy",
     },
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "We are far behind, can't compete with the world: Atiq-uz-Zaman",
       subTitle: "Cricket",
       updatedTime: "38 minutes ago",
       updatedBy: "BouncerGuy",
     },
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "We are far behind, can't compete with the world: Atiq-uz-Zaman",
       subTitle: "Cricket",
       updatedTime: "38 minutes ago",
       updatedBy: "BouncerGuy",
     },
     {
-      image: postedByUser,
+      image: '/Rectangle 56.svg',
       title: "We are far behind, can't compete with the world: Atiq-uz-Zaman",
       subTitle: "Cricket",
       updatedTime: "38 minutes ago",
@@ -65,7 +65,7 @@ const LatestPost = () => {
           </div>
           <button onClick={() => setIsPostMinimized(!isPostMinimized)}>
             <Image
-              src={isPostMinimized ? greenmaximize : greenminimize}
+              src={isPostMinimized ? '/icons8_expand_arrow 1 (2).svg' : '/icons8_expand_arrow 1 (1).svg'}
               alt="toggle"
               height={20}
               width={20}

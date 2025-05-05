@@ -2,13 +2,13 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-import minimize from "../../../public/icons8_expand_arrow 1.svg"
-import maximize from "../../../public/Vector.svg"
+// import minimize from "../../../public/icons8_expand_arrow 1.svg"
+// import maximize from "../../../public/Vector.svg"
 
-import postedByUser from "../../../public/Ellipse 1 (1).svg"
+// import postedByUser from "../../../public/Ellipse 1 (1).svg"
 import Image from 'next/image'
-import post4 from "../../../public/Rectangle 24 (1).svg"
-import post5 from "../../../public/Rectangle 24.svg"
+// import post4 from "../../../public/Rectangle 24 (1).svg"
+// import post5 from "../../../public/Rectangle 24.svg"
 import Link from 'next/link'
 
 const OffTopics = () => {
@@ -16,24 +16,24 @@ const OffTopics = () => {
 
   const offTopics = [
     {
-      image: post4,
+      image: '/Rectangle 24 (1).svg',
       title: "Time Pass And Sports",
       description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match and experience the rollercoaster of emotions.",
       threads: "27.7k",
       updatedTime: "53 minutes ago",
       MatchBetweenTeams: "New Zealand (131/2) outclass Pakistan (128/9)...",
       postedBy: "Bouncer Guy",
-      postedUserImage: postedByUser
+      postedUserImage: '/Ellipse 1 (1).svg'
     },
     {
-      image: post5,
+      image: '/Rectangle 24.svg',
       title: "Member Interviews",
       description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match and experience the rollercoaster of emotions.",
       threads: "27.7k",
       updatedTime: "53 minutes ago",
       MatchBetweenTeams: "New Zealand (131/2) outclass Pakistan (128/9)...",
       postedBy: "Bouncer Guy",
-      postedUserImage: postedByUser
+      postedUserImage: '/Ellipse 1 (1).svg'
     },
   ]
 
@@ -51,7 +51,7 @@ const OffTopics = () => {
         </h1>
         <button onClick={() => setIsMinimized(!isMinimized)}>
           <Image
-            src={isMinimized ? maximize : minimize}
+            src={isMinimized ? '/Vector.svg' : '/icons8_expand_arrow 1.svg'}
             alt="toggle"
             height={20}
             width={22}
@@ -96,7 +96,7 @@ const OffTopics = () => {
                     <h1 className='text-[12px] sm:text-[14px] font-bold primary-text-color font-openSans dark:text-backgroundTextColor mt-5 '>{item.MatchBetweenTeams}</h1>
                     <div className='flex items-center gap-2 mt-[10px] sm:mt-3 md:mt-7 '>
                       <div className='w-[34px] h-[34px] '>
-                        <Image src={item.postedUserImage} alt='posted user' />
+                        <Image src={item.postedUserImage} alt='posted user' width={34} height={34} />
                       </div>
                       <p className='text-[12px] sm:text-[14px] font-openSans font-bold primary-text-color dark:text-backgroundTextColor '>{item.postedBy}</p>
                     </div>

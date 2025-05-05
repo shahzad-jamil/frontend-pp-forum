@@ -1,43 +1,34 @@
 "use client";
 import React from 'react'
-import Image from 'next/image';
-import create from "../../../public/icons8_create 1.svg"
-import user from "../../../public/Group 2008.svg"
-import postImage from "../../../public/image 115.svg"
-import pin from "../../../public/pin.svg"
-import postvideo from "../../../public/image 115 (1).svg"
-import question from '../../../public/icons8_questions 1.svg';
-import arrow from "../../../public/icons8_expand_arrow black.svg"
-import search from '../../../public/green search icon.svg';
-import close from "../../../public/icons8_multiply 2.svg"
-import creat from "../../../public/icons8_create 2.svg"
-import dots from "../../../public/icons8_menu_vertical 1.svg"
-import poll from '../../../public/icons8_poll 1.svg';
-import filterbar from "../../../public/icons8_index 1.svg"
-import checkbox from "../../../public/checkbox.svg"
-import uncheckbox from "../../../public/uncheckbox.svg"
-
-
 import CreateComponent from '../components/CreateComponent';
 import { AnimatePresence, motion } from 'framer-motion'
-
-
-import minimize from "../../../public/icons8_expand_arrow 1.svg"
-import maximize from "../../../public/Vector.svg"
-import filterMaximize from "../../../public/newArrowExpand.svg"
-
-
-
-
-
 import { useState, useRef, useEffect } from 'react';
-
+import Link from 'next/link';
+import Image from 'next/image';
+// import create from "../../../public/icons8_create 1.svg"
+// import user from "../../../public/Group 2008.svg"
+// import postImage from "../../../public/image 115.svg"
+// import pin from "../../../public/pin.svg"
+// import postvideo from "../../../public/image 115 (1).svg"
+// import question from '../../../public/icons8_questions 1.svg';
+// import arrow from "../../../public/icons8_expand_arrow black.svg"
+// import search from '../../../public/green search icon.svg';
+// import close from "../../../public/icons8_multiply 2.svg"
+// import creat from "../../../public/icons8_create 2.svg"
+// import dots from "../../../public/icons8_menu_vertical 1.svg"
+// import poll from '../../../public/icons8_poll 1.svg';
+// import filterbar from "../../../public/icons8_index 1.svg"
+// import checkbox from "../../../public/checkbox.svg"
+// import uncheckbox from "../../../public/uncheckbox.svg"
+// import minimize from "../../../public/icons8_expand_arrow 1.svg"
+// import maximize from "../../../public/Vector.svg"
+// import filterMaximize from "../../../public/newArrowExpand.svg"
 // import create from '../../../public/icons8_create 1.svg';
-import article from '../../../public/icons8_regular_document 1.svg';
+// import article from '../../../public/icons8_regular_document 1.svg';
 // import question from '../../../public/icons8_questions 1.svg';
 // import poll from '../../../public/icons8_poll 1.svg';
-import discussion from '../../../public/discussion.svg';
-import Link from 'next/link';
+// import discussion from '../../../public/discussion.svg';
+
 const page = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [filterPopUp, setFilterPopup] = useState(false);
@@ -74,25 +65,25 @@ const page = () => {
 
   const actions = [
     {
-      image: discussion,
+      image: '/discussion.svg',
       title: 'Discussion',
       path: '/post-discussion',
       color: 'bg-discussionButtonColor',
     },
     {
-      image: article,
+      image: '/icons8_regular_document 1.svg',
       title: 'Article',
       path: '/post-article',
       color: 'bg-articleButtonColor',
     },
     {
-      image: poll,
+      image: '/icons8_poll 1.svg',
       title: 'Poll',
       path: '/poll',
       color: 'bg-pollButtonColor',
     },
     {
-      image: question,
+      image: '/icons8_questions 1.svg',
       title: 'Question',
       path: '/post-question',
       color: 'bg-questionButtonColor',
@@ -111,14 +102,14 @@ const page = () => {
     {
       title: "Pace alone won't make you a great bowler.",
       description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match...",
-      userImage: user,
+      userImage: '/Group 2008.svg',
       date: "Today at 3:29 AM",
       name: "Bouncer Guy",
       replies: "10",
       views: "226",
-      image: postImage,
+      image: '/image 115.svg',
       type: "discussion",
-      buttonImg: discussion,
+      buttonImg: '/discussion.svg',
       pinned: true,
 
     },
@@ -126,40 +117,40 @@ const page = () => {
     {
       title: "West Indies series could revive Shan Masood",
       description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match...",
-      userImage: user,
+      userImage: '/Group 2008.svg',
       date: "Today at 3:29 AM",
       name: "Bouncer Guy",
       replies: "10",
       views: "226",
       type: "article",
-      buttonImg: article,
+      buttonImg: '/icons8_regular_document 1.svg',
       pinned: true,
     },
 
     {
       title: "Mohammad Abbas was unfairly side-lined.",
       description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match...",
-      userImage: user,
+      userImage: '/Group 2008.svg',
       date: "Today at 3:29 AM",
       name: "Bouncer Guy",
       replies: "10",
       views: "226",
-      image: postvideo,
+      image: '/image 115 (1).svg',
       type: "discussion",
-      buttonImg: discussion,
+      buttonImg: '/discussion.svg',
       pinned: true,
     },
 
     {
       title: "Cricket has become too commercialized.",
       description: "Ever wanted to relive one of your favourite matches of recent times? Then this forum is for you, find your favourite match...",
-      userImage: user,
+      userImage: '/Group 2008.svg',
       date: "Today at 3:29 AM",
       name: "Bouncer Guy",
       replies: "10",
       views: "226",
       type: "article",
-      buttonImg: article,
+      buttonImg: '/icons8_regular_document 1.svg',
     },
 
   ]
@@ -186,18 +177,18 @@ const page = () => {
             <div className='flex  w-[100%] md:w-[90%] border-searchBorderColor dark:border-searchBorderColor/20 border p-3 md:p-4 mx-auto justify-between items-center rounded-[100px]'>
               <div className='w-[100%] flex gap-1 md:gap-3 items-center '>
                 <Image
-                  src={search}
+                  src='/green search icon.svg'
                   alt='search'
                   width={20}
-                  heigh={20}
+                  height={20}
                 />
                 <input type="text" placeholder='Search threads, posts and posters' className='w-[100%] text-[10px] md:text-[14px] p-2 outline-none bg-transparent text-secondaryColor montserrat-secondary-font  ' />
               </div>
               <Image
-                src={close}
+                src='/icons8_multiply 2.svg'
                 alt='close'
                 width={20}
-                heigh={20}
+                height={20}
               />
             </div>
 
@@ -206,17 +197,17 @@ const page = () => {
             <div className='flex md:w-[100%] xl:w-[40%] justify-end items-center gap-2'>
               <div className='w-[40px] h-[40px] flex items-center justify-center rounded-[100%] bg-chatBubbleColor '>
                 <Image
-                  src={filterbar}
+                  src='/icons8_index 1.svg'
                   alt='menu'
                   width={25}
-                  heigh={25}
+                  height={25}
                 />
               </div>
               <button
                 onClick={toggleDropdown}
                 className='button-background-color hover:bg-backgroundColor rounded-[100px] md:justify-center py-4 px-4 sm:py-5 sm:px-8 flex md:items-center gap-3'
               >
-                <Image src={create} alt='post 1' width={20} height={20} />
+                <Image src='/icons8_create 1.svg' alt='post 1' width={20} height={20} />
                 <h1 className=' text-[12px] sm:text-[14px] background-text-color font-semibold montserrat-secondary-font'>
                   Create Thread
                 </h1>
@@ -240,10 +231,10 @@ const page = () => {
                 {/* Heading */}
                 <div className='w-full flex justify-end'>
                   <Image
-                    src={close}
+                    src='/icons8_multiply 2.svg'
                     alt='close'
                     width={20}
-                    heigh={20}
+                    height={20}
                     className="cursor-pointer"
                     onClick={() => setFilterPopup(false)}
                   />
@@ -310,7 +301,7 @@ const page = () => {
                     </select>
 
                     <Image
-                      src={filterMaximize}
+                      src='/newArrowExpand.svg'
                       width={20}
                       height={20}
                       alt="icon"
@@ -338,7 +329,7 @@ const page = () => {
                     </select>
 
                     <Image
-                      src={filterMaximize}
+                      src='/newArrowExpand.svg'
                       width={20}
                       height={20}
                       alt="icon"
@@ -362,7 +353,7 @@ const page = () => {
                     </select>
 
                     <Image
-                      src={filterMaximize}
+                      src='/newArrowExpand.svg'
                       width={20}
                       height={20}
                       alt="icon"
@@ -384,7 +375,7 @@ const page = () => {
                     </select>
 
                     <Image
-                      src={filterMaximize}
+                      src='/newArrowExpand.svg'
                       width={20}
                       height={20}
                       alt="icon"
@@ -396,7 +387,7 @@ const page = () => {
 
                 {/* Filter Button */}
                 <div className='flex justify-end'>
-                  <button className=" button-background-color  text-white py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
+                  <button className=" button-background-color hover:bg-backgroundColor text-white py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
                     Filter
                   </button>
                 </div>
@@ -447,7 +438,7 @@ const page = () => {
               </h1>
               <button onClick={() => setIsMinimized(!isMinimized)}>
                 <Image
-                  src={isMinimized ? maximize : minimize}
+                  src={isMinimized ? '/Vector.svg' : '/icons8_expand_arrow 1.svg'}
 
                   alt="toggle"
                   height={20}
@@ -481,7 +472,7 @@ const page = () => {
               </h1>
               <button onClick={() => setIsOffTopic(!isOffTopic)}>
                 <Image
-                  src={isOffTopic ? maximize : minimize}
+                  src={isOffTopic ? '/Vector.svg' : '/icons8_expand_arrow 1.svg'}
                   alt="toggle"
                   height={20}
                   width={22}
@@ -511,7 +502,7 @@ const page = () => {
               </h1>
               <button onClick={() => setIsPPTeam(!isPPTeam)}>
                 <Image
-                  src={isPPTeam ? maximize : minimize}
+                  src={isPPTeam ? '/Vector.svg' : '/icons8_expand_arrow 1.svg'}
                   alt="toggle"
                   height={20}
                   width={22}
@@ -588,7 +579,7 @@ const page = () => {
                         <div className={`flex items-center gap-2 px-3 py-1 rounded-full text-backgroundTextColor 
                          ${items.type === "discussion" ? "bg-discussionButtonColor" : "bg-articleButtonColor"}`}>
                           <Image
-                            src={items.type === "discussion" ? discussion : article}
+                            src={items.type === "discussion" ? '/discussion.svg' : '/icons8_regular_document 1.svg'}
                             alt={items.type}
                             width={10}
                             height={10}
@@ -619,7 +610,7 @@ const page = () => {
 
                   {items.pinned && (
                     <div className="absolute top-6 right-7">
-                      <Image src={pin} alt="Pinned" width={30} height={30} />
+                      <Image src='/pin.svg' alt="Pinned" width={30} height={30} />
                     </div>
                   )}
                 </div>
@@ -638,7 +629,7 @@ const page = () => {
                     className="text-[8px] sm:text-[10px] w-full rounded-[100px] py-4 px-5 sm:py-2 sm:px-4 flex items-center gap-3 bg-questionButtonColor"
                   >
                     <Image
-                      src={question}
+                      src='/icons8_questions 1.svg'
                       alt='discussion'
                       width={12}
                       height={12}
@@ -650,7 +641,7 @@ const page = () => {
                 </div>
                 <div>
                   <Image
-                    src={arrow}
+                    src='/icons8_expand_arrow black.svg'
                     alt='arrow'
                     width={20}
                     height={20}
@@ -670,7 +661,7 @@ const page = () => {
                   </div>
                   <div className='mt-2'>
                     <Image
-                      src={close}
+                      src='/icons8_multiply 2.svg'
                       alt='close'
                       width={20}
                       height={20}
@@ -683,7 +674,7 @@ const page = () => {
                       Answer
                     </h1>
                     <Image
-                      src={creat}
+                      src='/icons8_create 2.svg'
                       alt='create'
                       width={20}
                       height={20}
@@ -691,7 +682,7 @@ const page = () => {
                   </div>
                   <div className='mt-3'>
                     <Image
-                      src={dots}
+                      src='/icons8_menu_vertical 1.svg'
                       alt='dots'
                       width={20}
                       height={20}
@@ -712,10 +703,10 @@ const page = () => {
                   </div>
                   <div className='mt-2'>
                     <Image
-                      src={close}
+                      src='/icons8_multiply 2.svg'
                       alt='close'
                       width={20}
-                      heigh={20}
+                      height={20}
                     />
                   </div>
                 </div>
@@ -725,7 +716,7 @@ const page = () => {
                       Answer
                     </h1>
                     <Image
-                      src={creat}
+                      src='/icons8_create 2.svg'
                       alt='create'
                       width={20}
                       height={20}
@@ -733,7 +724,7 @@ const page = () => {
                   </div>
                   <div className='mt-3'>
                     <Image
-                      src={dots}
+                      src='/icons8_menu_vertical 1.svg'
                       alt='dots'
                       width={20}
                       height={20}
@@ -754,7 +745,7 @@ const page = () => {
                     className="text-[8px] sm:text-[10px] w-full rounded-[100px] py-4 px-6 sm:py-2 sm:pr-[-3px]  flex items-center gap-2 bg-pollButtonColor"
                   >
                     <Image
-                      src={poll}
+                      src='/icons8_poll 1.svg'
                       alt='poll'
                       width={12}
                       height={12}
@@ -766,7 +757,7 @@ const page = () => {
                 </div>
                 <div>
                   <Image
-                    src={arrow}
+                    src='/icons8_expand_arrow black.svg'
                     alt='arrow'
                     width={20}
                     height={20}
@@ -783,7 +774,7 @@ const page = () => {
                 </div>
                 <div className='mt-3'>
                   <Image
-                    src={dots}
+                    src='/icons8_menu_vertical 1.svg'
                     alt='dots'
                     width={20}
                     height={20}

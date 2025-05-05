@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import blueTick from "../../../public/bluetick.svg";
-import greenTick from "../../../public/greentick.svg"; // assuming you have a green tick too
+// import blueTick from "../../../public/bluetick.svg";
+// import greenTick from "../../../public/greentick.svg"; // assuming you have a green tick too
 
 const Page = () => {
   const SubscriptionCards = [
@@ -88,8 +88,8 @@ const Page = () => {
                     <Image
                       src={
                         hoveredCardIndex === index
-                          ? blueTick
-                          : greenTick
+                          ? '/bluetick.svg'
+                          : '/greentick.svg'
                       }
                       alt="tick"
                       width={16}

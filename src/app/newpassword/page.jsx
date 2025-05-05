@@ -2,10 +2,10 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
-import Logo from "../../../public/logo.svg"
-import newPassImage from "../../../public/newpass.svg"
-import eye from "../../../public/icons8_hide 1.svg"
-import viewEye from "../../../public/viewEye.svg"
+// import Logo from "../../../public/logo.svg"
+// import newPassImage from "../../../public/newpass.svg"
+// import eye from "../../../public/icons8_hide 1.svg"
+// import viewEye from "../../../public/viewEye.svg"
 import { useRouter } from 'next/navigation'
 
 const Page = () => {
@@ -21,7 +21,7 @@ const Page = () => {
     <>
       <div className='py-[20px] px-[100px]'>
         <Image
-          src={Logo}
+          src='/logo.svg'
           alt='logo image'
           height={500}
           width={200}
@@ -51,7 +51,7 @@ const Page = () => {
                     className='w-full montserrat-secondary-font dark:bg-primaryColor  secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[14px]'
                   />
                   <Image
-                    src={showPassword ? viewEye : eye}
+                    src={showPassword ? '/viewEye.svg' : '/icons8_hide 1.svg'}
                     alt='eye'
                     height={18}
                     width={18}
@@ -75,7 +75,7 @@ const Page = () => {
                     className='w-full secondary-text-color dark:bg-primaryColor  montserrat-secondary-font outline-none p-5 md:p-5 rounded-[100px] text-[14px]'
                   />
                   <Image
-                    src={showConfirmPassword ? viewEye : eye}
+                    src={showConfirmPassword ? '/viewEye.svg' : '/icons8_hide 1.svg'}
                     alt='eye'
                     height={18}
                     width={18}
@@ -95,7 +95,7 @@ const Page = () => {
         </div>
 
         <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-0 xl:right-[6%] lg:bottom-[10%] xl:bottom-[8%] xl:top-[8%]">
-          <Image src={newPassImage} alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
+          <Image src='/newpass.svg' alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
         </div>
       </div>
     </>
