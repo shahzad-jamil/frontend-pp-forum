@@ -1,10 +1,10 @@
 "use client"
 import Image from 'next/image'
 import React from 'react'
-import Logo from "../../../public/logo.svg"
-import forgotImage from "../../../public/forgotpassword.svg"
+// import Logo from "../../../public/logo.svg"
+// import forgotImage from "../../../public/forgotpassword.svg"
 import Link from 'next/link'
-import captchaIcon from "../../../public/captcha.svg 1.svg"
+// import captchaIcon from "../../../public/captcha.svg 1.svg"
 import { useRouter } from 'next/navigation'
 
 
@@ -21,14 +21,14 @@ const page = () => {
 
       <div className='py-[20px]   px-[100px]'>
         <Image
-          src={Logo}
+          src='/logo.svg'
           alt='logo image'
           height={500}
           width={200}
         />
       </div >
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto item-center">
-        <div className='w-[100%] order-2 md:order-1'>
+        <div className='w-[100%]'>
           <div className='w-[100%] md:w-[80%] sm:h-[70vh] mx-auto flex flex-col justify-center'>
             <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] montserrat-primary-font dark:text-backgroundTextColor '>Forget Password?</h1>
             <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-secondary-font'>
@@ -51,7 +51,7 @@ const page = () => {
                     <span className='text-[12px] md:text-[14px] secondary-text-color montserrat-secondary-font'>I am human</span>
                   </label>
                   <Image
-                    src={captchaIcon}
+                    src='/captcha.svg 1.svg'
                     height={40}
                     width={40}
                   />
@@ -68,14 +68,8 @@ const page = () => {
             </form>
           </div>
         </div>
-        <div className="order-1 md:order-2 dark:bg-primaryColor flex flex-col lg:flex-row items-center justify-center overflow-y-hidden  lg:fixed right-[6%] lg:top-[8%] xl:top-[12%] ">
-          <Image
-            src={forgotImage}
-            alt='logo image'
-            width={447}
-            height={900}
-            className="object-contain"
-          />
+        <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-0 xl:right-[6%] lg:bottom-[10%] xl:bottom-[8%] xl:top-[8%]">
+          <Image src='/forgotpassword.svg' alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
         </div>
       </div>
     </>

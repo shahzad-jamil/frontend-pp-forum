@@ -17,9 +17,10 @@ const ForumStastic = () => {
         ].map((item, index) => (
           <div
             key={index}
-            className="flex flex-col w-full max-w-xs mx-auto p-6 rounded-[20px] border border-color justify-center items-center text-center"
+            className="flex flex-col w-full max-w-xs mx-auto p-6 rounded-[20px] border border-sportStatsBorder/20
+            dark:border-sportStatsDarkBorder/20 justify-center items-center text-center"
           >
-            <h1 className="montserrat-primary-font text-[14px] dark:text-backgroundTextColor sm:text-[24px] sm:text-[26px] font-bold primary-text-color">
+            <h1 className="montserrat-primary-font text-[14px] dark:text-backgroundTextColor sm:text-[24px]  font-bold primary-text-color">
               {item.value}
             </h1>
             <h1 className="montserrat-primary-font text-[13px] sm:text-[18px]  font-bold register-text-color">

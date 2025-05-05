@@ -1,14 +1,14 @@
 "use client"
 import Image from 'next/image'
 import React, { useState } from 'react'
-import Logo from "../../../public/logo.svg"
-import LoginImage from "../../../public/login.svg"
+// import Logo from "../../../public/logo.svg"
+// import LoginImage from "../../../public/loginImage.svg"
 import Link from 'next/link'
-import googleIcon from "../../../public/icons8_google 1.svg"
-import facebookIcon from "../../../public/icons8_facebook_circled 1.svg"
-import appleIcon from "../../../public//icons8_Apple_Inc 1.svg"
-import eye from "../../../public/icons8_hide 1.svg"
-import eyeSlash from "../../../public/viewEye.svg"
+// import googleIcon from "../../../public/icons8_google 1.svg"
+// import facebookIcon from "../../../public/icons8_facebook_circled 1.svg"
+// import appleIcon from "../../../public//icons8_Apple_Inc 1.svg"
+// import eye from "../../../public/icons8_hide 1.svg"
+// import eyeSlash from "../../../public/viewEye.svg"
 import { useRouter } from 'next/navigation'
 
 const page = () => {
@@ -27,15 +27,15 @@ const page = () => {
     <>
       <div className='py-[20px]  px-[20px] md:px-[100px]'>
         <Image
-          src={Logo}
+          src='/logo.svg'
           alt='logo image'
           height={500}
           width={200}
         />
       </div >
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto items-center overflow-x-hidden">
-        <div className='w-[100%] order-2 md:order-1 mb-[40px]'>
-          <div className='w-[100%] md:w-[80%] h-[100%] mx-auto flex flex-col justify-center'>
+        <div className='w-[100%] lg:order-1 mb-[40px]'>
+          <div className='w-[100%] md:w-[80%] h-[70vh] mx-auto flex flex-col justify-center'>
             <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold mb-[10px] dark:text-backgroundTextColor montserrat-primary-font '>Login</h1>
             <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-smallweigh-font'>
               Login to access your PakPassion account
@@ -64,7 +64,7 @@ const page = () => {
                     className='w-full montserrat-secondary-font dark:bg-primaryColor secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[12px] md:text-[14px]'
                   />
                   <Image
-                    src={passwordVisible ? eyeSlash : eye}
+                    src={passwordVisible ? '/viewEye.svg' : '/icons8_hide 1.svg'}
                     alt='toggle visibility'
                     height={18}
                     width={18}
@@ -108,7 +108,7 @@ const page = () => {
             <div className='w-[100%] flex gap-[30px] mt-[20px]'>
               <div className='flex items-center w-[100%] border-color cursor-pointer hover:bg-primaryColor/20 dark:hover:bg-secondaryColor/30  rounded-[100px] justify-center'>
                 <Image
-                  src={googleIcon}
+                  src='/icons8_google 1.svg'
                   height={34}
                   width={34}
                   alt='google'
@@ -116,7 +116,7 @@ const page = () => {
               </div>
               <div className='flex items-center w-[100%] border-color  cursor-pointer hover:bg-primaryColor/20 dark:hover:bg-secondaryColor/30 rounded-[100px] justify-center'>
                 <Image
-                  src={facebookIcon}
+                  src='/icons8_facebook_circled 1.svg'
                   height={34}
                   width={34}
                   alt='facebook'
@@ -125,10 +125,10 @@ const page = () => {
               </div>
               <div className='flex items-center border-color w-[100%] p-3 cursor-pointer hover:bg-primaryColor/20 dark:hover:bg-secondaryColor/30 rounded-[100px] justify-center'>
                 <Image
-                  src={appleIcon}
+                  src='/icons8_Apple_Inc 1.svg'
                   height={34}
                   width={34}
-                  alt='twitter'
+                  alt='apple'
 
                 />
               </div>
@@ -136,15 +136,10 @@ const page = () => {
           </div>
         </div>
 
-        <div className="order-1 lg:order-1 flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-[9%] lg:top-[8%] xl:top-[12%]">
-          <Image
-            src={LoginImage}
-            alt='logo image'
-            width={447}
-            height={600}
-            className="object-contain"
-          />
+        <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-0 xl:right-[6%] lg:bottom-[10%] xl:bottom-[8%] xl:top-[8%]">
+          <Image src='/loginImage.svg' alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
         </div>
+
       </div>
     </>
   )

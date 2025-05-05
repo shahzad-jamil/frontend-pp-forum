@@ -2,10 +2,10 @@
 
 import Image from 'next/image'
 import React, { useState } from 'react'
-import Logo from "../../../public/logo.svg"
-import newPassImage from "../../../public/newpass.svg"
-import eye from "../../../public/icons8_hide 1.svg"
-import viewEye from "../../../public/viewEye.svg"
+// import Logo from "../../../public/logo.svg"
+// import newPassImage from "../../../public/newpass.svg"
+// import eye from "../../../public/icons8_hide 1.svg"
+// import viewEye from "../../../public/viewEye.svg"
 import { useRouter } from 'next/navigation'
 
 const Page = () => {
@@ -21,7 +21,7 @@ const Page = () => {
     <>
       <div className='py-[20px] px-[100px]'>
         <Image
-          src={Logo}
+          src='/logo.svg'
           alt='logo image'
           height={500}
           width={200}
@@ -29,7 +29,7 @@ const Page = () => {
       </div>
 
       <div className="max-w-[90%] grid grid-cols-1 lg:grid-cols-2 mx-auto items-center">
-        <div className='w-full order-2 md:order-1'>
+        <div className='w-full'>
           <div className='w-[100%] md:w-[80%]  sm:h-[70vh] mx-auto flex flex-col justify-center'>
             <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold dark:text-backgroundTextColor mb-[10px] montserrat-primary-font'>New Password</h1>
             <p className='text-[14px] md:text-[16px] secondary-text-color montserrat-secondary-font '>
@@ -51,7 +51,7 @@ const Page = () => {
                     className='w-full montserrat-secondary-font dark:bg-primaryColor  secondary-text-color outline-none p-5 md:p-5 rounded-[100px] text-[14px]'
                   />
                   <Image
-                    src={showPassword ? viewEye : eye}
+                    src={showPassword ? '/viewEye.svg' : '/icons8_hide 1.svg'}
                     alt='eye'
                     height={18}
                     width={18}
@@ -75,7 +75,7 @@ const Page = () => {
                     className='w-full secondary-text-color dark:bg-primaryColor  montserrat-secondary-font outline-none p-5 md:p-5 rounded-[100px] text-[14px]'
                   />
                   <Image
-                    src={showConfirmPassword ? viewEye : eye}
+                    src={showConfirmPassword ? '/viewEye.svg' : '/icons8_hide 1.svg'}
                     alt='eye'
                     height={18}
                     width={18}
@@ -94,14 +94,8 @@ const Page = () => {
           </div>
         </div>
 
-        <div className="order-1 md:order-2 flex flex-col lg:flex-row items-center justify-center overflow-y-hidden lg:fixed right-[10%] lg:top-[8%] xl:top-[12%]">
-          <Image
-            src={newPassImage}
-            alt='new Pass image'
-            width={447}
-            height={900}
-            className="object-contain"
-          />
+        <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed right-0 xl:right-[6%] lg:bottom-[10%] xl:bottom-[8%] xl:top-[8%]">
+          <Image src='/newpass.svg' alt='register' width={616} height={816} className="object-contain w-[80%] xl:w-[100%]  xl:h-[100%] rounded-[20px]" />
         </div>
       </div>
     </>

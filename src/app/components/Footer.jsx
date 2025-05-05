@@ -4,11 +4,11 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import notificationImage from "../../../public/notification-03.svg"
-import instagram from "../../../public/instagram.svg"
-import youtube from "../../../public/youtube.svg"
-import facebook from "../../../public/facebook.svg"
-import twitter from "../../../public/twitter.svg"
+// import notificationImage from "../../../public/notification-03.svg"
+// import instagram from "../../../public/instagram.svg"
+// import youtube from "../../../public/youtube.svg"
+// import facebook from "../../../public/facebook.svg"
+// import twitter from "../../../public/twitter.svg"
 
 const Footer = () => {
   const footerlinks = [
@@ -19,7 +19,7 @@ const Footer = () => {
   ]
 
   const pathname = usePathname()
-  const hideFooterPages = ['/login', '/register', '/forgotpassword', '/newpassword', '/verifycode']
+  const hideFooterPages = ['/login', '/register', '/forgotpassword', '/newpassword', '/verifycode', '/post-discussion', '/post-article', '/poll', '/post-question', '/directmessage']
   if (hideFooterPages.includes(pathname)) return null
 
   return (
@@ -46,10 +46,10 @@ const Footer = () => {
           </div>
 
           <div className='flex gap-4 mt-6 lg:mt-0'>
-            <Image src={instagram} alt='Instagram' height={26} width={26} className='cursor-pointer' />
-            <Image src={twitter} alt='Twitter' height={26} width={26} className='cursor-pointer' />
-            <Image src={facebook} alt='Facebook' height={26} width={26} className='cursor-pointer' />
-            <Image src={youtube} alt='YouTube' height={26} width={26} className='cursor-pointer' />
+            <Image src='/instagram.svg' alt='Instagram' height={26} width={26} className='cursor-pointer' />
+            <Image src='/youtube.svg' alt='Twitter' height={26} width={26} className='cursor-pointer' />
+            <Image src='/facebook.svg' alt='Facebook' height={26} width={26} className='cursor-pointer' />
+            <Image src='/twitter.svg' alt='YouTube' height={26} width={26} className='cursor-pointer' />
           </div>
 
           <p className='text-[14px] font-openSans font-[400] text-white text-center mt-6 lg:mt-0'>
