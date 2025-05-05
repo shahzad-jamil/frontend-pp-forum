@@ -4,23 +4,23 @@ import { useEffect, useRef, useState } from 'react';
 import 'easymde/dist/easymde.min.css';
 import React from 'react'
 import Image from "next/image";
-import uploadVideo from "../../../public/play_circle_line.svg";
-import uploadImage from "../../../public/pic_line.svg";
-import strikeLineThrough from "../../../public/strikethrough_line.svg";
-import italicIcon from "../../../public/italic_line.svg";
-import underLineIcon from "../../../public/underline_line.svg";
-import boldIcon from "../../../public/bold_line.svg";
-import alignIcon from "../../../public/align.svg";
-import Line from "../../../public/line.svg";
-import linkIcon from "../../../public/link_line.svg";
-import orderIcon from "../../../public/list_ordered_line.svg";
-import listCheck from "../../../public/list_check_line.svg";
-import emojiIcon from "../../../public/emoji_2_line.svg";
-import codeIcon from "../../../public/code_line.svg";
-import backLine from "../../../public/back_line.svg";
-import atIcon from "../../../public/at_line.svg";
-import ArrowForward from "../../../public/Arrow.svg";
-import plus from "../../../public/at_line.svg";
+// import uploadVideo from "../../../public/play_circle_line.svg";
+// import uploadImage from "../../../public/pic_line.svg";
+// import strikeLineThrough from "../../../public/strikethrough_line.svg";
+// import italicIcon from "../../../public/italic_line.svg";
+// import underLineIcon from "../../../public/underline_line.svg";
+// import boldIcon from "../../../public/bold_line.svg";
+// import alignIcon from "../../../public/align.svg";
+// import Line from "../../../public/line.svg";
+// import linkIcon from "../../../public/link_line.svg";
+// import orderIcon from "../../../public/list_ordered_line.svg";
+// import listCheck from "../../../public/list_check_line.svg";
+// import emojiIcon from "../../../public/emoji_2_line.svg";
+// import codeIcon from "../../../public/code_line.svg";
+// import backLine from "../../../public/back_line.svg";
+// import atIcon from "../../../public/at_line.svg";
+// import ArrowForward from "../../../public/Arrow.svg";
+// import plus from "../../../public/at_line.svg";
 
 
 
@@ -103,14 +103,14 @@ const CreatePost = () => {
 
 
             <Image
-              src={backLine}
+              src='/back_line.svg'
               alt='undo'
               height={24}
               width={24}
               className='cursor-pointer'
             />
             <Image
-              src={ArrowForward}
+              src='/Arrow.svg'
               alt='undo'
               height={24}
               width={24}
@@ -119,7 +119,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={Line}
+              src='/line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -128,7 +128,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={boldIcon}
+              src='/bold_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -139,7 +139,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={italicIcon}
+              src='/italic_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -150,7 +150,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={underLineIcon}
+              src='/underline_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -161,7 +161,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={strikeLineThrough}
+              src='/strikethrough_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -173,7 +173,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={Line}
+              src='/line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -182,7 +182,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={listCheck}
+              src='/list_check_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -193,7 +193,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={orderIcon}
+              src='/list_ordered_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -204,7 +204,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={alignIcon}
+              src='/align.svg'
               alt='undo'
               height={34}
               width={34}
@@ -215,7 +215,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={Line}
+              src='/line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -224,7 +224,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={linkIcon}
+              src='/link_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -234,7 +234,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={codeIcon}
+              src='/code_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -244,7 +244,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={atIcon}
+              src='/at_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -253,7 +253,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={emojiIcon}
+              src='/emoji_2_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -262,7 +262,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={uploadImage}
+              src='/pic_line.svg'
               alt='undo'
               height={24}
               width={24}
@@ -271,7 +271,7 @@ const CreatePost = () => {
 
 
             <Image
-              src={uploadVideo}
+              src='/play_circle_line.svg'
               alt='undo'
               height={24}
               width={24}

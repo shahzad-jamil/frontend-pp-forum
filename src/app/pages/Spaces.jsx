@@ -2,14 +2,14 @@
 import React from 'react';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import post2 from "../../../public/image 115 (2).svg";
-import post4 from "../../../public/image 115 (3).svg";
-import plus from "../../../public/icons8_Plus 1.svg";
-import viewMore from "../../../public/expandLightMode.svg";
-import darkModeExpand from "../../../public/icons8_expand_arrow 1 (1).svg";
-import filterMaximize from "../../../public/newArrowExpand.svg"
-import close from "../../../public/icons8_multiply 2.svg"
-import upload from "../../../public/icons8_upload_to_the_cloud 1.svg"
+// import post2 from "../../../public/image 115 (2).svg";
+// import post4 from "../../../public/image 115 (3).svg";
+// import plus from "../../../public/icons8_Plus 1.svg";
+// import viewMore from "../../../public/expandLightMode.svg";
+// import darkModeExpand from "../../../public/icons8_expand_arrow 1 (1).svg";
+// import filterMaximize from "../../../public/newArrowExpand.svg"
+// import close from "../../../public/icons8_multiply 2.svg"
+// import upload from "../../../public/icons8_upload_to_the_cloud 1.svg"
 
 const Spaces = () => {
   const [expandedSections, setExpandedSections] = useState({});
@@ -46,36 +46,40 @@ const Spaces = () => {
     {
       title: "Spaces you might like",
       data: [
-        { img: post2, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post4, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post2, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post4, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post2, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post4, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post2, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post4, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (3).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (3).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (3).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
       ]
     },
     {
       title: "Cricket Zones",
       data: [
-        { img: post2, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post4, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post2, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post4, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post2, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post4, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (3).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (3).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (3).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
       ]
     },
     {
       title: "Off Topic Discussions",
       data: [
-        { img: post2, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post4, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post2, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post4, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post2, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
-        { img: post4, title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (3).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (3).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (2).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
+        { img: '/image 115 (3).svg', title: "Cricket Matches", description: "Stay updated with the latest cricket matches, live scores, and in-depth.", member: "3.1M", online: "45" },
       ]
     }
   ];
@@ -92,7 +96,7 @@ const Spaces = () => {
           </p>
         </div>
         <button onClick={toggleSpacePopUp} className='button-background-color relative hover:bg-backgroundColor rounded-full flex items-center gap-3 py-4 xl:py-5 px-6'>
-          <Image src={plus} alt='plus' width={20} height={20} />
+          <Image src='/icons8_Plus 1.svg' alt='plus' width={20} height={20} />
           <span className='text-sm sm:text-base text-backgroundTextColor font-semibold montserrat-secondary-font'>
             Create A Space
           </span>
@@ -104,10 +108,10 @@ const Spaces = () => {
 
             <div className='w-full flex justify-end'>
               <Image
-                src={close}
+                src='/icons8_multiply 2.svg'
                 alt='close'
                 width={20}
-                heigh={20}
+                height={20}
                 className="cursor-pointer"
                 onClick={() => setSpacePopUp(false)}
               />
@@ -124,7 +128,7 @@ const Spaces = () => {
               <input
                 type="text"
                 placeholder="My Cricket World"
-                className="w-full border border-popUpInputFieldsBorder bg-transparent focus:border-registerTextColor outline-none dark:bg-primaryColor p-3 sm:p-6 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color"
+                className="w-full border border-popUpInputFieldsBorder bg-transparent focus:border-registerTextColor outline-none dark:bg-primaryColor pp-5 md:p-5 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color"
               />
             </div>
             <div className="relative w-full my-[2px]">
@@ -134,7 +138,7 @@ const Spaces = () => {
 
               <div className="relative w-full">
                 <select
-                  className="w-full border focus:border-registerTextColor  border-createSpaceInputBorder outline-none dark:bg-primaryColor bg-popUpInputFieldsBorder p-3 sm:p-6 pr-12 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none cursor-pointer"
+                  className="w-full border focus:border-registerTextColor  border-createSpaceInputBorder outline-none dark:bg-primaryColor bg-cardBackgroundColor p-5 md:p-5 pr-12 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none cursor-pointer"
                 >
                   <option value="">Sports</option>
                   <option value="cricket">Cricket</option>
@@ -142,7 +146,7 @@ const Spaces = () => {
                   <option value="hockey">Hockey</option>
                 </select>
                 <Image
-                  src={filterMaximize}
+                  src='/newArrowExpand.svg'
                   width={20}
                   height={20}
                   alt="icon"
@@ -161,10 +165,10 @@ const Spaces = () => {
               />
             </div>
 
-            <div className='flex flex-col items-center justify-center border border-popUpInputFieldsBorder p-4 rounded-md'>
+            <div className='flex flex-col items-center justify-center border border-popUpInputFieldsBorder p-8 rounded-md'>
               <label htmlFor="file-upload" className="cursor-pointer flex flex-col items-center">
                 <Image
-                  src={upload}
+                  src='/icons8_upload_to_the_cloud 1.svg'
                   width={24}
                   height={24}
                   alt="upload"
@@ -190,7 +194,7 @@ const Spaces = () => {
 
             {/* Filter Button */}
             <div className='flex justify-end'>
-              <button className=" button-background-color  text-backgroundTextColor py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
+              <button className=" button-background-color hover:bg-backgroundColor  text-backgroundTextColor py-4 px-6 rounded-[100px] font-semibold text-[14px] montserrat-secondary-font">
                 Create
               </button>
             </div>
@@ -238,14 +242,14 @@ const Spaces = () => {
                 >
                   <span>{isExpanded ? 'View Less' : 'View More'}</span>
                   <Image
-                    src={viewMore}
+                    src='/expandLightMode.svg'
                     alt='expand'
                     width={14}
                     height={14}
                     className={`fill-primaryColor block dark:hidden ${isExpanded ? 'rotate-180' : ''}`}
                   />
                   <Image
-                    src={darkModeExpand}
+                    src='/icons8_expand_arrow 1 (1).svg'
                     alt='expand'
                     width={14}
                     height={14}

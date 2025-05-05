@@ -4,23 +4,23 @@ import { useEffect, useRef, useState } from 'react';
 import 'easymde/dist/easymde.min.css';
 import React from 'react'
 import Image from "next/image";
-import uploadVideo from "../../../public/play_circle_line.svg";
-import uploadImage from "../../../public/pic_line.svg";
-import strikeLineThrough from "../../../public/strikethrough_line.svg";
-import italicIcon from "../../../public/italic_line.svg";
-import underLineIcon from "../../../public/underline_line.svg";
-import boldIcon from "../../../public/bold_line.svg";
-import alignIcon from "../../../public/align.svg";
-import Line from "../../../public/line.svg";
-import linkIcon from "../../../public/link_line.svg";
-import orderIcon from "../../../public/list_ordered_line.svg";
-import listCheck from "../../../public/list_check_line.svg";
-import emojiIcon from "../../../public/emoji_2_line.svg";
-import codeIcon from "../../../public/code_line.svg";
-import backLine from "../../../public/back_line.svg";
-import atIcon from "../../../public/at_line.svg";
-import ArrowForward from "../../../public/Arrow.svg";
-import plus from "../../../public/at_line.svg";
+// import uploadVideo from "../../../public/play_circle_line.svg";
+// import uploadImage from "../../../public/pic_line.svg";
+// import strikeLineThrough from "../../../public/strikethrough_line.svg";
+// import italicIcon from "../../../public/italic_line.svg";
+// import underLineIcon from "../../../public/underline_line.svg";
+// import boldIcon from "../../../public/bold_line.svg";
+// import alignIcon from "../../../public/align.svg";
+// import Line from "../../../public/line.svg";
+// import linkIcon from "../../../public/link_line.svg";
+// import orderIcon from "../../../public/list_ordered_line.svg";
+// import listCheck from "../../../public/list_check_line.svg";
+// import emojiIcon from "../../../public/emoji_2_line.svg";
+// import codeIcon from "../../../public/code_line.svg";
+// import backLine from "../../../public/back_line.svg";
+// import atIcon from "../../../public/at_line.svg";
+// import ArrowForward from "../../../public/Arrow.svg";
+// import plus from "../../../public/at_line.svg";
 
 
 const page = () => {
@@ -73,231 +73,232 @@ const page = () => {
     <>
 
       <div className='w-[100%] px-[10px] xl:px-[0px] xl:max-w-[82%] h-[68vh]  xl:h-[47.8vh] mx-auto mt-[1px] lg:mt-[20px] '>
-        <h1 className='text-[32px] text-center md:text-left md:text-[36px] primary-text-color font-semibold montserrat-primary-font'>
+        <h1 className='text-[32px] text-center md:text-left md:text-[36px] primary-text-color font-semibold montserrat-primary-font '>
           Create Question
         </h1>
-        <p className='text-[14px] pt-[2px] secondary-text-color montserrat-smallweigh-font'>
+        <p className='text-[14px] pt-[2px] secondary-text-color montserrat-primary-font'>
           Tips on getting good answers quickly
         </p>
-        <p className='text-[14px] pt-[2px] secondary-text-color montserrat-smallweigh-font'>
-          Make sure your question has not been asked already
+        <ul className="list-disc pl-5">
+          <li className='text-[14px] pt-[2px] secondary-text-color montserrat-smallweigh-font'>
+            Make sure your question has not been asked already
+          </li>
+          <li className='text-[14px] pt-[2px] secondary-text-color montserrat-smallweigh-font'>
+            Keep your question short and to the point
+          </li>
+          <li className='text-[14px] pt-[2px] secondary-text-color montserrat-smallweigh-font'>
+            Double-check grammar and spelling
+          </li>
+        </ul>
 
-        </p>
-        <p className='text-[14px] pt-[2px] secondary-text-color montserrat-smallweigh-font'>
-          Keep your question short and to the point
+        <div className='mt-10'>
 
-        </p>
-        <p className='text-[14px] pt-[2px] secondary-text-color montserrat-smallweigh-font'>
-          Double-check grammar and spelling
-        </p>
-
-
-        <p className='text-[18px] pt-[5px] secondary-text-color montserrat-smallweigh-font'>
-          "Ask something you need help with or want answers to."
-        </p>
-
-
-
-
-
-
-        <div className='flex flex-wrap xl:flex-nowrap w-[100%] sm:w-[90%] xl:w-[60%] h-[20vh] xl:h-[24px] md:p-10 gap-[10px]  items-center shadow-lg rounded-[20px]'>
-
-          <Image
-            src={backLine}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-          />
-          <Image
-            src={ArrowForward}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-          />
-
-
-          <Image
-            src={Line}
-            alt='undo'
-            height={24}
-            width={24}
-            className='p-2 '
-          />
-
-
-          <Image
-            src={boldIcon}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-            onClick={handleBold}
-
-          />
-
-
-          <Image
-            src={italicIcon}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-            onClick={handleItalic}
-
-          />
-
-
-          <Image
-            src={underLineIcon}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-            onClick={handleBold}
-
-          />
-
-
-          <Image
-            src={strikeLineThrough}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-            onClick={handleStrikethrough}
-
-          />
-
-
-
-          <Image
-            src={Line}
-            alt='undo'
-            height={24}
-            width={24}
-            className=' p-2'
-          />
-
-
-          <Image
-            src={listCheck}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-            onClick={handleUnorderedList}
-
-          />
-
-
-          <Image
-            src={orderIcon}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-            onClick={handleOrderedList}
-
-          />
-
-
-          <Image
-            src={alignIcon}
-            alt='undo'
-            height={34}
-            width={34}
-            className='cursor-pointer'
-
-
-          />
-
-
-          <Image
-            src={Line}
-            alt='undo'
-            height={24}
-            width={24}
-            className=' p-2'
-          />
-
-
-          <Image
-            src={linkIcon}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-          />
-
-
-
-          <Image
-            src={codeIcon}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-            onClick={handleCode}
-          />
-
-
-          <Image
-            src={atIcon}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-          />
-
-
-          <Image
-            src={emojiIcon}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-          />
-
-
-          <Image
-            src={uploadImage}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer'
-          />
-
-
-          <Image
-            src={uploadVideo}
-            alt='undo'
-            height={24}
-            width={24}
-            className='cursor-pointer  '
-          />
-
+          <h1 className="outline-none p-6 text-[12px] text-center md:text-left sm:text-[18px] w-full text-secondaryColor  bg-postDiscussionCardBackground dark:bg-homeTabBackgroundColor rounded-[20px]
+             montserrat-secondary-font">
+            "Ask something you need help with or want answers to."
+          </h1>
         </div>
 
+        <div className='bg-postDiscussionCardBackground dark:bg-homeTabBackgroundColor rounded-[20px] mt-5 p-5'>
+          <div className='flex flex-wrap justify-center xl:flex-nowrap w-[100%] sm:w-[90%] lg:w-[60%] xl:w-[45%] py-5   px-10 gap-[10px]  items-center shadow-lg rounded-[20px] bg-backgroundTextColor dark:bg-DarkcardBackgroundColor'>
 
 
-        <textarea
-          ref={editorRef}
-          placeholder="❓ What’s the Most Unforgettable Cricket Match You’ve Ever Watched? 🏏"
-          className="outline-none p-5 text-[18px]  w-full h-[250px] resize-none font-bold"
-        />
+            <Image
+              src='/back_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+            />
+            <Image
+              src='/Arrow.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+            />
+
+
+            <Image
+              src='/line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='p-2 '
+            />
+
+
+            <Image
+              src='/bold_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+              onClick={handleBold}
+
+            />
+
+
+            <Image
+              src='/italic_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+              onClick={handleItalic}
+
+            />
+
+
+            <Image
+              src='/underline_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+              onClick={handleBold}
+
+            />
+
+
+            <Image
+              src='/strikethrough_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+              onClick={handleStrikethrough}
+
+            />
+
+
+
+            <Image
+              src='/line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className=' p-2'
+            />
+
+
+            <Image
+              src='/list_check_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+              onClick={handleUnorderedList}
+
+            />
+
+
+            <Image
+              src='/list_ordered_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+              onClick={handleOrderedList}
+
+            />
+
+
+            <Image
+              src='/align.svg'
+              alt='undo'
+              height={34}
+              width={34}
+              className='cursor-pointer'
+
+
+            />
+
+
+            <Image
+              src='/line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className=' p-2'
+            />
+
+
+            <Image
+              src='/link_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+            />
+
+
+
+            <Image
+              src='/code_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+              onClick={handleCode}
+            />
+
+
+            <Image
+              src='/at_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+            />
+
+
+            <Image
+              src='/emoji_2_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+            />
+
+
+            <Image
+              src='/pic_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer'
+            />
+
+
+            <Image
+              src='/play_circle_line.svg'
+              alt='undo'
+              height={24}
+              width={24}
+              className='cursor-pointer  '
+            />
+
+
+          </div>
+
+
+
+          <textarea
+            // ref={editorRef}
+            placeholder="❓ What’s the Most Unforgettable Cricket Match You’ve Ever Watched? 🏏"
+            className="p-5 text-[18px] outline-none bg-transparent montserrat-bolder-font text-secondaryColor w-full h-[400px] rounded-[20px]  overflow-y-auto resize-none dark:text-backgroundTextColor"
+          />
+        </div>
       </div>
-      <div className='flex justify-center w-[100%] mx-auto px-[10px] xl:px-0 xl:max-w-[82%]  mt-[150px] mb-[10px] lg:justify-end'>
+      <div className='flex justify-center fixed bottom-0   xl:right-[10%] w-[100%] mx-auto px-[10px] xl:px-0 xl:max-w-[82%] mb-[40px] lg:justify-end'>
         <button className='button-background-color rounded-[100px] justify-center py-4 md:py-5 px-8 flex items-center gap-3'>
           {/* <Image src={plus} alt='post 1' width={20} height={20} /> */}
           <h1 className='text-[14px] background-text-color font-semibold montserrat-secondary-font'>
-            Post Question
+            Post Thread
           </h1>
         </button>
       </div>
-
     </>
   )
 }

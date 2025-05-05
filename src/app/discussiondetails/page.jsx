@@ -1,26 +1,26 @@
 "use client"
 import React from 'react'
 import Image from 'next/image'
-import post from "../../../public/image 115 (2).svg"
-import flag from "../../../public/icons8_Flag 1.svg"
-import forward from "../../../public/icons8_forward_arrow 1.svg"
-import user from "../../../public/Group 2008.svg"
-import ytvideo from "../../../public/Group 1967.svg"
-import emoji from "../../../public/Frame 328.svg"
-import like from "../../../public/icons8_thumbs_up_1 1.svg"
-import comment from "../../../public/icons8_chat_message_1 1.svg"
-import share from "../../../public/Vector 2.svg"
-import dislike from "../../../public/icons8_thumbs_down.svg"
+// import post from "../../../public/image 115 (2).svg"
+// import flag from "../../../public/icons8_Flag 1.svg"
+// import forward from "../../../public/icons8_forward_arrow 1.svg"
+// import user from "../../../public/Group 2008.svg"
+// import ytvideo from "../../../public/Group 1967.svg"
+// import emoji from "../../../public/Frame 328.svg"
+// import like from "../../../public/icons8_thumbs_up_1 1.svg"
+// import comment from "../../../public/icons8_chat_message_1 1.svg"
+// import share from "../../../public/Vector 2.svg"
+// import dislike from "../../../public/icons8_thumbs_down.svg"
 // import maximize from "../../../public/icons8_expand_arrow 1 (1).svg"
-import darkmaximize from "../../../public/icons8_expand_arrow black.svg"
+// import darkmaximize from "../../../public/icons8_expand_arrow black.svg"
 import { Input } from 'postcss'
 import Comments from '../components/Comments'
 import { useState, useRef, useEffect } from 'react';
-import maximize from "../../../public/newArrowExpand.svg"
-import minimize from "../../../public/Vector.svg"
-import search from '../../../public/green search icon.svg';
-import close from "../../../public/icons8_multiply 2.svg"
-import discussion from '../../../public/discussion.svg';
+// import maximize from "../../../public/newArrowExpand.svg"
+// import minimize from "../../../public/Vector.svg"
+// import search from '../../../public/green search icon.svg';
+// import close from "../../../public/icons8_multiply 2.svg"
+// import discussion from '../../../public/discussion.svg';
 
 
 const page = () => {
@@ -38,18 +38,19 @@ const page = () => {
         <div className='flex mt-[10px] w-[100%] border-searchBorderColor dark:border-searchBorderColor/20 border p-4 mx-auto justify-between items-center rounded-[100px]'>
           <div className='w-[100%] flex gap-3 items-center'>
             <Image
-              src={search}
+              src='/green search icon.svg'
               alt='search'
               width={18}
-              heigh={18}
+              height={18}
+
             />
             <input type="text" placeholder='Search threads, posts and posters' className='w-[100%] p-2 outline-none bg-transparent text-secondaryColor montserrat-bolder-font  ' />
           </div>
           <Image
-            src={close}
+            src='/icons8_multiply 2.svg'
             alt='close'
             width={20}
-            heigh={20}
+            height={20}
           />
         </div>
         <div className="flex flex-col lg:flex-row justify-between items-start gap-4 p-4 w-full">
@@ -65,7 +66,7 @@ const page = () => {
               </h1>
               <button onClick={() => setIsSport(!isSport)}>
                 <Image
-                  src={isSport ? minimize : maximize}
+                  src={isSport ? '/Vector.svg' : '/newArrowExpand.svg'}
                   alt="toggle"
                   height={20}
                   width={22}
@@ -97,7 +98,7 @@ const page = () => {
               </h1>
               <button onClick={() => setIsOffTopic(!isOffTopic)}>
                 <Image
-                  src={isOffTopic ? minimize : maximize}
+                  src={isOffTopic ? '/Vector.svg' : '/newArrowExpand.svg'}
                   alt="toggle"
                   height={20}
                   width={22}
@@ -126,7 +127,7 @@ const page = () => {
               </h1>
               <button onClick={() => setIsMinimized(!isMinimized)}>
                 <Image
-                  src={isMinimized ? minimize : maximize}
+                  src={isMinimized ? '/Vector.svg' : '/newArrowExpand.svg'}
                   alt="toggle"
                   height={20}
                   width={22}
@@ -153,7 +154,7 @@ const page = () => {
             <div className='bg-discussionDetailCardBackground dark:bg-mixTopicsOtherCardsBorder/5 rounded-[20px] p-5'>
               <div className='w-[100%] '>
                 <Image
-                  src={post}
+                  src='/image 115 (2).svg'
                   alt='post'
                   width={742}
                   height={380}
@@ -166,7 +167,7 @@ const page = () => {
 
                 <div className="flex items-center gap-2 px-3 py-1 rounded-full text-backgroundTextColor bg-discussionButtonColor">
                   <Image
-                    src={discussion}
+                    src='/discussion.svg'
                     alt="discussion"
                     width={10}
                     height={10}
@@ -195,9 +196,9 @@ const page = () => {
                 {/* Right Section */}
                 <div className="w-full md:w-[21%] md:text-[16px] flex justify-between md:justify-end items-center gap-4">
                   <p className="register-text-color font-openSans font-[600]">New</p>
-                  <Image src={flag} alt="flag" width={20} height={20}
+                  <Image src='/icons8_Flag 1.svg' alt="flag" width={20} height={20}
                     className='dark:bg-white' />
-                  <Image src={forward} alt="forward" width={20} height={20}
+                  <Image src='/icons8_forward_arrow 1.svg' alt="forward" width={20} height={20}
                     className=' dark:bg-white' />
                   <h1 className="text-[12px] md:text-[16px] primary-text-color font-openSans font-[700] 
                 dark:text-backgroundTextColor">
@@ -212,7 +213,7 @@ const page = () => {
                   {/* Left Section */}
                   <div className='flex flex-col sm:flex-row sm:items-center  gap-4 '>
                     <Image
-                      src={user}
+                      src='/Group 2008.svg'
                       alt="user"
                       width={63}
                       height={48}
@@ -296,7 +297,7 @@ const page = () => {
               {/* Emoji image */}
               <div className='w-full sm:w-[80%] flex justify-center sm:justify-end mt-2'>
                 <Image
-                  src={emoji}
+                  src='/Frame 328.svg'
                   alt='emoji'
                   width={158}
                   height={30}
@@ -307,21 +308,21 @@ const page = () => {
               {/* Like, Comment, Share section */}
               <div className='w-full sm:w-[90%] flex flex-wrap gap-3 justify-center sm:justify-end mt-2'>
                 <div className='flex items-center bg-viewmoreButtonColor py-3 px-6 rounded-full'>
-                  <Image src={like} alt='like' width={25} height={25} />
+                  <Image src='/icons8_thumbs_up_1 1.svg' alt='like' width={25} height={25} />
                   <h1 className='ml-2 text-[14px] primary-text-color font-openSans font-[600] dark:text-primaryColor'>
                     10k
                   </h1>
                 </div>
 
                 <div className='flex items-center bg-viewmoreButtonColor py-3 px-6 rounded-full'>
-                  <Image src={comment} alt='comment' width={25} height={25} />
+                  <Image src='/icons8_chat_message_1 1.svg' alt='comment' width={25} height={25} />
                   <h1 className='ml-2 text-[14px] primary-text-color font-openSans font-[600] dark:text-primaryColor'>
                     4k
                   </h1>
                 </div>
 
                 <div className='flex items-center bg-viewmoreButtonColor py-3 px-6 rounded-full'>
-                  <Image src={share} alt='share' width={25} height={25} />
+                  <Image src='/Vector 2.svg' alt='share' width={25} height={25} />
                   <h1 className='ml-2 text-[14px] primary-text-color font-openSans font-[600] dark:text-primaryColor'>
                     956
                   </h1>
@@ -339,7 +340,7 @@ const page = () => {
             <div className="my-4 w-full flex justify-between p-4 rounded-[20px] items-center">
               <div className="w-full sm:w-[85%] md:w-[75%] xl:w-[85%] flex items-center justify-between gap-3">
                 <div className="flex-shrink-0">
-                  <Image src={user} alt="user" width={63} height={48} />
+                  <Image src='/Group 2008.svg' alt="user" width={63} height={48} />
                 </div>
                 <div className="w-full shadow-2xl">
                   <input

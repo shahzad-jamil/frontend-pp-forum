@@ -1,12 +1,12 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import report from "../../../public/report.svg";
-import attach from "../../../public/attachment.svg";
-import messgaePic from "../../../public/1 7.svg";
+// import report from "../../../public/report.svg";
+// import attach from "../../../public/attachment.svg";
+// import messgaePic from "../../../public/1 7.svg";
 import UserDetailPanel from "../components/UserDetailPanel";
-import send from "../../../public/icons8_paper_plane 1.svg";
-import minimize from "../../../public/Vector.svg";
+// import send from "../../../public/icons8_paper_plane 1.svg";
+// import minimize from "../../../public/Vector.svg";
 
 const OpenChat = ({ selectedUser, onClose }) => {
   const [reportPopup, setReportPopup] = useState(false);
@@ -40,7 +40,7 @@ const OpenChat = ({ selectedUser, onClose }) => {
         <div className="flex justify-between items-center border-b border-searchBorderColor dark:border-searchBorderColor/20  h-[61px]">
           <div className="flex gap-4 items-center">
             <button onClick={onClose} className="text-xl" aria-label="Close panel">
-              <Image src={minimize} alt="minimize" className="rotate-180 w-5 h-5" />
+              <Image src="/Vector.svg" alt="minimize" width={20} height={20} className="rotate-180 w-5 h-5" />
             </button>
             <Image
               src={selectedUser.profileImage}
@@ -59,7 +59,7 @@ const OpenChat = ({ selectedUser, onClose }) => {
           </div>
 
           <Image
-            src={report}
+            src="/report.svg"
             onClick={toggleReportPopUp}
             alt="report icon"
             width={42}
@@ -115,7 +115,7 @@ const OpenChat = ({ selectedUser, onClose }) => {
           <div className="flex gap-5 items-start">
             <Image src={selectedUser.profileImage} alt="chat dp" width={24} height={24} />
             <div className="flex flex-col gap-2">
-              <Image src={messgaePic} alt="media" width={240} height={240} />
+              <Image src="/1 7.svg" alt="media" width={240} height={240} />
               <p className=" text-[14px] sm:text-[17px] text-registerTextColor montserrat-smallweigh-font mt-2 break-all">
                 https://dribbble.com/shots/17742253-ui-kit-designjam
               </p>
@@ -170,7 +170,7 @@ const OpenChat = ({ selectedUser, onClose }) => {
         {/* Input Section */}
         <div className="w-full dark:bg-homeTabBackgroundColor/5 flex flex-col sm:flex-row items-center gap-3 p-2 rounded-md">
           <div className="w-full flex">
-            <Image src={attach} alt="attach" width={40} height={40} className="cursor-pointer" />
+            <Image src="/attachment.svg" alt="attach" width={40} height={40} className="cursor-pointer" />
             <input
               type="text"
               placeholder="Type your message here..."
@@ -183,7 +183,7 @@ const OpenChat = ({ selectedUser, onClose }) => {
                 Send Message
               </h1>
               <Image
-                src={send}
+                src="/icons8_paper_plane 1.svg"
                 alt="send"
                 width={18}
                 height={18}

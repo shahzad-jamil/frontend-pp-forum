@@ -624,7 +624,7 @@ const page = () => {
             dark:border-mixTopicsOtherCardsBorder/20 rounded-[20px]'>
               <div className='w-full flex justify-between items-center pb-5 border-b border-searchBorderColor
               dark:border-searchBorderColor/20'>
-                <div className=' sm:w-[30%] md:w-[50%] lg:w-[35%] xl:w-[22%]'>
+                <div className=' sm:w-[30%] md:w-[50%] lg:w-[35%] xl:w-[18%]'>
                   <button
                     className="text-[8px] sm:text-[10px] w-full rounded-[100px] py-4 px-5 sm:py-2 sm:px-4 flex items-center gap-3 bg-questionButtonColor"
                   >

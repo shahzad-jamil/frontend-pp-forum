@@ -1,12 +1,12 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-import lock from "../../../public/icons8_lock 1.svg";
-import maleprofile from "../../../public/icons8_male_user 1.svg";
-import mute from "../../../public/mute bell.svg";
-import search from "../../../public/green search icon.svg";
-import arrow from "../../../public/detailPanel Vector.svg";
-import minimize from "../../../public/Vector.svg";
+// import lock from "../../../public/icons8_lock 1.svg";
+// import maleprofile from "../../../public/icons8_male_user 1.svg";
+// import mute from "../../../public/mute bell.svg";
+// import search from "../../../public/green search icon.svg";
+// import arrow from "../../../public/detailPanel Vector.svg";
+// import minimize from "../../../public/Vector.svg";
 
 const UserDetailPanel = ({ user, onClose }) => {
   return (
@@ -14,7 +14,7 @@ const UserDetailPanel = ({ user, onClose }) => {
       {/* Header */}
       <div className="flex justify-between items-center mb-4">
         <button onClick={onClose} className="text-xl" aria-label="Close panel">
-          <Image src={minimize} alt="minimize" className="rotate-180 w-5 h-5" />
+          <Image src="/Vector.svg" alt="minimize" width={20} height={20} className="rotate-180 w-5 h-5" />
         </button>
       </div>
 
@@ -32,7 +32,7 @@ const UserDetailPanel = ({ user, onClose }) => {
         <div className="w-full flex justify-center">
           <div className="w-[80%] sm:w-[80%] md:w-[80%] lg:w-[83%] flex gap-2 bg-massageBackground
            dark:bg-mixTopicsOtherCardsBorder/5 rounded-[10px] p-2 px-3 items-center justify-center">
-            <Image src={lock} width={16} height={16} alt="lock" />
+            <Image src="/icons8_lock 1.svg" width={16} height={16} alt="lock" />
             <h1 className="text-[13px] sm:text-[14px] dark:text-backgroundTextColor secondary-text-color montserrat-smallweigh-font text-center">
               End-to-end encrypted
             </h1>
@@ -42,9 +42,9 @@ const UserDetailPanel = ({ user, onClose }) => {
         {/* Options: Profile / Mute / Search */}
         <div className="flex justify-around gap-4 flex-wrap w-full sm:w-[90%] lg:w-[80%] mt-6">
           {[
-            { icon: maleprofile, label: "Profile" },
-            { icon: mute, label: "Mute" },
-            { icon: search, label: "Search" },
+            { icon: "/icons8_male_user 1.svg", label: "Profile" },
+            { icon: "/mute bell.svg", label: "Mute" },
+            { icon: "/green search icon.svg", label: "Search" },
           ].map((item, index) => (
             <div key={index} className="flex flex-col items-center w-[80px] sm:w-[45px]">
               <div className="flex items-center bg-massageBackground dark:bg-mixTopicsOtherCardsBorder/5 w-[40px] h-[40px] justify-center rounded-full">
@@ -73,7 +73,7 @@ const UserDetailPanel = ({ user, onClose }) => {
                 <span className="text-[16px] sm:text-[17px] font-Montserrat font-[500] text-primaryColor dark:text-backgroundTextColor">
                   {text}
                 </span>
-                <Image src={arrow} height={8} width={12} alt="arrow" />
+                <Image src="/detailPanel Vector.svg" height={8} width={12} alt="arrow" />
               </div>
             ))}
           </div>
