@@ -294,10 +294,16 @@ const page = () => {
                     <select
                       className="w-full border focus:border-registerTextColor  border-popUpInputFieldsBorder outline-none dark:bg-primaryColor bg-cardBackgroundColor p-3 sm:p-6 pr-12 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none cursor-pointer"
                     >
-                      <option value="">Select Time</option>
-                      <option value="24h">Last 24 Hours</option>
-                      <option value="7d">Last 7 Days</option>
-                      <option value="30d">Last 30 Days</option>
+                      <option value="">Any time</option>
+                      <option value="7">7 days</option>
+                      <option value="">14 days</option>
+                      <option value=""> 30 days</option>
+                      <option value=""> 2 months</option>
+                      <option value=""> 3 months</option>
+                      <option value=""> 6 months</option>
+                      <option value=""> 1 year</option>
+
+
                     </select>
 
                     <Image
@@ -321,7 +327,7 @@ const page = () => {
                     <select
                       className="w-full border focus:border-registerTextColor border-popUpInputFieldsBorder outline-none dark:bg-primaryColor bg-cardBackgroundColor p-3 sm:p-6 pr-12 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none cursor-pointer"
                     >
-                      <option value="Any">(Any)</option>
+                      <option value="Any">Any</option>
                       <option value="Discussion">Discussion</option>
                       <option value="Article">Article</option>
                       <option value="Poll"> Poll</option>
@@ -347,9 +353,11 @@ const page = () => {
                   <div className="relative w-full">
                     <select className="w-full border focus:border-registerTextColor border-popUpInputFieldsBorder dark:bg-primaryColor outline-none p-3 sm:p-6 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none bg-cardBackgroundColor cursor-pointer">
                       <option value="last message">Last message</option>
-                      <option value="latest">Latest</option>
-                      <option value="oldest">Oldest</option>
-                      <option value="popular">Most Popular</option>
+                      <option value="first message">First message</option>
+                      <option value="title">Title</option>
+                      <option value="replies">Replies</option>
+                      <option value="views">views</option>
+
                     </select>
 
                     <Image
@@ -369,8 +377,8 @@ const page = () => {
                   </label>
 
                   <div className="relative w-full">
-                    <select className="w-full border focus:border-registerTextColor border-popUpInputFieldsBorder dark:bg-primaryColor outline-none p-3 sm:p-6 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none bg-cardBackgroundColor cursor-pointer">
-                      <option value="desc">Descending</option>
+                    <select className="w-full border focus:border-registerTextColor border-popUpInputFieldsBorder dark:bg-primaryColor  outline-none p-3 sm:p-6 rounded-[100px] text-[12px] md:text-[14px] montserrat-secondary-font secondary-text-color appearance-none bg-cardBackgroundColor cursor-pointer">
+                      <option value="desc" >Descending</option>
                       <option value="asc">Ascending</option>
                     </select>
 
