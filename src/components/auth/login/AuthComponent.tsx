@@ -3,12 +3,12 @@
 import Image from "next/image"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import InputField from "../../reuseable/Inputfield";
 import { useForm } from "react-hook-form";
 import PasswordField from "../../reuseable/PasswordField";
 import CheckboxField from "../../reuseable/CheckBoxfield";
-import Header from "../../layouts/auth/Header";
+
+const loginSchema = {}
 
 
 const AuthComponent = () => {

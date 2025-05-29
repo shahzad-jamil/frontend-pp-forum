@@ -20,14 +20,10 @@ const MainLogin = () => {
                 </div>
 
 
-                {/* <div className=" flex items-center justify-center mt-6 lg:mt-0 overflow-y-hidden lg:fixed 2xl:right-[2%] xl:right-[2%] right-[-4%]  lg:bottom-[10%] xl:bottom-[8%] top-[8%]">
-                    <Image src='/loginImage.svg' alt='register' width={616} height={816} className="object-contain 2xl:w-[120%] 2xl:h-[100%] xl:w-[95%] w-[80%] rounded-[20px]" />
-                </div> */}
-
 
                 <div className='lg:col-span-1 lg:order-2 order-1 lg:block hidden'>
                     <div className='lg:w-[50vw] w-full lg:fixed top-0 right-0 lg:h-screen flex items-center justify-center lg:py-24'>
-                        <Image src='/loginImage.svg' alt='register' width={616} height={816} className="lg:max-h-[90vh] object-cover object-left-top  rounded-[20px]" />
+                        <Image src='/loginImage.svg' alt='register' width={616} height={816} className="lg:max-h-[90vh] object-cover object-left-top  rounded-[20px] border-8 border-neutral50" />
                     </div>
                 </div>
 
