@@ -46,7 +46,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
         />
       </div>
 
-      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+      {error && <p className="text-red-500 text-sm mt-1 ps-4">{error}</p>}
     </div>
   );
 };

@@ -7,17 +7,30 @@ import InputField from "../../reuseable/Inputfield";
 import { useForm } from "react-hook-form";
 import PasswordField from "../../reuseable/PasswordField";
 import CheckboxField from "../../reuseable/CheckBoxfield";
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
 
-const loginSchema = {}
+const loginSchema = z.object({
+  email: z.string({ required_error: "Password is required" }).email("Invalid email"),
+  password: z.string({ required_error: "Password is required" }).min(6, "Password must be at least 6 characters"),
+  remember: z.boolean()
+})
 
+type LoginFormValues = z.infer<typeof loginSchema>
 
 const AuthComponent = () => {
     const router = useRouter()
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormValues>({
+    resolver: zodResolver(loginSchema),
+  })
+
+  const onSubmit = (data: LoginFormValues) => {
+    console.log("Login data:", data)
+  }
 
     const handleNavigate = (e: any) => {
         e.preventDefault()
@@ -33,13 +46,13 @@ const AuthComponent = () => {
                 </p>
 
 
-                <form action="">
+                <form onSubmit={handleSubmit(onSubmit)}>
 
                     <InputField
                         id="email"
                         label="Email"
                         placeholder="Enter Your Email"
-                        register={register("email", { required: "Email is required" })}
+                        register={register("email")}
                         error={errors.email?.message}
                     />
 
@@ -47,7 +60,7 @@ const AuthComponent = () => {
                         id="password"
                         label="Password"
                         placeholder="Enter Your Password"
-                        register={register("password", { required: "Password is required" })}
+                        register={register("password")}
                         error={errors.password?.message}
                     />
 
@@ -62,7 +75,7 @@ const AuthComponent = () => {
 
 
                     <div>
-                        <button onClick={handleNavigate} type="submit" className='w-[100%] bg-primaryGreen transition duration-100 text-backgroundTextColor hover:bg-registerTextColor p-4 rounded-[100px]  text-[12px] md:text-[14px] text-openSans font-[600] cursor-pointer my-[30px]  '>
+                        <button type="submit" className='w-[100%] bg-primaryGreen transition duration-100 text-backgroundTextColor hover:bg-registerTextColor p-4 rounded-[100px]  text-[12px] md:text-[14px] text-openSans font-[600] cursor-pointer my-[30px]  '>
                             Login
                         </button>
                     </div>

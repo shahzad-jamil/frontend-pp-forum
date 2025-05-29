@@ -33,7 +33,7 @@ const InputField: React.FC<InputFieldProps> = ({
         {...register}
         className="w-full dark:bg-primaryColor montserrat-secondary-font border-[1.7px] border-neutral200 focus:border-primaryGreen/50  secondary-text-color outline-none px-6 py-4 rounded-[100px] text-[12px] md:text-[14px]"
       />
-      {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+      {error && <p className="text-red-500 text-sm mt-1 ps-4">{error}</p>}
     </div>
   );
 };

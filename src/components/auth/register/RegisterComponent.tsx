@@ -7,17 +7,37 @@ import { useRouter } from "next/navigation"
 import { useForm } from "react-hook-form"
 import PasswordField from "../../reuseable/PasswordField"
 import CustomCheckbox from "../../reuseable/CheckBoxfield"
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+
+const registerSchema = z.object({
+  userName: z.string().min(1, "Username is required"),
+  email: z.string().email("Invalid email"),
+  password: z.string().min(6, "Password must be at least 6 characters"),
+  humanConfirmation: z.literal(true, {
+    errorMap: () => ({ message: "Please confirm you're human." }),
+  }),
+  agreeToTerms: z.literal(true, {
+    errorMap: () => ({ message: "You must agree to the terms." }),
+  }),
+})
+type RegisterFormValues = z.infer<typeof registerSchema>
 
 
 const RegisterComponent = () => {
 
 
-    const router = useRouter()
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<RegisterFormValues>({
+    resolver: zodResolver(registerSchema),
+  })
+
+  const onSubmit = (data: RegisterFormValues) => {
+    console.log("Form Submitted:", data)
+  }
 
     const handleCaptcha = () => {
 
@@ -32,21 +52,21 @@ const RegisterComponent = () => {
             </p>
 
 
-            <form action="">
+            <form onSubmit={handleSubmit(onSubmit)}>
 
                 <InputField
                     id="userName"
                     label="User Name"
                     placeholder="username"
-                    register={register("userName", { required: "Email is required" })}
-                    error={errors.email?.message}
+                    register={register("userName")}
+                    error={errors.userName?.message}
                 />
 
                 <InputField
                     id="email"
                     label="Email"
                     placeholder="user@gmail.com"
-                    register={register("email", { required: "Email is required" })}
+                    register={register("email")}
                     error={errors.email?.message}
                 />
 
@@ -54,18 +74,23 @@ const RegisterComponent = () => {
                     id="password"
                     label="Password"
                     placeholder="Enter Your Password"
-                    register={register("password", { required: "Password is required" })}
+                    register={register("password")}
                     error={errors.password?.message}
                 />
 
 
                 <div className="my-4 flex flex-col gap-4">
                     <div className="flex items-center justify-between">
-                        <CustomCheckbox label="“By continuing, you agree to our User Agreement and acknowledge that you understand the Privacy Policy.”" id="terms" register={register("terms")} />
+                        <CustomCheckbox
+                            error={errors.agreeToTerms?.message}
+                            label="“By continuing, you agree to our User Agreement and acknowledge that you understand the Privacy Policy.”"
+                            id="terms"
+                            register={register("agreeToTerms")} 
+                        />
                     </div>
 
                     <div className="flex items-center justify-between">
-                        <CustomCheckbox label="I am human" id="human-confirmation" register={register("humanConfirmation")} />
+                        <CustomCheckbox error={errors.humanConfirmation?.message} label="I am human" id="human-confirmation" register={register("humanConfirmation")} />
 
                         <button type="button" onClick={handleCaptcha} className="flex items-center justify-center">
                             <Image alt="catcha-image" src='/captcha.svg 1.svg' objectFit="cover" height={50} width={50} />
@@ -84,7 +109,7 @@ const RegisterComponent = () => {
 
                 <div className='text-center text-[12px] md:text-[14px] mt-[-20px] tracking-[1px] montserrat-secondary-font'>
                     <h1 className='text-secondaryColor dark:text-darkSecondaryColor montserrat-secondary-font'>
-                        Already have an account? <Link href="/register" className='text-[12px] md:text-[14px] register-text-color font-semibold'>
+                        Already have an account? <Link href="/login" className='text-[12px] md:text-[14px] register-text-color font-semibold'>
                             Login</Link>
                     </h1>
                 </div>
@@ -122,7 +147,6 @@ const RegisterComponent = () => {
                         height={34}
                         width={34}
                         alt='apple'
-
                     />
                 </div>
             </div>
