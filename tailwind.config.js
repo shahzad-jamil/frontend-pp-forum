@@ -25,10 +25,12 @@ module.exports = {
       colors: {
         primaryColor: " #141A28",
         secondaryColor: " #7E7F81",
+        darkSecondaryColor: "#D1D5DB",
         neutral200: "#D0D0D1",
         neutral50: "#F5F5F6",
         accentColor: " #FF3D00",
         primaryGreen: " #3F9405",
+
         "backgroundTextColor": " #FFFFFF",
         "registerTextColor": " #4AB100",
         "FollowingTextColor": " #007AD9",

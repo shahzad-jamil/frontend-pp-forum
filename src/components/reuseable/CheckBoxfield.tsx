@@ -16,7 +16,7 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({ label, register, id }) 
                 {...register}
                 className="peer hidden"
             />
-            <div className="w-5 h-5 border-[3px] border-secondaryColor rounded-[3px] flex items-center justify-center transition-all peer-checked:hidden">
+            <div className="w-5 h-5 shrink-0 border-[3px] border-secondaryColor rounded-[3px] flex items-center justify-center transition-all peer-checked:hidden">
             </div>
             <div className="w-5 h-5 border-[3px] hidden peer-checked:flex border-primaryGreen rounded-[3px] items-center justify-center transition-all peer-checked:bg-primaryGreen">
                 <svg
@@ -29,7 +29,7 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({ label, register, id }) 
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
             </div>
-            <span className="text-sm text-secondaryColor font-Montserrat">{label}</span>
+            <span className="text-sm text-secondaryColor dark:text-darkSecondaryColor font-Montserrat">{label}</span>
         </label>
     );
 };
