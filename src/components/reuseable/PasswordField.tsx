@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
+import { DefaultTransition } from "../../utils/constants";
 
 interface PasswordFieldProps {
   label: string;
@@ -34,7 +36,7 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
           type={visible ? "text" : "password"}
           placeholder={placeholder}
           {...register}
-          className="w-full montserrat-secondary-font dark:bg-primaryColor secondary-text-color outline-none px-6 py-4  rounded-[100px] text-[12px] md:text-[14px]"
+          className="w-full montserrat-secondary-font dark:bg-primaryColor  dark:text-backgroundTextColor secondary-text-color outline-none px-6 py-4  rounded-[100px] text-[12px] md:text-[14px]"
         />
         <Image
           src={visible ? "/viewEye.svg" : "/icons8_hide 1.svg"}
@@ -46,7 +48,20 @@ const PasswordField: React.FC<PasswordFieldProps> = ({
         />
       </div>
 
-      {error && <p className="text-red-500 text-sm mt-1 ps-4">{error}</p>}
+      <AnimatePresence initial={false} mode="wait">
+        {error && (
+          <motion.div
+            key="upper"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={DefaultTransition}
+            style={{ overflow: 'hidden' }}
+          >
+            <p className="text-red-500 text-sm mt-1 ps-4">{error}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

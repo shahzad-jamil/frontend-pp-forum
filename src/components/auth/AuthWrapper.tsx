@@ -10,7 +10,7 @@ interface Props {
     image: string | StaticImport
 }
 
-const AuthWrapper: React.FC<Props> = ({children, image}) => {
+const AuthWrapper: React.FC<Props> = ({ children, image }) => {
 
 
     return (
@@ -18,9 +18,18 @@ const AuthWrapper: React.FC<Props> = ({children, image}) => {
             <div className="grid grid-cols-1 lg:gap-8 gap-2 lg:grid-cols-2 flex-grow">
 
                 <div className='lg:order-1 order-2 lg:col-span-1 lg:px-0 md:px-12 sm:px-8 px-4 h-full flex flex-col'>
-                    <Header classes="lg:block hidden"/>
+                    <Header classes="lg:block hidden" />
                     <div className='2xl:ps-24 lg:ps-12 flex-grow flex flex-col xl:pt-12 sm:pt-6 pb-6'>
-                        {children}
+                        <div className=' flex flex-col justify-center lg:text-left text-center flex-grow'>
+                            <div className="flex-grow flex flex-col justify-center">
+                                {children}
+                            </div>
+
+                            <div className="flex flex-col justify-end">
+                                <footer className="mt-12 text-secondaryColor text-center">Forum PakPassion.net™ © copyright 2025 All Rights Reserved.</footer>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 

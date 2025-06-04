@@ -1,5 +1,7 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
+import { DefaultTransition } from "../../utils/constants";
 
 interface CustomCheckboxProps {
     label: string;
@@ -33,7 +35,20 @@ const CustomCheckbox: React.FC<CustomCheckboxProps> = ({ label, register, id, er
                 </div>
                 <span className="text-sm text-secondaryColor dark:text-darkSecondaryColor font-Montserrat">{label}</span>
             </label>
-            {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
+            <AnimatePresence initial={false} mode="wait">
+                {error && (
+                    <motion.div
+                        key="upper"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={DefaultTransition}
+                        style={{ overflow: 'hidden' }}
+                    >
+                        <p className="text-red-500 text-sm mt-1">{error}</p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };

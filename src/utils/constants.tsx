@@ -1,0 +1,1 @@
+export const DefaultTransition = { duration: 0.3, ease: 'easeInOut' }

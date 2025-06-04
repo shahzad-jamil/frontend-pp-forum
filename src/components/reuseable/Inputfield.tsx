@@ -1,5 +1,7 @@
 import React from "react";
 import { UseFormRegisterReturn } from "react-hook-form";
+import { AnimatePresence, motion } from "framer-motion";
+import { DefaultTransition } from "../../utils/constants";
 
 interface InputFieldProps {
   label: string;
@@ -31,9 +33,22 @@ const InputField: React.FC<InputFieldProps> = ({
         type={type}
         placeholder={placeholder}
         {...register}
-        className="w-full dark:bg-primaryColor montserrat-secondary-font border-[1.7px] border-neutral200 focus:border-primaryGreen/50  secondary-text-color outline-none px-6 py-4 rounded-[100px] text-[12px] md:text-[14px]"
+        className="w-full dark:bg-primaryColor  dark:text-backgroundTextColor montserrat-secondary-font border-[1.7px] border-neutral200 focus:border-primaryGreen/50  secondary-text-color outline-none px-6 py-4 rounded-[100px] text-[12px] md:text-[14px]"
       />
-      {error && <p className="text-red-500 text-sm mt-1 ps-4">{error}</p>}
+           <AnimatePresence initial={false} mode="wait">
+                {error && (
+                    <motion.div
+                        key="upper"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={DefaultTransition}
+                        style={{ overflow: 'hidden' }}
+                    >
+                        <p className="text-red-500 text-sm mt-1 ps-4">{error}</p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
     </div>
   );
 };

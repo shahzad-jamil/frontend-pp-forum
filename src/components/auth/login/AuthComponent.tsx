@@ -1,6 +1,4 @@
 "use client"
-
-import Image from "next/image"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import InputField from "../../reuseable/Inputfield";
@@ -9,127 +7,107 @@ import PasswordField from "../../reuseable/PasswordField";
 import CheckboxField from "../../reuseable/CheckBoxfield";
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { Routes } from "../../../utils/routes";
+import FormTitle from "../Heading";
+import AuthButton from "../AuthButton";
+import FormLink from "../FormLink";
+import SocialLoginButtons from "../SocialLogin";
+import { toast } from "sonner";
+import { messages } from "../../../utils/messages";
 
 const loginSchema = z.object({
-  email: z.string({ required_error: "Password is required" }).email("Invalid email"),
-  password: z.string({ required_error: "Password is required" }).min(6, "Password must be at least 6 characters"),
-  remember: z.boolean()
+    email: z.string({ required_error: "Password is required" }).email("Invalid email"),
+    password: z.string({ required_error: "Password is required" }).min(6, "Password must be at least 6 characters"),
+    remember: z.boolean()
 })
 
 type LoginFormValues = z.infer<typeof loginSchema>
 
 const AuthComponent = () => {
     const router = useRouter()
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<LoginFormValues>({
-    resolver: zodResolver(loginSchema),
-  })
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<LoginFormValues>({
+        resolver: zodResolver(loginSchema),
+    })
 
-  const onSubmit = (data: LoginFormValues) => {
-    console.log("Login data:", data)
-  }
+    const onSubmit = (data: LoginFormValues) => {
+        console.log("Login data:", data)
+        logUserIn()
+    }
 
-    const handleNavigate = (e: any) => {
-        e.preventDefault()
-        router.push("/")
+
+    const logUserIn = () => {
+        toast.success(messages.loginSuccess)
+        setTimeout(() => { router.push(Routes.base) }, 1000)
     }
 
     return (
-        
-            <div className=' flex flex-col justify-center lg:text-left text-center flex-grow'>
-                <h1 className='text-[30px] md:text-[40px] primary-text-color font-semibold dark:text-backgroundTextColor montserrat-primary-font '>Login</h1>
-                <p className='text-[14px] md:text-[16px] text-secondaryColor montserrat-smallweigh-font '>
-                    Login to access your PakPassion account
-                </p>
+
+        <>
 
 
-                <form onSubmit={handleSubmit(onSubmit)}>
-
-                    <InputField
-                        id="email"
-                        label="Email"
-                        placeholder="Enter Your Email"
-                        register={register("email")}
-                        error={errors.email?.message}
-                    />
-
-                    <PasswordField
-                        id="password"
-                        label="Password"
-                        placeholder="Enter Your Password"
-                        register={register("password")}
-                        error={errors.password?.message}
-                    />
-
-                    <div className="flex mt-[20px] items-center justify-between mb-4">
-                        <CheckboxField  label="Remember me" id="remember" register={register("remember")} />
-
-                        <Link href="/forgotpassword" className="text-[12px] transition duration-200 md:text-[14px] accent-text-color hover:underline montserrat-secondary-font">
-                            Forgot password?
-                        </Link>
-                    </div>
+            <FormTitle
+                title="Login"
+                subtitle="Login to access your PakPassion account"
+            />
 
 
+            <form onSubmit={handleSubmit(onSubmit)}>
 
-                    <div>
-                        <button type="submit" className='w-[100%] bg-primaryGreen transition duration-100 text-backgroundTextColor hover:bg-registerTextColor p-4 rounded-[100px]  text-[12px] md:text-[14px] text-openSans font-[600] cursor-pointer my-[30px]  '>
-                            Login
-                        </button>
-                    </div>
+                <InputField
+                    id="email"
+                    label="Email"
+                    placeholder="Enter Your Email"
+                    register={register("email")}
+                    error={errors.email?.message}
+                />
 
-                    
-                    <div className='text-center text-[12px] md:text-[14px] mt-[-20px] tracking-[1px] montserrat-secondary-font'>
-                        <h1 className='text-secondaryColor montserrat-secondary-font'>
-                            Don't have an account? <Link href="/register" className='text-[12px] md:text-[14px] register-text-color font-semibold'>
-                                Register now</Link>
-                        </h1>
-                    </div>
+                <PasswordField
+                    id="password"
+                    label="Password"
+                    placeholder="Enter Your Password"
+                    register={register("password")}
+                    error={errors.password?.message}
+                />
 
-                    {/* or continue section fixed */}
-                    <div className='flex gap-3 mt-[30px] items-center montserrat-secondary-font whitespace-nowrap'>
-                        <div className='flex-1 bg-neutral200 h-[1.5px]' />
-                        <p className='text-[12px] md:text-[14px] secondary-text-color text-center tracking-[2px] px-2'>
-                            or continue with
-                        </p>
-                        <div className='flex-1 bg-neutral200 h-[1.5px]' />
-                    </div>
-                </form>
+                <div className="flex mt-[20px] items-center justify-between mb-4">
+                    <CheckboxField label="Remember me" id="remember" register={register("remember")} />
 
-                <div className='w-[100%] flex gap-[30px] mt-[20px]'>
-                    <div className='flex items-center w-[100%] border-color cursor-pointer hover:bg-primaryColor/20 transition duration-100 dark:hover:bg-secondaryColor/30  rounded-[100px] justify-center'>
-                        <Image
-                            src='/icons8_google 1.svg'
-                            height={34}
-                            width={34}
-                            alt='google'
-                        />
-                    </div>
-                    <div className='flex items-center w-[100%] border-color  cursor-pointer hover:bg-primaryColor/20 transition duration-100 dark:hover:bg-secondaryColor/30 rounded-[100px] justify-center'>
-                        <Image
-                            src='/icons8_facebook_circled 1.svg'
-                            height={34}
-                            width={34}
-                            alt='facebook'
-                        />
-                    </div>
-                    <div className='flex items-center border-color w-[100%] p-3 cursor-pointer hover:bg-primaryColor/20 transition duration-100 dark:hover:bg-secondaryColor/30 rounded-[100px] justify-center'>
-                        <Image
-                            src='/icons8_Apple_Inc 1.svg'
-                            height={34}
-                            width={34}
-                            alt='apple'
+                    <FormLink href={Routes.forgotPassword}>
+                        Forgot password?
+                    </FormLink>
 
-                        />
-                    </div>
                 </div>
 
-                <div className="flex flex-col justify-end flex-grow">
-                    <footer className="mt-12 text-secondaryColor text-center">Copyright © 2025 Pak Passion, LLC. All rights reserved.</footer>
+
+
+                <div>
+                    <AuthButton children="Login" />
                 </div>
-            </div>
+
+
+                <div className='text-center text-[12px] md:text-[14px] mt-[-20px] tracking-[1px] montserrat-secondary-font'>
+                    <h1 className='text-secondaryColor montserrat-secondary-font'>
+                        Don't have an account? <Link href={Routes.register} className='text-[12px] md:text-[14px] register-text-color font-semibold'>
+                            Register now</Link>
+                    </h1>
+                </div>
+
+                <div className='flex gap-3 mt-[30px] items-center montserrat-secondary-font whitespace-nowrap'>
+                    <div className='flex-1 bg-neutral200 h-[1.5px]' />
+                    <p className='text-[12px] md:text-[14px] secondary-text-color text-center tracking-[2px] px-2'>
+                        or continue with
+                    </p>
+                    <div className='flex-1 bg-neutral200 h-[1.5px]' />
+                </div>
+            </form>
+
+            <SocialLoginButtons />
+
+        </>
     )
 }
 

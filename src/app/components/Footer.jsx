@@ -19,7 +19,7 @@ const Footer = () => {
   ]
 
   const pathname = usePathname()
-  const hideFooterPages = ['/login', '/register', '/forgotpassword', '/newpassword', '/verifycode', '/post-discussion', '/post-article', '/poll', '/post-question', '/directmessage']
+  const hideFooterPages = ['/login', '/register', '/forgot-password', '/new-password', '/verify-code', '/post-discussion', '/post-article', '/poll', '/post-question', '/directmessage']
   if (hideFooterPages.includes(pathname)) return null
 
   return (

@@ -1,3 +1,5 @@
+import path from 'node:path';
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   webpack(config) {
@@ -7,6 +9,10 @@ const nextConfig = {
       issuer: /\.[jt]sx?$/,  // Make sure this is for JS/TS files
       use: ['@svgr/webpack'],
     });
+    //     config.resolve.alias = {
+    //   ...(config.resolve.alias || {}),
+    //   "@": path.resolve(process.cwd(), "src"),
+    // };
     return config;
   },
 };

@@ -17,6 +17,11 @@
 
 }
 
+.dark input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #0f172a inset !important; /* e.g. Tailwind slate-900 */
+  -webkit-text-fill-color: #f8fafc !important; /* e.g. Tailwind slate-50 */
+}
+
 input:-webkit-autofill {
   transition: background-color 100000s ease-in-out 0s;
   -webkit-text-fill-color: #000 !important; /* keep your desired text color */
